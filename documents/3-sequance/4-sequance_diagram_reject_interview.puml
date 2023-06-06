@@ -1,0 +1,20 @@
+@startuml
+
+actor Recruiter
+actor TechnicalAdvisor
+participant System
+
+TechnicalAdvisor -> System: Click on the link reject Interview
+System --> TechnicalAdvisor: Response of the request
+group Check Rejected Request
+    alt#SkyBlue #LightBlue If X TechnicalAdvisor has rejected the request
+        alt#LightCyan #LightSkyBlue If there are more of TechnicalAdvisor eligible for the request
+            ref over System
+                Random selection of X TechnicalAdvisor
+            end ref
+        else #LightCyan
+            System ->> Recruiter: Send email all the TechnicalAdvisor eligible refused the request
+        end
+    end
+end
+@enduml

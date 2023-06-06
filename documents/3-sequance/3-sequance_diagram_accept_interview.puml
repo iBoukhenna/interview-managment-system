@@ -1,0 +1,15 @@
+@startuml
+actor Recruiter
+actor TechnicalAdvisor
+participant System
+
+TechnicalAdvisor -> System: Click on the link accept Interview
+System --> TechnicalAdvisor: Response of the request
+alt If no one else has accepted before
+    System ->> TechnicalAdvisor: Send an email the interview request is assigned \n and the recruiter's informations
+    System ->> Recruiter: Send an email containing a link to details of the TechnicalAdvisor who accept
+else If someone has already accepted
+    System ->> TechnicalAdvisor: Send email to informe that the interview has already been assigned \n that he will be contacted if this ultimately proves necessary
+end
+
+@enduml

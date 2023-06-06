@@ -1,0 +1,11 @@
+@startuml
+actor Recruiter
+actor TechnicalAdvisor
+participant System
+
+group Choise the Request
+    Recruiter -> System: Choise the accepted Request
+    System -> Recruiter: Response of the Request
+end ref
+
+@enduml

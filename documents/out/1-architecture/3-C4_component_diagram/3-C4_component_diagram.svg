@@ -1,0 +1,1443 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1264px" preserveAspectRatio="none" style="width:2206px;height:1264px;background:#FFFFFF;" version="1.1" viewBox="0 0 2206 1264" width="2206px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="27.6094" id="_title" style="stroke:none;stroke-width:1.0;" width="511" x="840.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="501" x="845.5" y="24.5332">Component diagram for Interview Management System - API Application</text><!--MD5=[7442f3b126ee602ae02566c1a49e158a]
+cluster api--><g id="cluster_api"><rect fill="none" height="571" rx="2.5" ry="2.5" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="1515" x="7" y="266.6094"/><text fill="#444444" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="116" x="706.5" y="285.2188">API Application</text><text fill="#444444" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="63" x="733" y="301.1914">[Container]</text></g><!--MD5=[23dd82446d11b8368f420b33181c4cf6]
+entity technical_advisor_controller--><g id="elem_technical_advisor_controller"><rect fill="#85BBF0" height="110.5625" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="203" x="30.5" y="320.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="137" x="61.5" y="347.2188">Technical Advisor</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="76" x="94" y="367.3438">Controller</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="127" x="68.5" y="383.3164">[Spring Rest Controller]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="130" y="400.4863"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="40.5" y="418.0957">CRUD TechnicalAdvisor APIs</text></g><!--MD5=[fc469690d1119eda12ee67c8ff7535b8]
+entity recruiter_controller--><g id="elem_recruiter_controller"><rect fill="#85BBF0" height="90.4375" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="170" x="300" y="331.1094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="150" x="310" y="357.7188">Recruiter Controller</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="127" x="321.5" y="373.6914">[Spring Rest Controller]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="383" y="390.8613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="133" x="318.5" y="408.4707">CRUD Recruiter APIs</text></g><!--MD5=[f0c2f6223e5c21c82ab78b45c8f0e99b]
+entity line_business_controller--><g id="elem_line_business_controller"><rect fill="#85BBF0" height="110.5625" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="194" x="541" y="320.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="130" x="571" y="347.2188">Line Of Business</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="76" x="600" y="367.3438">Controller</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="127" x="574.5" y="383.3164">[Spring Rest Controller]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="636" y="400.4863"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="551" y="418.0957">CRUD LineOfBusiness APIs</text></g><!--MD5=[4d7ea756375bd1aa5bfb64173122bea1]
+entity job_position_controller--><g id="elem_job_position_controller"><rect fill="#85BBF0" height="90.4375" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="196" x="793" y="331.1094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="176" x="803" y="357.7188">Job Position Controller</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="127" x="827.5" y="373.6914">[Spring Rest Controller]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="889" y="390.8613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="817.5" y="408.4707">CRUD JobPosition APIs</text></g><!--MD5=[e00ac927b3dcb65b645abd6691737152]
+entity sign_in_controller--><g id="elem_sign_in_controller"><rect fill="#85BBF0" height="108.0469" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="203" x="1042.5" y="322.1094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="133" x="1077.5" y="348.7188">Sign In Controller</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="127" x="1080.5" y="364.6914">[Spring Rest Controller]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1142" y="381.8613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="1052.5" y="399.4707">Allows users to sign in to the</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="1122" y="417.0801">system</text></g><!--MD5=[ea35eb90da13e8f593c67a1d04d68820]
+entity interview_controller--><g id="elem_interview_controller"><rect fill="#85BBF0" height="90.4375" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="169" x="1312.5" y="331.1094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="149" x="1322.5" y="357.7188">Interview Controller</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="127" x="1333.5" y="373.6914">[Spring Rest Controller]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1395" y="390.8613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="1332" y="408.4707">CRUD Interview APIs</text></g><!--MD5=[9349723730b541f45f1a8af3d9d815c3]
+entity technical_advisor_component--><g id="elem_technical_advisor_component"><rect fill="#85BBF0" height="128.1719" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="218" x="23" y="508.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="137" x="61.5" y="535.2188">Technical Advisor</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="90" x="87" y="555.3438">Component</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="95" y="571.3164">[Spring Bean]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="130" y="588.4863"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="33" y="606.0957">Provides functionality related to</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="79" y="623.7051">technical advisor</text></g><!--MD5=[fb5c9c7b0c69e99ae8602fc125576f6d]
+entity recruiter_component--><g id="elem_recruiter_component"><rect fill="#85BBF0" height="108.0469" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="218" x="276" y="518.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="164" x="303" y="545.2188">Recruiter Component</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="348" y="561.1914">[Spring Bean]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="383" y="578.3613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="286" y="595.9707">Provides functionality related to</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="358.5" y="613.5801">recruiter</text></g><!--MD5=[49be2388c4c8546d99bded8604a9d276]
+entity line_business_component--><g id="elem_line_business_component"><rect fill="#85BBF0" height="128.1719" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="218" x="529" y="508.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="130" x="571" y="535.2188">Line Of Business</text><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="90" x="593" y="555.3438">Component</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="601" y="571.3164">[Spring Bean]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="636" y="588.4863"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="539" y="606.0957">Provides functionality related to</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="589" y="623.7051">line of business</text></g><!--MD5=[6418820beb2f93eb24b2b4d18a5ab3d1]
+entity job_position_component--><g id="elem_job_position_component"><rect fill="#85BBF0" height="108.0469" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="218" x="782" y="518.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="190" x="796" y="545.2188">Job Position Component</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="854" y="561.1914">[Spring Bean]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="889" y="578.3613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="792" y="595.9707">Provides functionality related to</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="855" y="613.5801">job position</text></g><!--MD5=[5010ca637f60643ff5a37ff246172296]
+entity security_component--><g id="elem_security_component"><rect fill="#85BBF0" height="125.6563" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="218" x="1035" y="509.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="157" x="1065.5" y="536.2188">Security Component</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="1107" y="552.1914">[Spring Bean]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1142" y="569.3613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="1045" y="586.9707">Provides functionality related to</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="1045" y="604.5801">singing in, changing password,</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="12" x="1138" y="622.1895">...</text></g><!--MD5=[71cdfc728a1827befdddaf5fc598dc51]
+entity interview_component--><g id="elem_interview_component"><rect fill="#85BBF0" height="108.0469" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="218" x="1288" y="518.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="163" x="1315.5" y="545.2188">Interview Component</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="1360" y="561.1914">[Spring Bean]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1395" y="578.3613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="1298" y="595.9707">Provides functionality related to</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="1369.5" y="613.5801">interview</text></g><!--MD5=[ecfcf00d22edec15e04c1c5f01f1baa0]
+entity unit4_component--><g id="elem_unit4_component"><rect fill="#85BBF0" height="108.0469" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="218" x="115" y="713.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="134" x="157" y="740.2188">Unit4 Component</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="74" x="187" y="756.1914">[Spring Bean]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="222" y="773.3613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="125" y="790.9707">Provides functionality related to</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="208.5" y="808.5801">unit4</text></g><!--MD5=[c5d79654ca52135478dac8470883ebcf]
+entity notification_component--><g id="elem_notification_component"><rect fill="#85BBF0" height="108.0469" rx="2.5" ry="2.5" style="stroke:#78A8D8;stroke-width:0.5;" width="218" x="739" y="713.6094"/><text fill="#000000" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="181" x="757.5" y="740.2188">Notification Component</text><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="38" x="829" y="756.1914">[Kafka]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="846" y="773.3613"> </text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="749" y="790.9707">Provides functionality related to</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="810.5" y="808.5801">notifications</text></g><!--MD5=[33573e971ff506c0f246109ca3fd77bd]
+entity spa--><g id="elem_spa"><rect fill="#438DD5" height="143.2656" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="220" x="289" y="45.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="181" x="308.5" y="72.2188">Single Page Application</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="112" x="343" y="88.1914">[JavaScript, Angular]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="397" y="105.3613"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156" x="319" y="122.9707">Provides all the interview</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="196" x="299" y="140.5801">system functionality to recruiter</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="188" x="303" y="158.1895">and technical advisor via their</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="357.5" y="175.7988">web browser.</text></g><!--MD5=[99c5416311fbf9d118be657efd773f39]
+entity ma--><g id="elem_ma"><rect fill="#438DD5" height="143.2656" rx="2.5" ry="2.5" style="stroke:#3C7FC0;stroke-width:0.5;" width="218" x="1022" y="45.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="85" x="1088.5" y="72.2188">Mobile App</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="75" x="1093.5" y="88.1914">[C#, Xamarin]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1129" y="105.3613"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="1042.5" y="122.9707">Provides a limited subset of</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="1032" y="140.5801">interview system functionality to</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="1033.5" y="158.1895">recruiter and technical advisor</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="1059" y="175.7988">via their mobile device.</text></g><!--MD5=[7468467f3b6b392f1d176d828c753b77]
+entity db--><g id="elem_db"><path d="M1582,925.6094 C1582,915.6094 1685,915.6094 1685,915.6094 C1685,915.6094 1788,915.6094 1788,925.6094 L1788,1040.2656 C1788,1050.2656 1685,1050.2656 1685,1050.2656 C1685,1050.2656 1582,1050.2656 1582,1040.2656 L1582,925.6094 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:0.5;"/><path d="M1582,925.6094 C1582,935.6094 1685,935.6094 1685,935.6094 C1685,935.6094 1788,935.6094 1788,925.6094 " fill="none" style="stroke:#3C7FC0;stroke-width:0.5;"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="72" x="1649" y="956.2188">Database</text><text fill="#FFFFFF" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="168" x="1601" y="972.1914">[Relational Database Schema]</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="1683" y="989.3613"> </text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="1593" y="1006.9707">Stores Information regarding</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="1592" y="1024.5801">the interviews, the recruiters,</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="1608.5" y="1042.1895">the technical advisors ...</text></g><!--MD5=[088d2f8db2a642851fdacc5e01750e2a]
+entity email_system--><g id="elem_email_system"><rect fill="#999999" height="40.125" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="127" x="1605.5" y="552.6094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="107" x="1615.5" y="579.2188">E-Mail System</text></g><!--MD5=[31aef6c55960c11b090ee0b6edd663d1]
+entity unit4_system--><g id="elem_unit4_system"><rect fill="#999999" height="40.125" rx="2.5" ry="2.5" style="stroke:#8A8A8A;stroke-width:0.5;" width="121" x="163.5" y="963.1094"/><text fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="101" x="173.5" y="989.7188">Unit4 System</text></g><!--MD5=[2890bde98949fbb94922fc5541225248]
+link spa to technical_advisor_controller--><g id="link_spa_technical_advisor_controller"><path d="M288.89,127.1794 C227.5,138.5294 155.79,163.6094 117,218.6094 C98.08,245.4294 100.25,281.5894 107.86,312.3894 " fill="none" id="spa-to-technical_advisor_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="110.02,320.5094,110.8613,312.0069,105.0632,313.5502,110.02,320.5094" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="143.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="118" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[d76e15f2cd1f741e698f650683570c60]
+link ma to technical_advisor_controller--><g id="link_ma_technical_advisor_controller"><path d="M1021.98,139.7794 C959.46,155.4094 881.28,180.5594 819,218.6094 C801.84,229.0994 805.52,242.7694 787,250.6094 C735.33,272.4994 334.94,239.9994 282,258.6094 C248.45,270.4094 216.55,292.9394 190.85,315.0694 " fill="none" id="ma-to-technical_advisor_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="184.8,320.3794,192.7936,317.3624,188.8388,312.8502,184.8,320.3794" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="845.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="820" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[5536852307c23a7b2eaf61b9c720335b]
+link spa to recruiter_controller--><g id="link_spa_recruiter_controller"><path d="M288.61,153.5394 C258.87,168.6994 230.2,189.7694 213,218.6094 C205.72,230.8294 204.04,239.5694 213,250.6094 C223.87,264.0094 235.55,250.9194 251,258.6094 C283.95,274.9994 315.31,301.4394 339.4,324.9894 " fill="none" id="spa-to-recruiter_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="345.36,330.9094,341.7852,323.1492,337.5641,327.4132,345.36,330.9094" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="239.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="214" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[b19389dfbb0aad2fa9cac175ce40e428]
+link ma to recruiter_controller--><g id="link_ma_recruiter_controller"><path d="M1021.61,168.8294 C994.3,183.3894 965.77,200.3194 941,218.6094 C924.82,230.5594 927.5,242.7194 909,250.6094 C869.54,267.4394 563.13,243.4594 523,258.6094 C486.61,272.3494 453.08,300.1294 428.19,325.1094 " fill="none" id="ma-to-recruiter_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="422.37,331.0594,430.1076,327.4358,425.817,323.2416,422.37,331.0594" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="967.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="942" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[c1769206136a820f4d6916bff0c9cd3c]
+link spa to line_business_controller--><g id="link_spa_line_business_controller"><path d="M334.89,188.8594 C322.76,210.4594 318.38,233.0994 335,250.6094 C346.64,262.8794 471.14,252.7294 487,258.6094 C520.2,270.9094 552.01,293.2594 577.8,315.1194 " fill="none" id="spa-to-line_business_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="583.88,320.3594,579.7844,312.861,575.8638,317.4029,583.88,320.3594" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="361.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="336" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[58952fcfaff6de265d2a96636bfa19c9]
+link ma to line_business_controller--><g id="link_ma_line_business_controller"><path d="M1081.73,188.6994 C1060.39,218.2394 1038.55,246.6994 1031,250.6094 C1005.73,263.6894 801.55,248.3694 775,258.6094 C743.85,270.6194 714.82,292.9294 691.57,314.8294 " fill="none" id="ma-to-line_business_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="685.79,320.3794,693.638,317.0017,689.4819,312.6742,685.79,320.3794" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="1084.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="1059" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[813e559d43bfc1b25fd1024b4cffac39]
+link spa to job_position_controller--><g id="link_spa_job_position_controller"><path d="M413.65,188.7394 C422.23,212.3594 435.75,236.2994 457,250.6094 C484.2,268.9294 721.34,246.9894 752,258.6094 C788.39,272.3994 822.04,300.0294 847.11,324.9194 " fill="none" id="spa-to-job_position_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="852.98,330.8494,849.4838,323.0534,845.2198,327.2746,852.98,330.8494" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="483.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="458" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[7957cafcb7138e80f9fb9943adaeda3b]
+link ma to job_position_controller--><g id="link_ma_job_position_controller"><path d="M1163.84,188.8794 C1169.08,211.1094 1168.49,234.1194 1153,250.6094 C1143.24,260.9994 1038.19,253.2094 1025,258.6094 C989.88,273.0094 957.54,300.5094 933.44,325.1694 " fill="none" id="ma-to-job_position_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="927.8,331.0394,935.5052,327.3475,931.1777,323.1914,927.8,331.0394" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="1193.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="1168" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[18d9c9e51a1ca49c09bed34e1d8d70a3]
+link spa to sign_in_controller--><g id="link_spa_sign_in_controller"><path d="M503.5,188.8694 C516.97,198.6194 530.43,208.6994 543,218.6094 C559.81,231.8694 559.06,242.8194 579,250.6094 C623.2,267.8894 961.59,241.8994 1006,258.6094 C1038.19,270.7194 1068.14,293.8494 1091.85,316.3194 " fill="none" id="spa-to-sign_in_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1097.74,322.0194,1094.0675,314.3049,1089.9006,318.6219,1097.74,322.0194" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="605.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="580" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[af92d8d5c6c42d3baed27646b452b9ab]
+link ma to sign_in_controller--><g id="link_ma_sign_in_controller"><path d="M1240.1,176.1094 C1254.14,188.2494 1266.54,202.3894 1275,218.6094 C1293.51,254.0994 1270.17,288.7394 1238.32,316.3794 " fill="none" id="ma-to-sign_in_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1231.84,321.8094,1239.8966,318.9649,1236.0397,314.3688,1231.84,321.8094" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="1307.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="1282" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[e031db6ff22180d4f6745f09b37ef730]
+link spa to interview_controller--><g id="link_spa_interview_controller"><path d="M509.28,149.6894 C558.83,166.3694 616.84,189.4894 665,218.6094 C683.32,229.6894 681.04,242.8594 701,250.6094 C759.21,273.2194 1204.66,236.3194 1263,258.6094 C1298.72,272.2594 1331.29,300.0394 1355.37,325.0394 " fill="none" id="spa-to-interview_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1361,330.9994,1357.6818,323.126,1353.323,327.2492,1361,330.9994" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="727.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="702" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[2cd8915581a0b49e3873623213e01013]
+link ma to interview_controller--><g id="link_ma_interview_controller"><path d="M1240.19,139.0094 C1287.28,153.5594 1338.83,177.9594 1371,218.6094 C1394.08,247.7794 1400.05,289.7294 1400.53,322.8494 " fill="none" id="ma-to-interview_controller" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1400.54,331.0694,1403.5257,323.064,1397.5257,323.0747,1400.54,331.0694" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="1413.5" y="232.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="1388" y="247.1602">[JSON/HTTPS]</text></g><!--MD5=[14aaeea3cb11f00bfa995b09c342755e]
+link technical_advisor_controller to technical_advisor_component--><g id="link_technical_advisor_controller_technical_advisor_component"><path d="M132,431.8094 C132,453.0194 132,477.5994 132,500.1794 " fill="none" id="technical_advisor_controller-to-technical_advisor_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="132,508.3994,135,500.3994,129,500.3994,132,508.3994" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="133" y="475.0664">Uses</text></g><!--MD5=[8913d739970b2cd63bdea923d5dfa602]
+link recruiter_controller to recruiter_component--><g id="link_recruiter_controller_recruiter_component"><path d="M385,421.2494 C385,447.5694 385,481.3994 385,510.2894 " fill="none" id="recruiter_controller-to-recruiter_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="385,518.2994,388,510.2994,382,510.2994,385,518.2994" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="386" y="475.0664">Uses</text></g><!--MD5=[a7527544aef546c1577ee0b3a6bf796f]
+link line_business_controller to line_business_component--><g id="link_line_business_controller_line_business_component"><path d="M638,431.8094 C638,453.0194 638,477.5994 638,500.1794 " fill="none" id="line_business_controller-to-line_business_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="638,508.3994,641,500.3994,635,500.3994,638,508.3994" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="639" y="475.0664">Uses</text></g><!--MD5=[2a511d93cebe73765e556bdcb09874ab]
+link job_position_controller to job_position_component--><g id="link_job_position_controller_job_position_component"><path d="M891,421.2494 C891,447.5694 891,481.3994 891,510.2894 " fill="none" id="job_position_controller-to-job_position_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="891,518.2994,894,510.2994,888,510.2994,891,518.2994" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="892" y="475.0664">Uses</text></g><!--MD5=[f58f73cee45dc93eaaaa56b81bfe8ebe]
+link sign_in_controller to security_component--><g id="link_sign_in_controller_security_component"><path d="M1144,430.2594 C1144,452.1894 1144,477.9194 1144,501.3794 " fill="none" id="sign_in_controller-to-security_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1144,509.5694,1147,501.5694,1141,501.5694,1144,509.5694" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="1145" y="475.0664">Uses</text></g><!--MD5=[24747d9b0bb80bd72afe8f04dc6a0846]
+link interview_controller to interview_component--><g id="link_interview_controller_interview_component"><path d="M1397,421.2494 C1397,447.5694 1397,481.3994 1397,510.2894 " fill="none" id="interview_controller-to-interview_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1397,518.2994,1400,510.2994,1394,510.2994,1397,518.2994" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="1398" y="475.0664">Uses</text></g><!--MD5=[1119308cbe1d743af1f47c8a486aab9a]
+link recruiter_component to unit4_component--><g id="link_recruiter_component_unit4_component"><path d="M340.58,626.8594 C319.82,651.7494 295.01,681.4794 273.63,707.1094 " fill="none" id="recruiter_component-to-unit4_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="268.28,713.5294,275.71,709.3109,271.1042,705.4656,268.28,713.5294" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="306" y="680.0664">Uses</text></g><!--MD5=[c1a3084971c99453ae63f8ecce0c36b2]
+link technical_advisor_component to unit4_component--><g id="link_technical_advisor_component_unit4_component"><path d="M58.14,636.8094 C48.78,651.9394 45.39,668.1794 55,683.6094 C67.58,703.7994 86.66,719.2194 107.54,730.9494 " fill="none" id="technical_advisor_component-to-unit4_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="114.68,734.7794,109.064,728.3404,106.2149,733.6208,114.68,734.7794" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="56" y="680.0664">Uses</text></g><!--MD5=[6deedf083fd7dfd80b2a40f5bd381b31]
+link interview_component to notification_component--><g id="link_interview_component_notification_component"><path d="M1308.86,626.7194 C1272.94,646.6894 1230.42,668.2494 1190,683.6094 C1117.28,711.2494 1032.3,731.9294 965.24,745.7294 " fill="none" id="interview_component-to-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="957.15,747.3794,965.5882,748.7197,964.3889,742.8408,957.15,747.3794" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="1227" y="680.0664">Produce</text></g><!--MD5=[8894757c885307fc9537f9089e65ba7b]
+reverse link interview_component to notification_component--><g id="link_interview_component_notification_component"><path d="M1348.88,632.7194 C1330.49,651.7194 1308.1,671.0594 1284,683.6094 C1181.31,737.0694 1048.97,756.3694 957.16,763.1894 " fill="none" id="interview_component-backto-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1354.46,626.8494,1346.7736,630.5801,1351.1219,634.7143,1354.46,626.8494" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="54" x="1310" y="680.0664">Consume</text></g><!--MD5=[83e3db374f31cbb260e14ba5b3f29a1d]
+link job_position_component to notification_component--><g id="link_job_position_component_notification_component"><path d="M906.76,626.7194 C909.84,645.0394 910.62,665.4994 905,683.6094 C902.63,691.2494 899.29,698.8094 895.39,706.0694 " fill="none" id="job_position_component-to-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="891.33,713.2294,897.8796,707.7428,892.657,704.7891,891.33,713.2294" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="910" y="680.0664">Produce</text></g><!--MD5=[ae45a4a5b5743adac5440c939b5e9ea2]
+reverse link job_position_component to notification_component--><g id="link_job_position_component_notification_component"><path d="M960.71,633.4494 C971.14,649.2794 975.83,666.6794 967,683.6094 C961.17,694.7794 953.08,704.7494 943.84,713.5594 " fill="none" id="job_position_component-backto-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="955.91,626.7694,958.1427,635.0165,963.0149,631.5149,955.91,626.7694" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="54" x="973" y="680.0664">Consume</text></g><!--MD5=[121a0f65e462f146ae35c5741fdf4c3e]
+link line_business_component to notification_component--><g id="link_line_business_component_notification_component"><path d="M704.54,636.7294 C720.96,652.1494 738.55,668.5394 755,683.6094 C763.56,691.4494 772.61,699.6494 781.58,707.7094 " fill="none" id="line_business_component-to-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="787.76,713.2594,783.8075,705.6846,779.8014,710.1513,787.76,713.2594" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="756" y="680.0664">Produce</text></g><!--MD5=[6081d7b101c21e4b5270cbe15c136577]
+reverse link line_business_component to notification_component--><g id="link_line_business_component_notification_component"><path d="M754.57,633.2594 C781.6,647.8594 804,660.9394 809,666.6094 C820.7,679.8894 829.09,697.0894 835.01,713.4594 " fill="none" id="line_business_component-backto-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="747.22,629.3094,752.8461,635.7395,755.6869,630.4546,747.22,629.3094" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="54" x="822" y="680.0664">Consume</text></g><!--MD5=[13814a372ffe96d2bce7a0d129dbb788]
+link recruiter_component to notification_component--><g id="link_recruiter_component_notification_component"><path d="M370.36,626.6594 C368.11,646.5594 370,668.0894 383,683.6094 C426.53,735.5994 607.86,755.0494 730.79,762.3194 " fill="none" id="recruiter_component-to-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="738.8,762.7794,730.9907,759.3131,730.6371,765.3027,738.8,762.7794" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="384" y="680.0664">Produce</text></g><!--MD5=[cb10498a04638ae95458dc437b80d0f0]
+reverse link recruiter_component to notification_component--><g id="link_recruiter_component_notification_component"><path d="M467.84,631.2494 C496.99,649.7594 530.58,669.1894 563,683.6094 C619.15,708.5794 684.83,728.2994 738.98,742.2394 " fill="none" id="recruiter_component-backto-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="460.92,626.8094,466.0418,633.648,469.2755,628.594,460.92,626.8094" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="54" x="564" y="680.0664">Consume</text></g><!--MD5=[13814a372ffe96d2bce7a0d129dbb788]
+link recruiter_component to notification_component--><g id="link_recruiter_component_notification_component"><path d="M416.34,626.8294 C431.06,647.4894 450.37,669.5194 473,683.6094 C550.71,731.9994 652.92,752.3594 731,760.8294 " fill="none" id="recruiter_component-to-notification_component-1" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="738.96,761.6694,731.3137,757.857,730.6923,763.8247,738.96,761.6694" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="474" y="680.0664">Produce</text></g><!--MD5=[cb10498a04638ae95458dc437b80d0f0]
+reverse link recruiter_component to notification_component--><g id="link_recruiter_component_notification_component"><path d="M494.56,629.9994 C500.08,632.3294 505.58,634.5494 511,636.6094 C559.18,654.8894 574.42,649.4294 623,666.6094 C661.49,680.2194 702.57,697.5994 738.96,714.0294 " fill="none" id="recruiter_component-backto-notification_component-1" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="487.03,626.7594,493.1847,632.6855,495.5638,627.1773,487.03,626.7594" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="54" x="669" y="680.0664">Consume</text></g><!--MD5=[7d11003ffca1682405050fdded94ba4d]
+link technical_advisor_component to notification_component--><g id="link_technical_advisor_component_notification_component"><path d="M113.21,636.7494 C111.95,653.7394 114.67,670.9094 126,683.6094 C130.99,689.2094 527.66,732.3594 730.84,754.1294 " fill="none" id="technical_advisor_component-to-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="738.87,754.9894,731.2373,751.1498,730.5947,757.1153,738.87,754.9894" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="127" y="680.0664">Produce</text></g><!--MD5=[abfaf95b4a69c9ef362f0ec69fdf6812]
+reverse link technical_advisor_component to notification_component--><g id="link_technical_advisor_component_notification_component"><path d="M180.93,643.0394 C195.29,658.7494 212.25,673.7094 231,683.6094 C274.9,706.7894 573.66,739.4594 738.8,756.0494 " fill="none" id="technical_advisor_component-backto-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="175.35,636.7494,178.4274,644.7199,182.9095,640.7311,175.35,636.7494" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="54" x="232" y="680.0664">Consume</text></g><!--MD5=[2a890070276c0711b9d9f9443f877b70]
+link security_component to notification_component--><g id="link_security_component_notification_component"><path d="M1091.09,635.6694 C1074.61,652.6394 1055.59,670.0594 1036,683.6094 C1014.2,698.6894 989.21,712.0094 964.72,723.3194 " fill="none" id="security_component-to-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="957.14,726.7694,965.6642,726.1875,963.1797,720.7261,957.14,726.7694" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="48" x="1058" y="680.0664">Produce</text></g><!--MD5=[7ace1c4cd591a70e30b3b4e8b49dd54a]
+reverse link security_component to notification_component--><g id="link_security_component_notification_component"><path d="M1136.8,643.3494 C1132.42,658.1094 1125.58,672.5494 1115,683.6094 C1074.05,726.3894 1011.49,747.2394 957.22,757.3594 " fill="none" id="security_component-backto-notification_component" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1138.88,635.6094,1133.8992,642.5514,1139.692,644.1147,1138.88,635.6094" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="54" x="1127" y="680.0664">Consume</text></g><!--MD5=[705a880d3b206c10376c4ba7502f56d3]
+link interview_component to db--><g id="link_interview_component_db"><path d="M1506.08,614.8494 C1532.55,623.3794 1561.01,631.3594 1588,636.6094 C1688.34,656.1094 1954.12,623.9294 2047,666.6094 C2073.56,678.8094 2081.96,686.5494 2093,713.6094 C2122.89,786.8794 2116.89,848.4994 2047,885.6094 C1968.43,927.3294 1870.49,952.0094 1796.3,965.9594 " fill="none" id="interview_component-to-db" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1788.29,967.4394,1796.7024,968.9331,1795.6103,963.0333,1788.29,967.4394" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="87" x="2111" y="765.0664">CRUD Interview</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="38" x="2135.5" y="780.1602">[JDBC]</text></g><!--MD5=[de2f6d5e3d959318d276a683b146c7cb]
+link job_position_component to db--><g id="link_job_position_component_db"><path d="M987.09,626.6794 C996.98,630.6094 1007.06,634.0294 1017,636.6094 C1166.44,675.3094 1564.18,618.9394 1711,666.6094 C1746.99,678.2994 1764.09,680.2694 1782,713.6094 C1809.77,765.2894 1799.84,789.7194 1782,845.6094 C1774.92,867.7794 1762.79,889.4394 1749.45,908.7294 " fill="none" id="job_position_component-to-db" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1744.68,915.4494,1751.7473,910.6479,1746.8475,907.1849,1744.68,915.4494" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="105" x="1800" y="765.0664">CRUD Job Position</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="38" x="1833.5" y="780.1602">[JDBC]</text></g><!--MD5=[772c0dffa760f927e79a694dbb8555b2]
+link line_business_component to db--><g id="link_line_business_component_db"><path d="M747.23,631.5794 C752.83,633.4894 758.43,635.1794 764,636.6094 C933.75,680.1094 1385.19,612.9194 1552,666.6094 C1588.02,678.1994 1601.43,682.5194 1623,713.6094 C1662.64,770.7494 1677.25,849.5594 1682.48,907.0094 " fill="none" id="line_business_component-to-db" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1683.18,915.3294,1685.498,907.1058,1679.5191,907.6094,1683.18,915.3294" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="87" x="1674" y="765.0664">CRUD Interview</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="38" x="1698.5" y="780.1602">[JDBC]</text></g><!--MD5=[64c12f0e85887329c1c679979650247c]
+link recruiter_component to db--><g id="link_recruiter_component_db"><path d="M480.7,626.6794 C490.72,630.6394 500.92,634.0694 511,636.6094 C564.52,650.0994 1463.22,629.4194 1504,666.6094 C1533.61,693.6094 1507.07,810.2794 1526,845.6094 C1538.9,869.6894 1557.91,891.3894 1578.34,910.0294 " fill="none" id="recruiter_component-to-db" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1584.43,915.4594,1580.4584,907.8946,1576.4636,912.3713,1584.43,915.4594" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="87" x="1527" y="765.0664">CRUD Interview</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="38" x="1551.5" y="780.1602">[JDBC]</text></g><!--MD5=[794401aef64ab2f91f0d6c5e85163e97]
+link technical_advisor_component to db--><g id="link_technical_advisor_component_db"><path d="M241.21,631.6594 C246.81,633.5394 252.42,635.2094 258,636.6094 C318.11,651.6594 1324.35,628.2294 1373,666.6094 C1437.67,717.6194 1369.35,781.4494 1421,845.6094 C1460.01,894.0694 1520.84,927.1694 1574.28,948.6194 " fill="none" id="technical_advisor_component-to-db" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1581.77,951.5594,1575.4335,945.828,1573.2273,951.4077,1581.77,951.5594" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="87" x="1422" y="765.0664">CRUD Interview</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="38" x="1446.5" y="780.1602">[JDBC]</text></g><!--MD5=[c5297c73667f4f0507008f0517226cec]
+link security_component to db--><g id="link_security_component_db"><path d="M1253.06,631.1294 C1259.04,633.2094 1265.05,635.0594 1271,636.6094 C1419.86,675.4594 1879.58,581.8494 1959,713.6094 C1989.29,763.8494 1989.88,795.7294 1959,845.6094 C1923.39,903.1294 1855.46,937.1894 1796.14,956.9094 " fill="none" id="security_component-to-db" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1788.21,959.4794,1796.7447,959.8775,1794.9021,954.1675,1788.21,959.4794" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="62" x="1982" y="765.0664">CRUD User</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="38" x="1994" y="780.1602">[JDBC]</text></g><!--MD5=[a40cf576bf82814bf93b6f59fa6102c2]
+link notification_component to db--><g id="link_notification_component_db"><path d="M957.2,803.6494 C1035.5,828.1694 1143.7,860.8394 1240,885.6094 C1352.96,914.6694 1483.53,942.2894 1573.89,960.4694 " fill="none" id="notification_component-to-db" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1581.96,962.0894,1574.7053,957.5762,1573.5265,963.4592,1581.96,962.0894" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="99" x="1241" y="867.0664">CRUD Notification</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="38" x="1271.5" y="882.1602">[JDBC]</text></g><!--MD5=[87e7e2ea2a993343dc7cb342f7ab121b]
+link interview_component to email_system--><g id="link_interview_component_email_system"><path d="M1506.07,572.6094 C1536.74,572.6094 1569.31,572.6094 1597.21,572.6094 " fill="none" id="interview_component-to-email_system" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="1605.32,572.6094,1597.32,569.6094,1597.32,575.6094,1605.32,572.6094" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="63" x="1524.25" y="551.0664">Send Email</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="38" x="1536.75" y="566.1602">[SMTP]</text></g><!--MD5=[b261886feedc7303d2420a3c653021d3]
+link unit4_component to unit4_system--><g id="link_unit4_component_unit4_system"><path d="M224,821.6594 C224,863.8294 224,921.1194 224,954.6094 " fill="none" id="unit4_component-to-unit4_system" style="stroke:#666666;stroke-width:1.0;"/><polygon fill="#666666" points="224,962.9894,227,954.9894,221,954.9894,224,962.9894" style="stroke:#666666;stroke-width:1.0;"/><text fill="#666666" font-family="sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="29" x="250.5" y="867.0664">Uses</text><text fill="#666666" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="80" x="225" y="882.1602">[JSON/HTTPS]</text></g><rect fill="none" height="174.4844" id="_legend" rx="7.5" ry="7.5" style="stroke:none;stroke-width:1.0;" width="144" x="2040" y="1074.2656"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="53" x="2046" y="1096.7988">Legend</text><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="2099" y="1096.7988"> </text><rect fill="#08427B" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="2046" y="1099.875"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="2050" y="1114.4082">person</text><rect fill="#1168BD" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="2046" y="1117.4844"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="2050" y="1132.0176">system</text><rect fill="#438DD5" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="2046" y="1135.0938"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="2050" y="1149.627">container</text><rect fill="#85BBF0" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="2046" y="1152.7031"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="2050" y="1167.2363">component</text><rect fill="#686868" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="2046" y="1170.3125"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="2050" y="1184.8457">external person</text><rect fill="#999999" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="2046" y="1187.9219"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="2050" y="1202.4551">external system</text><rect fill="#B3B3B3" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="2046" y="1205.5313"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="2050" y="1220.0645">external container</text><rect fill="#CCCCCC" height="17.6094" style="stroke:none;stroke-width:1.0;" width="132" x="2046" y="1223.1406"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="2050" y="1237.6738">external component</text><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2046" x2="2178" y1="1082.2656" y2="1082.2656"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2046" x2="2178" y1="1099.875" y2="1099.875"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2046" x2="2178" y1="1117.4844" y2="1117.4844"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2046" x2="2178" y1="1135.0938" y2="1135.0938"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2046" x2="2178" y1="1152.7031" y2="1152.7031"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2046" x2="2178" y1="1170.3125" y2="1170.3125"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2046" x2="2178" y1="1187.9219" y2="1187.9219"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2046" x2="2178" y1="1205.5313" y2="1205.5313"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2046" x2="2178" y1="1223.1406" y2="1223.1406"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2046" x2="2178" y1="1240.75" y2="1240.75"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2046" x2="2046" y1="1082.2656" y2="1240.75"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="2178" x2="2178" y1="1082.2656" y2="1240.75"/><!--MD5=[5dbfde6a8a8812b8eeb79aec8e67b155]
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Component diagram for Interview Management System - API Application
+
+Container(spa, "Single Page Application", "JavaScript, Angular", "Provides all the interview system functionality to recruiter and technical advisor via their web browser.")
+Container(ma, "Mobile App", "C#, Xamarin", "Provides a limited subset of interview system functionality to recruiter and technical advisor via their mobile device.")
+ContainerDb(db, "Database", "Relational Database Schema", "Stores Information regarding the interviews, the recruiters, the technical advisors ...")
+System_Ext(email_system, "E-Mail System")
+System_Ext(unit4_system, "Unit4 System")
+
+Container_Boundary(api, "API Application") {
+
+    Component(technical_advisor_controller, "Technical Advisor Controller", "Spring Rest Controller", "CRUD TechnicalAdvisor APIs")
+    Rel(spa, technical_advisor_controller, "Uses", "JSON/HTTPS")
+    Rel(ma, technical_advisor_controller, "Uses", "JSON/HTTPS")
+
+    Component(recruiter_controller, "Recruiter Controller", "Spring Rest Controller", "CRUD Recruiter APIs")
+    Rel(spa, recruiter_controller, "Uses", "JSON/HTTPS")
+    Rel(ma, recruiter_controller, "Uses", "JSON/HTTPS")
+
+    Component(line_business_controller, "Line Of Business Controller", "Spring Rest Controller", "CRUD LineOfBusiness APIs")
+    Rel(spa, line_business_controller, "Uses", "JSON/HTTPS")
+    Rel(ma, line_business_controller, "Uses", "JSON/HTTPS")
+
+    Component(job_position_controller, "Job Position Controller", "Spring Rest Controller", "CRUD JobPosition APIs")
+    Rel(spa, job_position_controller, "Uses", "JSON/HTTPS")
+    Rel(ma, job_position_controller, "Uses", "JSON/HTTPS")
+
+    Component(sign_in_controller, "Sign In Controller", "Spring Rest Controller", "Allows users to sign in to the system")
+    Rel(spa, sign_in_controller, "Uses", "JSON/HTTPS")
+    Rel(ma, sign_in_controller, "Uses", "JSON/HTTPS")
+
+    Component(interview_controller, "Interview Controller", "Spring Rest Controller", "CRUD Interview APIs")
+    Rel(spa, interview_controller, "Uses", "JSON/HTTPS")
+    Rel(ma, interview_controller, "Uses", "JSON/HTTPS")
+
+    Component(technical_advisor_component, "Technical Advisor Component", "Spring Bean", "Provides functionality related to technical advisor")
+    Rel(technical_advisor_controller, technical_advisor_component, "Uses")
+
+    Component(recruiter_component, "Recruiter Component", "Spring Bean", "Provides functionality related to recruiter")
+    Rel(recruiter_controller, recruiter_component, "Uses")
+
+    Component(line_business_component, "Line Of Business Component", "Spring Bean", "Provides functionality related to line of business")
+    Rel(line_business_controller, line_business_component, "Uses")
+
+    Component(job_position_component, "Job Position Component", "Spring Bean", "Provides functionality related to job position")
+    Rel(job_position_controller, job_position_component, "Uses")
+
+    Component(security_component, "Security Component", "Spring Bean", "Provides functionality related to singing in, changing password, ...")
+    Rel(sign_in_controller, security_component, "Uses")
+
+    Component(interview_component, "Interview Component", "Spring Bean", "Provides functionality related to interview")
+    Rel(interview_controller, interview_component, "Uses")
+
+    Component(unit4_component, "Unit4 Component", "Spring Bean", "Provides functionality related to unit4")
+    Rel(recruiter_component, unit4_component, "Uses")
+    Rel(technical_advisor_component, unit4_component, "Uses")
+
+    Component(notification_component, "Notification Component", "Kafka", "Provides functionality related to notifications")
+    Rel_Neighbor(interview_component, notification_component, "Produce")
+    Rel_Back(interview_component, notification_component, "Consume")
+    Rel_Neighbor(job_position_component, notification_component, "Produce")
+    Rel_Back(job_position_component, notification_component, "Consume")
+    Rel_Neighbor(line_business_component, notification_component, "Produce")
+    Rel_Back(line_business_component, notification_component, "Consume")
+    Rel_Neighbor(recruiter_component, notification_component, "Produce")
+    Rel_Back(recruiter_component, notification_component, "Consume")
+    Rel_Neighbor(recruiter_component, notification_component, "Produce")
+    Rel_Back(recruiter_component, notification_component, "Consume")
+    Rel_Neighbor(technical_advisor_component, notification_component, "Produce")
+    Rel_Back(technical_advisor_component, notification_component, "Consume")
+    Rel_Neighbor(security_component, notification_component, "Produce")
+    Rel_Back(security_component, notification_component, "Consume")
+
+}
+
+Rel(interview_component, db, "CRUD Interview", "JDBC")
+Rel(job_position_component, db, "CRUD Job Position", "JDBC")
+Rel(line_business_component, db, "CRUD Interview", "JDBC")
+Rel(recruiter_component, db, "CRUD Interview", "JDBC")
+Rel(technical_advisor_component, db, "CRUD Interview", "JDBC")
+Rel(security_component, db, "CRUD User", "JDBC")
+Rel(notification_component, db, "CRUD Notification", "JDBC")
+
+Rel_Neighbor(interview_component, email_system, "Send Email", "SMTP")
+Rel(unit4_component, unit4_system, "Uses", "JSON/HTTPS")
+
+@enduml
+
+@startuml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam LegendFontColor #FFFFFF
+skinparam LegendBackgroundColor transparent
+skinparam LegendBorderColor transparent
+
+skinparam rectangle<<legendArea>> {
+    backgroundcolor transparent
+    bordercolor transparent
+}
+
+skinparam rectangle {
+    StereotypeFontSize 12
+}
+
+skinparam database {
+    StereotypeFontSize 12
+}
+
+skinparam queue {
+    StereotypeFontSize 12
+}
+
+skinparam participant {
+    StereotypeFontSize 12
+}
+
+skinparam arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam person {
+    StereotypeFontSize 12
+}
+
+skinparam actor {
+    StereotypeFontSize 12
+    style awesome
+}
+
+skinparam rectangle<<boundary>> {
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    BorderStyle dashed
+}
+
+skinparam package {
+    StereotypeFontSize 6
+    StereotypeFontColor transparent
+    FontStyle plain
+    BackgroundColor transparent
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam participant<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam sequencebox<<boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<boundary>>StereotypeFontColor transparent
+skinparam rectangle<<boundary>>StereotypeFontColor transparent
+
+skinparam rectangle<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<enterprise_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam participant<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam sequencebox<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<enterprise_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<enterprise_boundary>>StereotypeFontColor transparent
+
+
+skinparam rectangle<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<system_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam participant<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam sequencebox<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<system_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<system_boundary>>StereotypeFontColor transparent
+
+
+skinparam rectangle<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<container_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam participant<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam sequencebox<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<container_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<container_boundary>>StereotypeFontColor transparent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam person<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam actor<<person>> {
+    StereotypeFontColor #08427B
+    FontColor #08427B
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam participant<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam sequencebox<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam person<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_person>> {
+    StereotypeFontColor #686868
+    FontColor #686868
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam participant<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam sequencebox<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam queue<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam person<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam actor<<system>> {
+    StereotypeFontColor #1168BD
+    FontColor #1168BD
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam participant<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam sequencebox<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam person<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_system>> {
+    StereotypeFontColor #999999
+    FontColor #999999
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam participant<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam sequencebox<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+skinparam rectangle<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<system_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam participant<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam sequencebox<<system_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<system_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<system_boundary>>StereotypeFontColor transparent
+
+
+skinparam rectangle<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<enterprise_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam participant<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam sequencebox<<enterprise_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<enterprise_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<enterprise_boundary>>StereotypeFontColor transparent
+
+
+
+
+
+
+sprite $person [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000025788300000000005886410000000000000
+000000000007DFFFFFFD9643347BFFFFFFFB400000000000
+0000000004EFFFFFFFFFFFFFFFFFFFFFFFFFFB1000000000
+000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD200000000
+00000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE10000000
+0000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0000000
+000000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5000000
+000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF200000
+00000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00000EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD3000000
+000000014555555555555555555555555555555300000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $person2 [48x48/16] {
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000002578888300000000005888864100000000000
+0000000007DFFFFFFFFD9643347BFFFFFFFFFB4000000000
+00000004EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB10000000
+0000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2000000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+00003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+0000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF50000
+0003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0000
+0009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+0009FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF2000
+0003FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFD0000
+0000BFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF50000
+00003FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFB00000
+000006FFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFE100000
+0000007FFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFD2000000
+00000004EFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFB10000000
+0000000007DF8FFFFFFFFFFFFFFFFFFFFFF8FB4000000000
+000000000002578888888888888888888864100000000000
+}
+
+sprite $robot [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000005BFFFFFFFFFFFFFFFFFFFFFE9100000000000
+0000000000AFFFFFFFFFFFFFFFFFFFFFFFFFE30000000000
+0000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFE1000000000
+000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000000000
+000000004FFFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000699405FFFFFFC427FFFFFFFFFC427FFFFFFE009982000
+008FFF705FFFFFE10006FFFFFFFE00007FFFFFE00FFFF100
+00CFFF705FFFFFA00001FFFFFFF900002FFFFFE00FFFF500
+00DFFF705FFFFFB00002FFFFFFFA00003FFFFFE00FFFF500
+00DFFF705FFFFFF4000AFFFFFFFF3000BFFFFFE00FFFF500
+00DFFF705FFFFFFFA8DFFFFFFFFFFA8DFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00DFFF705FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE00FFFF500
+00CFFF705FFFFFF87777777777777777CFFFFFE00FFFF500
+008FFF705FFFFFF100000000000000009FFFFFE00FFFF100
+000699405FFFFFF76666666666666666CFFFFFE009982000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFFFE000000000
+000000004FFFFFFFFFFFFFFFFFFFFFFFFFFFFFC000000000
+000000000EFFFFFFFFFFFFFFFFFFFFFFFFFFFF7000000000
+0000000005FFFFFFFFFFFFFFFFFFFFFFFFFFFD0000000000
+00000000004CFFFFFFFFFFFFFFFFFFFFFFFF910000000000
+000000000000011111111111111111111110000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $robot2 [48x48/16] {
+000000000000000088888888888888880000000000000000
+000000000000000AFFFFFFFFFFFFFFFFA000000000000000
+00000000000000CFFFFFFFFFFFFFFFFFFC00000000000000
+00000000000004EFFFFFFFFFFFFFFFFFFE40000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFFA0000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000888FFFFFFFFFFFFFFFFFFFF88800000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000008FF8FFFFFFFFFFFFFFFFFFFF8FF80000000000
+00000000000888FFFFFFFFFFFFFFFFFFFF88800000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000008FFFFFFFFFFFFFFFFFFFF80000000000000
+00000000000004CFFFFFFFFFFFFFFFFFFC40000000000000
+000000488888848CFFFFFFFFFFFFFFFFC848888884000000
+00000CFFFFFFFFC888888888888888888CFFFFFFFFC00000
+00008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF80000
+0000CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC0000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0008FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF8000
+0000CFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFC0000
+00008FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF80000
+00000CFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFC00000
+000000488887578888888888888888888864688884000000
+000000000000000000000000000000000000000000000000
+}
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam person<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam actor<<person>> {
+    StereotypeFontColor #08427B
+    FontColor #08427B
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam participant<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam sequencebox<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam person<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam actor<<external_person>> {
+    StereotypeFontColor #686868
+    FontColor #686868
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam participant<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam sequencebox<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam queue<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam person<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam actor<<container>> {
+    StereotypeFontColor #438DD5
+    FontColor #438DD5
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam participant<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam sequencebox<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam database<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam queue<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam person<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam actor<<external_container>> {
+    StereotypeFontColor #B3B3B3
+    FontColor #B3B3B3
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam participant<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam sequencebox<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+
+
+skinparam rectangle<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam database<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam queue<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam person<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam actor<<container_boundary>> {
+    FontColor transparent
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam participant<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam sequencebox<<container_boundary>> {
+    FontColor #444444
+    BackgroundColor transparent
+    BorderColor #444444
+}
+skinparam package<<container_boundary>>StereotypeFontColor transparent
+skinparam rectangle<<container_boundary>>StereotypeFontColor transparent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam database<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam queue<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam person<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam actor<<component>> {
+    StereotypeFontColor #85BBF0
+    FontColor #85BBF0
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam participant<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+skinparam sequencebox<<component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #85BBF0
+    BorderColor #78A8D8
+}
+
+skinparam rectangle<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam database<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam queue<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam person<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam actor<<external_component>> {
+    StereotypeFontColor #CCCCCC
+    FontColor #CCCCCC
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam participant<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+skinparam sequencebox<<external_component>> {
+    StereotypeFontColor #000000
+    FontColor #000000
+    BackgroundColor #CCCCCC
+    BorderColor #BFBFBF
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+hide stereotype
+legend right
+|<color:#000000>**Legend**</color> |
+|<#08427B> person |
+|<#1168BD> system |
+|<#438DD5> container |
+|<#85BBF0> component |
+|<#686868> external person |
+|<#999999> external system |
+|<#B3B3B3> external container |
+|<#CCCCCC> external component |
+endlegend
+
+title Component diagram for Interview Management System - API Application
+
+  rectangle "== Single Page Application\n//<size:12>[JavaScript, Angular]</size>//\n\nProvides all the interview system functionality to recruiter and technical advisor via their web browser." <<container>> as spa
+  rectangle "== Mobile App\n//<size:12>[C#, Xamarin]</size>//\n\nProvides a limited subset of interview system functionality to recruiter and technical advisor via their mobile device." <<container>> as ma
+  database "== Database\n//<size:12>[Relational Database Schema]</size>//\n\nStores Information regarding the interviews, the recruiters, the technical advisors ..." <<container>> as db
+  rectangle "== E-Mail System" <<external_system>> as email_system
+  rectangle "== Unit4 System" <<external_system>> as unit4_system
+
+  rectangle "== API Application\n<size:12>[Container]</size>" <<container_boundary>><<boundary>> as api  {
+
+      rectangle "== Technical Advisor Controller\n//<size:12>[Spring Rest Controller]</size>//\n\nCRUD TechnicalAdvisor APIs" <<component>> as technical_advisor_controller
+    spa - ->> technical_advisor_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+    ma - ->> technical_advisor_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+
+      rectangle "== Recruiter Controller\n//<size:12>[Spring Rest Controller]</size>//\n\nCRUD Recruiter APIs" <<component>> as recruiter_controller
+    spa - ->> recruiter_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+    ma - ->> recruiter_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+
+      rectangle "== Line Of Business Controller\n//<size:12>[Spring Rest Controller]</size>//\n\nCRUD LineOfBusiness APIs" <<component>> as line_business_controller
+    spa - ->> line_business_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+    ma - ->> line_business_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+
+      rectangle "== Job Position Controller\n//<size:12>[Spring Rest Controller]</size>//\n\nCRUD JobPosition APIs" <<component>> as job_position_controller
+    spa - ->> job_position_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+    ma - ->> job_position_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+
+      rectangle "== Sign In Controller\n//<size:12>[Spring Rest Controller]</size>//\n\nAllows users to sign in to the system" <<component>> as sign_in_controller
+    spa - ->> sign_in_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+    ma - ->> sign_in_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+
+      rectangle "== Interview Controller\n//<size:12>[Spring Rest Controller]</size>//\n\nCRUD Interview APIs" <<component>> as interview_controller
+    spa - ->> interview_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+    ma - ->> interview_controller : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+
+      rectangle "== Technical Advisor Component\n//<size:12>[Spring Bean]</size>//\n\nProvides functionality related to technical advisor" <<component>> as technical_advisor_component
+    technical_advisor_controller - ->> technical_advisor_component : **Uses**
+
+      rectangle "== Recruiter Component\n//<size:12>[Spring Bean]</size>//\n\nProvides functionality related to recruiter" <<component>> as recruiter_component
+    recruiter_controller - ->> recruiter_component : **Uses**
+
+      rectangle "== Line Of Business Component\n//<size:12>[Spring Bean]</size>//\n\nProvides functionality related to line of business" <<component>> as line_business_component
+    line_business_controller - ->> line_business_component : **Uses**
+
+      rectangle "== Job Position Component\n//<size:12>[Spring Bean]</size>//\n\nProvides functionality related to job position" <<component>> as job_position_component
+    job_position_controller - ->> job_position_component : **Uses**
+
+      rectangle "== Security Component\n//<size:12>[Spring Bean]</size>//\n\nProvides functionality related to singing in, changing password, ..." <<component>> as security_component
+    sign_in_controller - ->> security_component : **Uses**
+
+      rectangle "== Interview Component\n//<size:12>[Spring Bean]</size>//\n\nProvides functionality related to interview" <<component>> as interview_component
+    interview_controller - ->> interview_component : **Uses**
+
+      rectangle "== Unit4 Component\n//<size:12>[Spring Bean]</size>//\n\nProvides functionality related to unit4" <<component>> as unit4_component
+    recruiter_component - ->> unit4_component : **Uses**
+    technical_advisor_component - ->> unit4_component : **Uses**
+
+      rectangle "== Notification Component\n//<size:12>[Kafka]</size>//\n\nProvides functionality related to notifications" <<component>> as notification_component
+    interview_component ->> notification_component : **Produce**
+    interview_component <<- - notification_component : **Consume**
+    job_position_component ->> notification_component : **Produce**
+    job_position_component <<- - notification_component : **Consume**
+    line_business_component ->> notification_component : **Produce**
+    line_business_component <<- - notification_component : **Consume**
+    recruiter_component ->> notification_component : **Produce**
+    recruiter_component <<- - notification_component : **Consume**
+    recruiter_component ->> notification_component : **Produce**
+    recruiter_component <<- - notification_component : **Consume**
+    technical_advisor_component ->> notification_component : **Produce**
+    technical_advisor_component <<- - notification_component : **Consume**
+    security_component ->> notification_component : **Produce**
+    security_component <<- - notification_component : **Consume**
+
+}
+
+interview_component - ->> db : **CRUD Interview**\n//<size:12>[JDBC]</size>//
+job_position_component - ->> db : **CRUD Job Position**\n//<size:12>[JDBC]</size>//
+line_business_component - ->> db : **CRUD Interview**\n//<size:12>[JDBC]</size>//
+recruiter_component - ->> db : **CRUD Interview**\n//<size:12>[JDBC]</size>//
+technical_advisor_component - ->> db : **CRUD Interview**\n//<size:12>[JDBC]</size>//
+security_component - ->> db : **CRUD User**\n//<size:12>[JDBC]</size>//
+notification_component - ->> db : **CRUD Notification**\n//<size:12>[JDBC]</size>//
+
+interview_component ->> email_system : **Send Email**\n//<size:12>[SMTP]</size>//
+unit4_component - ->> unit4_system : **Uses**\n//<size:12>[JSON/HTTPS]</size>//
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 13:01:30 EDT 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

@@ -1,0 +1,28 @@
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+title System Context diagram for Interview Management
+
+
+Person(recruiter, "Recruiter")
+Person(technical_advisor, "Technical Advisor")
+
+System(interview_management_system, "Interview Management System")
+
+System_Ext(email_system, "E-mail System")
+System_Ext(unit4_system, "Unit4 System")
+
+Rel(recruiter, interview_management_system, "Manage Interview Request", "Browser")
+Rel(technical_advisor, interview_management_system, "Accept/Reject Request", "Browser")
+
+Rel_Back(recruiter, email_system, "Send Email to")
+Rel_Back(technical_advisor, email_system, "Send Email to")
+
+Rel_Neighbor(interview_management_system, email_system, "Send Email Using", "SMTP")
+
+Rel(interview_management_system, unit4_system, "Send Email Using", "HTTPS")
+
+@enduml

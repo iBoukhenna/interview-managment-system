@@ -1,0 +1,25 @@
+@startuml
+actor Recruiter
+actor TechnicalAdvisor
+participant System
+
+TechnicalAdvisor -> System: Click on the link confirme reject Interview
+System --> TechnicalAdvisor: Response of the request
+alt#Grey #LightGray If this TechnicalAdvisor confirme that he rejecte the request
+    alt#Yellow #LightGoldenRodYellow If this TechnicalAdvisor is the first one accept the request
+        alt#Orange #LightSalmon If there is another TechnicalAdvisor accept this request
+            System ->> TechnicalAdvisor: Send an email to the next TechnicalAdvisor \n the interview request is assigned \n send the recruiter's informations
+            System ->> Recruiter: Send an email to the Recruiter
+        else #LightSalmon
+            ref over System
+                Check Rejected Request
+            end ref
+        end
+    else #LightGoldenRodYellow
+        ref over System
+            Check Rejected Request
+        end ref
+    end
+end
+
+@enduml

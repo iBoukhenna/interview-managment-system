@@ -1,0 +1,96 @@
+@startuml
+
+class Applicant {
+ - String name
+ - String email
+}
+
+class Recruiter {
+ - String name
+ - String email
+}
+
+class Interview {
+ - Applicant applicant
+ - Recruiter recruiter
+ - JobPosition jobPosition
+ - StateOfInterview stateOfInterview
+ - LevelOfExpertise levelOfExpertise
+ - TypeOfInterview typeOfInterview
+}
+
+Recruiter "1" -- "*" Interview : create >
+Applicant "1" -- "1" Interview : have <
+
+enum StateOfInterview {
+ OPEN
+ IN_PROGRESS
+ CLOSED
+}
+
+enum TypeOfInterview {
+ URGENT
+ NOT_URGENT
+}
+
+Interview -- StateOfInterview : is >
+Interview -- TypeOfInterview : is >
+
+class LineOfBusiness {
+ - String label
+}
+
+class JobPosition {
+ - String label
+ - LineOfBusiness lineOfBusiness
+}
+
+LineOfBusiness "1" -- "*" JobPosition
+
+enum LevelOfExpertise {
+ A : Junior
+ B : Intermédiaire
+ C : Senior
+ D : Senior +
+ E : Emérite
+}
+
+class Skill {
+ - JobPosition jobPosition
+ - LevelOfExpertise levelOfExpertise
+}
+
+Skill "*" -- "1" JobPosition
+Skill --  LevelOfExpertise : have >
+Interview "*" -- "1" JobPosition
+Interview -- LevelOfExpertise : have >
+
+class TechnicalAdvisor {
+ - String name
+ - String email
+ - List<Skill> skills
+}
+
+TechnicalAdvisor "*" -- "*" Skill
+
+class InterviewRequest {
+    - Interview Interview
+    - TechnicalAdvisor technicalAdvisor
+    - StatusOfRequest statusOfRequest
+    - String motif
+}
+
+InterviewRequest "*" -- "1" Interview
+InterviewRequest "*" -- "1" TechnicalAdvisor
+
+enum StatusOfRequest {
+ OPENED
+ ASSIGNED
+ ACCEPTED
+ REJECTED_BY_TECHNICAL_ADVISOR
+ DECLINED_BY_RECRUITER
+}
+
+InterviewRequest -- statusOfRequest : have >
+
+@enduml

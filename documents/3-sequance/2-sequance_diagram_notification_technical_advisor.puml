@@ -1,0 +1,18 @@
+@startuml
+actor Recruiter
+actor TechnicalAdvisor
+participant System
+
+group Asynchrone Job
+    System ->> System: Wait for Y heures
+    alt If no TechnicalAdvisor has accepted the request
+        alt If there are more of TechnicalAdvisor eligible for the request
+            ref over System
+                Random selection of X TechnicalAdvisor
+            end ref
+        else
+            System ->> Recruiter: Send email all the TechnicalAdvisor eligible refused the request
+        end
+    end
+end
+@enduml

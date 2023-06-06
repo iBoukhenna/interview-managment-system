@@ -1,0 +1,51 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+
+' LAYOUT_TOP_DOWN()
+' LAYOUT_AS_SKETCH()
+LAYOUT_WITH_LEGEND()
+
+title Container diagram for Interview Management System
+
+Person(recruiter, "Recruiter")
+Person(technical_advisor, "Technical Advisor")
+
+System_Boundary(c1, "Interview Management System") {
+
+    Container(reverse_proxy, "Reverse Proxy", "NGINX", "Delivers the static content and the interview single page application.")
+
+    Container(spa, "Single Page Application", "JavaScript, Angular", "Provides all the interview system functionality to recruiter and technical advisor via their web browser.")
+
+    Container(mobile_app, "Mobile App", "C#, Xamarin", "Provides a limited subset of interview system functionality to recruiter and technical advisor via their mobile device.")
+
+    Container(backend_api, "API Application", "Java and Spring boot", "Provides fonctionality via JSON/HTTPS API.")
+
+    ContainerDb(database, "Database", "Relational Database Schema", "Stores All Data.")
+}
+
+System_Ext(email_system, "E-Mail System")
+System_Ext(unit4_system, "Unit4 System")
+
+Rel(recruiter, reverse_proxy, "Uses", "HTTPS")
+Rel(technical_advisor, reverse_proxy, "Uses", "HTTPS")
+
+Rel(recruiter, mobile_app, "Uses")
+Rel(technical_advisor, mobile_app, "Uses")
+
+Rel(reverse_proxy, spa, "Delivers")
+
+Rel(spa, backend_api, "Uses", "JSON/HTTPS")
+Rel(mobile_app, backend_api, "Uses", "JSON/HTTPS")
+
+Rel_Back_Neighbor(database, backend_api, "Read and Write", "JDBC")
+
+Rel_Back(recruiter, email_system, "Uses", "Send Email")
+Rel_Back(technical_advisor, email_system, "Uses", "Send Email")
+
+Rel_Back(email_system, backend_api, "Uses", "Send Email")
+Rel_Neighbor(backend_api, unit4_system, "Uses")
+
+
+@enduml

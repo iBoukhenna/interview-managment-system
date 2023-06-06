@@ -1,0 +1,16 @@
+@startuml
+actor Recruiter
+actor TechnicalAdvisor
+participant System
+
+TechnicalAdvisor -> System: Click on the link reject Interview
+System --> TechnicalAdvisor: Response of the request
+alt#Green #LightGreen If this TechnicalAdvisor has accepted this request before
+    System ->> TechnicalAdvisor: Send message to confirme the reject action
+else #LightGreen
+    ref over System
+        Check Rejected Request
+    end ref
+end
+
+@enduml

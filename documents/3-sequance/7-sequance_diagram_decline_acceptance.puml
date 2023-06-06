@@ -1,0 +1,12 @@
+@startuml
+actor Recruiter
+actor TechnicalAdvisor
+participant System
+
+Recruiter -> System: Decline the acceptance of Interview Request
+System --> Recruiter: Response of the request
+ref over Recruiter
+    Choise the Request
+end ref
+
+@enduml
