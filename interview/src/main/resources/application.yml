@@ -18,14 +18,5 @@ spring:
     show-sql: true
   kafka:
     bootstrap-servers: localhost:9092
-    template:
-      default-topic: notificationTopic
     producer:
-      group-id: notificationId
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      properties:
-        spring:
-          json:
-            type:
-              mapping: event:ca.levio.interview.dto.InterviewRequestCreationRequest

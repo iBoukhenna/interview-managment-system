@@ -1,40 +1,26 @@
 package ca.levio.interview.service;
 
-import ca.levio.interview.dto.InterviewCreationRequest;
-import ca.levio.interview.dto.InterviewRequestCreationRequest;
-import ca.levio.interview.enums.LevelOfExpertise;
-import ca.levio.interview.enums.StateOfInterview;
-import ca.levio.interview.enums.TypeOfInterview;
-import ca.levio.interview.kafka.KafkaMessageProducer;
+import ca.levio.interview.dto.InterviewDto;
+import ca.levio.interview.mapper.InterviewMapper;
 import ca.levio.interview.model.Interview;
+import ca.levio.interview.queue.MessageQueueProducer;
 import ca.levio.interview.repository.InterviewRepository;
+import lombok.AllArgsConstructor;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public record InterviewService(InterviewRepository interviewRepository, KafkaMessageProducer kafkaMessageProducer) {
+@AllArgsConstructor
+public class InterviewService {
 
-    public void createInterview(InterviewCreationRequest request) {
+    private InterviewRepository interviewRepository;
+    private final MessageQueueProducer messageQueueProducer;
+    private final InterviewMapper createInterviewMapper;
 
-        LevelOfExpertise levelOfExpertise = LevelOfExpertise.valueOf(request.levelOfExpertise());
-        TypeOfInterview typeOfInterview = TypeOfInterview.valueOf(request.typeOfInterview());
-        Interview interview = Interview.builder().applicat(request.applicant())
-                .recruiter(request.recruiter())
-                .jobPosition(request.jobPosition())
-                .stateOfInterview(StateOfInterview.OPEN)
-                .levelOfExpertise(levelOfExpertise)
-                .typeOfInterview(typeOfInterview).build();
-
+    public void createInterview(InterviewDto createInterviewDto) {
+        Interview interview = createInterviewMapper.interviewDtoToInterview(createInterviewDto);
         interview = interviewRepository.saveAndFlush(interview);
-        
-        InterviewRequestCreationRequest interviewRequestCreationRequest = new InterviewRequestCreationRequest(
-            interview.getId(),
-            typeOfInterview.getX(),
-            request.jobPosition(),
-            request.levelOfExpertise()
-        );
-
-        kafkaMessageProducer.publish("interviewrequest.topic", "internal.interviewrequest.key", interviewRequestCreationRequest);
+        messageQueueProducer.send(interview);
     }
 
 }

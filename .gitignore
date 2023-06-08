@@ -36,8 +36,8 @@ interview/mvnw
 interview/.mvn/
 interview-request/mvnw
 interview-request/.mvn/
-kafka/mvnw
-kafka/.mvn/
+message-queue/mvnw
+message-queue/.mvn/
 notification/mvnw
 notification/.mvn/
 openfeign-service/mvnw
