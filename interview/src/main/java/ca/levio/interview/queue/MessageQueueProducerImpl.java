@@ -17,13 +17,13 @@ public class MessageQueueProducerImpl implements MessageQueueProducer {
     public void send(Object data) {
         Interview interview = (Interview) data;
 
-        InterviewRequestDto createInterviewRequest = new InterviewRequestDto(
+        InterviewRequestDto interviewRequestDto = new InterviewRequestDto(
             interview.getId(),
             interview.getTypeOfInterview().getX(),
             interview.getJobPosition(),
             interview.getLevelOfExpertise().toString()
         );
 
-        kafkaTemplate.send("interviewRequest.topic", "interviewRequest.createInterviewDto", createInterviewRequest);
+        kafkaTemplate.send("interviewRequest.topic", "interviewRequest.createInterviewDto", interviewRequestDto);
     }
 }

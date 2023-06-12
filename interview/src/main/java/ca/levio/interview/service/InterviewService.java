@@ -6,9 +6,13 @@ import ca.levio.interview.model.Interview;
 import ca.levio.interview.queue.MessageQueueProducer;
 import ca.levio.interview.repository.InterviewRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 @AllArgsConstructor
 public class InterviewService {
@@ -17,10 +21,17 @@ public class InterviewService {
     private final MessageQueueProducer messageQueueProducer;
     private final InterviewMapper createInterviewMapper;
 
-    public void createInterview(InterviewDto createInterviewDto) {
+    public Interview createInterview(InterviewDto createInterviewDto) {
+        log.info("interivew creation service {}", createInterviewDto);
         Interview interview = createInterviewMapper.interviewDtoToInterview(createInterviewDto);
         interview = interviewRepository.saveAndFlush(interview);
+        log.info("send interivew data to interview request {}", createInterviewDto);
         messageQueueProducer.send(interview);
+        return interview;
     }
 
+    public List<Interview> getInterviews() {
+        log.info("get all interivews service");
+        return interviewRepository.findAll();
+    }
 }

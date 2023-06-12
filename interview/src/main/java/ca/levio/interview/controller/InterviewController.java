@@ -3,6 +3,8 @@ package ca.levio.interview.controller;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +26,14 @@ public class InterviewController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createInterview(@RequestBody InterviewDto interviewCreationRequest) {
-        log.info("new customer registration {}", interviewCreationRequest);
-        interviewService.createInterview(interviewCreationRequest);
+    public ResponseEntity<?> createInterview(@RequestBody InterviewDto interviewDto) {
+        log.info("new interivew creation {}", interviewDto);
+        return new ResponseEntity<>(interviewService.createInterview(interviewDto), HttpStatus.OK);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllInterviews() {
+        log.info("get all interivews");
+        return ResponseEntity.ok().body(interviewService.getInterviews());
     }
 }

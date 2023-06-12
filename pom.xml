@@ -12,6 +12,7 @@
     <modules>
         <module>interview</module>
         <module>interview-request</module>
+        <module>technical-advisor</module>
     </modules>
 
     <name>interview-management-project</name>

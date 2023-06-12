@@ -82,6 +82,21 @@ services:
       - spring
       - postgres
     depends_on:
+      - technical-advisor
+      - postgres
+      - kafka
+
+  technical-advisor:
+    image: iboukhenna/technical-advisor:latest
+    container_name: technical-advisor
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - spring
+      - postgres
+    depends_on:
       - postgres
       - kafka
 

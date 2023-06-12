@@ -19,6 +19,6 @@ public class MessageQueueConsumerImpl {
     @KafkaListener(topics = "interviewRequest.topic", groupId = "interviewRequestId")
     public void receive(InterviewRequestDto interviewRequestDto) {
         InterviewRequest interviewRequest = interviewRequestMapper.interviewRequestDtoToInterviewRequest(interviewRequestDto);
-        interviewRequestService.createInterviewRequest(interviewRequest);
+        interviewRequestService.createInterviewRequest(interviewRequest, interviewRequestDto.getX(), interviewRequestDto.getJobPosition(), interviewRequestDto.getLevelOfExpertise());
     }
 }
