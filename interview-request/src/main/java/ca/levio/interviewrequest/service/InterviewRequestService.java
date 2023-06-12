@@ -1,6 +1,7 @@
 package ca.levio.interviewrequest.service;
 
 import ca.levio.interviewrequest.dto.TechnicalAdvisorsDto;
+import ca.levio.interviewrequest.enums.StatusOfRequest;
 import ca.levio.interviewrequest.model.InterviewRequest;
 import ca.levio.interviewrequest.repository.InterviewRequestRepository;
 import lombok.AllArgsConstructor;
@@ -34,11 +35,15 @@ public class InterviewRequestService {
         );
 
         String[] technicalAdvisors = response.getBody();
+        InterviewRequest interviewRequestTemp;
 
         if (technicalAdvisors != null) {
             for (String technicalAdvisor : technicalAdvisors) {
-                interviewRequest.setTechnicalAdvisor(technicalAdvisor);
-                interviewRequestRepository.saveAndFlush(interviewRequest);
+                interviewRequestTemp = new InterviewRequest();
+                interviewRequestTemp.setInterview(interviewRequest.getInterview());
+                interviewRequestTemp.setTechnicalAdvisor(technicalAdvisor);
+                interviewRequestTemp.setStatusOfRequest(StatusOfRequest.OPENED);
+                interviewRequestRepository.saveAndFlush(interviewRequestTemp);
             }
         } else {
             log.info("Aucun Technical Advisor trouvé.");

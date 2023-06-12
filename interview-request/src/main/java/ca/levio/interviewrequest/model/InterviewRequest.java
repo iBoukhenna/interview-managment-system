@@ -24,7 +24,7 @@ public class InterviewRequest {
     )
     private Integer id;
 
-    private Integer Interview;
+    private Integer interview;
 
     private String technicalAdvisor;
 

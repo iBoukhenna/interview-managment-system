@@ -26,7 +26,7 @@ public class Interview {
     )
     private Integer id;
 
-    private String applicat;
+    private String applicant;
     private String recruiter;
     private String jobPosition;
 

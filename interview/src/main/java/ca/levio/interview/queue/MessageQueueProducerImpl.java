@@ -6,7 +6,9 @@ import org.springframework.stereotype.Component;
 import ca.levio.interview.dto.InterviewRequestDto;
 import ca.levio.interview.model.Interview;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Component
 @AllArgsConstructor
 public class MessageQueueProducerImpl implements MessageQueueProducer {
@@ -16,6 +18,7 @@ public class MessageQueueProducerImpl implements MessageQueueProducer {
     @Override
     public void send(Object data) {
         Interview interview = (Interview) data;
+        log.info("send data of interview {}", interview);
 
         InterviewRequestDto interviewRequestDto = new InterviewRequestDto(
             interview.getId(),
@@ -23,6 +26,7 @@ public class MessageQueueProducerImpl implements MessageQueueProducer {
             interview.getJobPosition(),
             interview.getLevelOfExpertise().toString()
         );
+        log.info("send interivew data to interview request {}", interviewRequestDto);
 
         kafkaTemplate.send("interviewRequest.topic", "interviewRequest.createInterviewDto", interviewRequestDto);
     }

@@ -1,6 +1,7 @@
 package ca.levio.interview.service;
 
 import ca.levio.interview.dto.InterviewDto;
+import ca.levio.interview.enums.StateOfInterview;
 import ca.levio.interview.mapper.InterviewMapper;
 import ca.levio.interview.model.Interview;
 import ca.levio.interview.queue.MessageQueueProducer;
@@ -24,8 +25,9 @@ public class InterviewService {
     public Interview createInterview(InterviewDto createInterviewDto) {
         log.info("interivew creation service {}", createInterviewDto);
         Interview interview = createInterviewMapper.interviewDtoToInterview(createInterviewDto);
+        interview.setStateOfInterview(StateOfInterview.OPEN);
         interview = interviewRepository.saveAndFlush(interview);
-        log.info("send interivew data to interview request {}", createInterviewDto);
+        log.info("send data of interview created {}", interview);
         messageQueueProducer.send(interview);
         return interview;
     }

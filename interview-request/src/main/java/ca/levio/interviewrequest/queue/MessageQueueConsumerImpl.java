@@ -8,7 +8,9 @@ import ca.levio.interviewrequest.mapper.InterviewRequestMapper;
 import ca.levio.interviewrequest.model.InterviewRequest;
 import ca.levio.interviewrequest.service.InterviewRequestService;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Component
 @AllArgsConstructor
 public class MessageQueueConsumerImpl {
@@ -18,6 +20,7 @@ public class MessageQueueConsumerImpl {
 
     @KafkaListener(topics = "interviewRequest.topic", groupId = "interviewRequestId")
     public void receive(InterviewRequestDto interviewRequestDto) {
+        log.info("receive interivew data from interview {}", interviewRequestDto);
         InterviewRequest interviewRequest = interviewRequestMapper.interviewRequestDtoToInterviewRequest(interviewRequestDto);
         interviewRequestService.createInterviewRequest(interviewRequest, interviewRequestDto.getX(), interviewRequestDto.getJobPosition(), interviewRequestDto.getLevelOfExpertise());
     }
