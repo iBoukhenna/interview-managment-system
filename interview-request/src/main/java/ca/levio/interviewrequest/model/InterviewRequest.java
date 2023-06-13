@@ -14,21 +14,15 @@ import jakarta.persistence.*;
 @Entity
 public class InterviewRequest {
     @Id
-    @SequenceGenerator(
-            name = "interview_request_id_sequence",
-            sequenceName = "interview_request_id_sequence"
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "interview_request_id_sequence"
-    )
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
-    private Integer interview;
+    private String interview;
 
     private String technicalAdvisor;
 
-    private StatusOfRequest statusOfRequest;
+    @Builder.Default
+    private StatusOfRequest statusOfRequest = StatusOfRequest.OPENED;
     private String motif;
 
 }

@@ -13,6 +13,17 @@ public enum TypeOfInterview {
         this.x = x;
         this.y = y;
     }
+
+    public static TypeOfInterview getTypeOfInterviewFromX(int x) {
+        TypeOfInterview typeOfInterview = null;
+        for (TypeOfInterview type : TypeOfInterview.values()) {
+            if (type.getX() == x) {
+                typeOfInterview = type;
+                break;
+            }
+        }
+        return typeOfInterview;
+    }
     
     public String getCode() {
         return code;

@@ -6,7 +6,7 @@ import ca.levio.technicaladvisor.dto.TechnicalAdvisorDto;
 import ca.levio.technicaladvisor.model.TechnicalAdvisor;
 
 @Mapper(componentModel = "spring")
-public abstract class TechnicalAdvisorMapper {
+public abstract class TechnicalAdvisorDtoMapper {
 
     public abstract TechnicalAdvisorDto TechnicalAdvisorToTechnicalAdvisorDto(TechnicalAdvisor TechnicalAdvisor);
 

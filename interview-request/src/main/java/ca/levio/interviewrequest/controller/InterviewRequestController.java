@@ -19,7 +19,7 @@ public class InterviewRequestController {
 
     private InterviewRequestService interviewRequestService;
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<?> getAllInterviewRequests() {
         log.info("get all interivew requests");
         return ResponseEntity.ok().body(interviewRequestService.getInterviewRequests());

@@ -1,6 +1,5 @@
 server:
   port: 8082
-
 spring:
   application:
     name: interview-request
@@ -20,5 +19,7 @@ spring:
     bootstrap-servers: kafka:9092
     consumer:
       group-id: interviewRequestId
-      value-deserializer: ca.levio.interviewrequest.queue.InterviewRequestDtoDeserializer
+      value-deserializer: ca.levio.interviewrequest.queue.GenerateInterviewRequestDtoDeserializer
       properties.spring.json.trusted.packages: "*"
+technical-advisor:
+  url: http://technical-advisor:8083/api/v1/technical-advisors/select

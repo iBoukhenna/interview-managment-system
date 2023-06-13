@@ -24,7 +24,7 @@ public class TechnicalAdvisorController {
 
     private TechnicalAdvisorService technicalAdvisorService;
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<?> getAllTechnicalAdvisors() {
         log.info("get all technical advisors");
         return ResponseEntity.ok().body(technicalAdvisorService.getTechnicalAdvisors());

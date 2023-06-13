@@ -17,15 +17,8 @@ import jakarta.persistence.*;
 @Entity
 public class TechnicalAdvisor {
     @Id
-    @SequenceGenerator(
-            name = "technical_advisor_id_sequence",
-            sequenceName = "technical_advisor_id_sequence"
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "technical_advisor_id_sequence"
-    )
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
     private String name;
     

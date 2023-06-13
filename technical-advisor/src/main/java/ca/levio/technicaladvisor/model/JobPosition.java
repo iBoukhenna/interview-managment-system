@@ -14,15 +14,8 @@ import jakarta.persistence.*;
 public class JobPosition {
 
     @Id
-    @SequenceGenerator(
-            name = "jib_position_id_sequence",
-            sequenceName = "job_position_id_sequence"
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "job_position_id_sequence"
-    )
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
     private String label;
 

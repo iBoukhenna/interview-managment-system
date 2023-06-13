@@ -19,7 +19,7 @@ public class TechnicalAdvisorService {
     private TechnicalAdvisorRepository technicalAdvisorRepository;
 
     public List<TechnicalAdvisor> getTechnicalAdvisors() {
-        log.info("get all technical advisorss service");
+        log.info("get all technical advisors service");
         return technicalAdvisorRepository.findAll();
     }
 

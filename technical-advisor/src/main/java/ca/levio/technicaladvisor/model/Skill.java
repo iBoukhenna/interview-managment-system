@@ -14,15 +14,8 @@ import jakarta.persistence.*;
 @Entity
 public class Skill {
     @Id
-    @SequenceGenerator(
-            name = "skill_id_sequence",
-            sequenceName = "skill_id_sequence"
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "skill_id_sequence"
-    )
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private JobPosition jobPosition;

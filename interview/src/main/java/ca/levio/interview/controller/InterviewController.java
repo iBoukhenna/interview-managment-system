@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import ca.levio.interview.dto.InterviewDto;
+import ca.levio.interview.dto.CreateInterviewDto;
 import ca.levio.interview.service.InterviewService;
 
 import lombok.AllArgsConstructor;
@@ -26,12 +26,12 @@ public class InterviewController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<?> createInterview(@RequestBody InterviewDto interviewDto) {
+    public ResponseEntity<?> createInterview(@RequestBody CreateInterviewDto interviewDto) {
         log.info("new interivew creation {}", interviewDto);
         return new ResponseEntity<>(interviewService.createInterview(interviewDto), HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<?> getAllInterviews() {
         log.info("get all interivews");
         return ResponseEntity.ok().body(interviewService.getInterviews());
