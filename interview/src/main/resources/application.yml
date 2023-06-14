@@ -5,9 +5,9 @@ spring:
   application:
     name: interview
   datasource:
-    username: test
+    username: postgres
     url: jdbc:postgresql://localhost:5432/interview
-    password: password
+    password: spintechs
   jpa:
     properties:
       hibernate:

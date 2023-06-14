@@ -3,7 +3,7 @@ package ca.levio.interviewrequest.queue;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import ca.levio.interview.dto.GenerateInterviewRequestDto;
+import ca.levio.queuemessagebean.dto.GenerateInterviewRequestDto;
 import ca.levio.interviewrequest.mapper.CreateInterviewRequestMapper;
 import ca.levio.interviewrequest.model.InterviewRequest;
 import ca.levio.interviewrequest.service.InterviewRequestService;

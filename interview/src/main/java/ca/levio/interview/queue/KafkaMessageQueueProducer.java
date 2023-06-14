@@ -3,7 +3,7 @@ package ca.levio.interview.queue;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
-import ca.levio.interview.dto.GenerateInterviewRequestDto;
+import ca.levio.queuemessagebean.dto.GenerateInterviewRequestDto;
 import ca.levio.interview.mapper.GenerateInterviewRequestDtoMapper;
 import ca.levio.interview.model.Interview;
 import lombok.AllArgsConstructor;

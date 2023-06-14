@@ -3,7 +3,7 @@ package ca.levio.interview.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import ca.levio.interview.dto.GenerateInterviewRequestDto;
+import ca.levio.queuemessagebean.dto.GenerateInterviewRequestDto;
 import ca.levio.interview.model.Interview;
 
 @Mapper(componentModel = "spring")

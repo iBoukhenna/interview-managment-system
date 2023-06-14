@@ -1,11 +1,13 @@
-package ca.levio.interview.dto;
+package ca.levio.queuemessagebean.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Data
-public class GenerateInterviewRequestDto {
+@NoArgsConstructor
+public class GenerateInterviewRequestDto{
     private String interview;
     private Integer x;
     private String jobPosition;

@@ -3,7 +3,7 @@ package ca.levio.interviewrequest.queue;
 
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 
-import ca.levio.interview.dto.GenerateInterviewRequestDto;
+import ca.levio.queuemessagebean.dto.GenerateInterviewRequestDto;
 
 
 public class GenerateInterviewRequestDtoDeserializer extends JsonDeserializer<GenerateInterviewRequestDto> {
