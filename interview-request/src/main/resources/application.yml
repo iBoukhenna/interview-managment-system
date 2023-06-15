@@ -21,5 +21,3 @@ spring:
       group-id: interviewRequestId
       value-deserializer: ca.levio.interviewrequest.queue.GenerateInterviewRequestDtoDeserializer
       properties.spring.json.trusted.packages: "*"
-technical-advisor:
-  url: http://localhost:8083/api/v1/technical-advisors/select

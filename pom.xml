@@ -14,6 +14,7 @@
         <module>interview-request</module>
         <module>queue-message-bean</module>
         <module>technical-advisor</module>
+        <module>openfeign-clients</module>
     </modules>
 
     <name>interview-management-project</name>
@@ -28,7 +29,7 @@
         <org.projectlombok.version>1.18.20</org.projectlombok.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
-        <spring.cloud.version>2020.0.3</spring.cloud.version>
+        <spring.cloud.version>2022.0.3</spring.cloud.version>
         <image>iboukhenna/${project.artifactId}:${project.version}</image>
     </properties>
 
@@ -66,10 +67,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 

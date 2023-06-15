@@ -1,7 +1,6 @@
 package ca.levio.interview.service;
 
 import ca.levio.interview.dto.CreateInterviewDto;
-import ca.levio.interview.enums.StateOfInterview;
 import ca.levio.interview.mapper.CreateInterviewDtoMapper;
 import ca.levio.interview.model.Interview;
 import ca.levio.interview.queue.MessageQueueProducer;
