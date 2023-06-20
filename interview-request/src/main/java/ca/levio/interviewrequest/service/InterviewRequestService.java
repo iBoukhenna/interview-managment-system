@@ -1,5 +1,6 @@
 package ca.levio.interviewrequest.service;
 
+import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
 import ca.levio.interviewrequest.model.InterviewRequest;
 import ca.levio.interviewrequest.repository.InterviewRequestRepository;
 import lombok.AllArgsConstructor;
@@ -20,13 +21,13 @@ public class InterviewRequestService {
     public void createInterviewRequest(InterviewRequest interviewRequest, Integer x, String jobPosition, String levelOfExpertise) {
         log.info("create interview request service");
 
-        List<String> technicalAdvisors = technicalAdvisorService.selectEligibleTechnicalAdvisors(jobPosition, levelOfExpertise, x);
+        List<EligibleTechnicalAdvisorDto> eligibleTechnicalAdvisorDtos = technicalAdvisorService.selectEligibleTechnicalAdvisors(jobPosition, levelOfExpertise, x);
 
-        if (technicalAdvisors != null) {
-            technicalAdvisors.forEach(technicalAdvisor -> {
+        if (eligibleTechnicalAdvisorDtos != null) {
+            eligibleTechnicalAdvisorDtos.forEach(eligibleTechnicalAdvisorDto -> {
                 InterviewRequest interviewRequestTemp = InterviewRequest.builder()
                         .interview(interviewRequest.getInterview())
-                        .technicalAdvisor(technicalAdvisor)
+                        .technicalAdvisor(eligibleTechnicalAdvisorDto.getId())
                         .build();
                 interviewRequestRepository.saveAndFlush(interviewRequestTemp);
             });

@@ -19,5 +19,5 @@ spring:
     bootstrap-servers: localhost:9092
     consumer:
       group-id: interviewRequestId
-      value-deserializer: ca.levio.interviewrequest.queue.GenerateInterviewRequestDtoDeserializer
+      value-deserializer: ca.levio.interviewrequest.queue.InterviewRequestMessageEventDeserializer
       properties.spring.json.trusted.packages: "*"

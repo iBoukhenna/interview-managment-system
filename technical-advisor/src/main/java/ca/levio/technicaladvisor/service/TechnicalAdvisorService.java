@@ -1,5 +1,6 @@
 package ca.levio.technicaladvisor.service;
 
+import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
 import ca.levio.technicaladvisor.enums.LevelOfExpertise;
 import ca.levio.technicaladvisor.model.TechnicalAdvisor;
 import ca.levio.technicaladvisor.repository.TechnicalAdvisorRepository;
@@ -23,12 +24,12 @@ public class TechnicalAdvisorService {
         return technicalAdvisorRepository.findAll();
     }
 
-    public List<String> selectTechnicalAdvisorsByCriteria(String jobPosition, LevelOfExpertise levelOfExpertise, Integer x) {
+    public List<EligibleTechnicalAdvisorDto> selectTechnicalAdvisorsByCriteria(String jobPosition, LevelOfExpertise levelOfExpertise, Integer x) {
         log.info("select technical advisorss by criteria service");
-        return new ArrayList<String>() {
+        return new ArrayList<EligibleTechnicalAdvisorDto>() {
             {
-                add("ibrahim.boukhenna@levio.ca");
-                add("amine.kabouche@levio.ca");
+                add(new EligibleTechnicalAdvisorDto("1", "a", "a@gmail.com"));
+                add(new EligibleTechnicalAdvisorDto("2", "b", "b@gmail.com"));
             }
         };
     }

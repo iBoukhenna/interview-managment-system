@@ -18,7 +18,7 @@ public class KafkaMessageQueueConsumer {
     private InterviewRequestService interviewRequestService;
     private InterviewRequestMessageEventMapper interviewRequestMapper;
 
-    @KafkaListener(topics = "interviewRequest.topic", groupId = "interviewRequestId")
+    @KafkaListener(topics = "interviewRequest", groupId = "interviewRequestId")
     public void receive(InterviewRequestMessageEvent interviewRequestDto) {
         log.info("receive interivew data from interview {}", interviewRequestDto);
         InterviewRequest interviewRequest = interviewRequestMapper.interviewRequestDtoToInterviewRequest(interviewRequestDto);

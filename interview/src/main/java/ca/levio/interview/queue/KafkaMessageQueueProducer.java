@@ -13,6 +13,6 @@ public class KafkaMessageQueueProducer<T> implements MessageQueueProducer<T> {
 
     @Override
     public void send(T data) {
-        kafkaTemplate.send("interviewRequest.topic", "interviewRequest.interviewDto", data);
+        kafkaTemplate.send("interviewRequest", "interviewRequest", data);
     }
 }
