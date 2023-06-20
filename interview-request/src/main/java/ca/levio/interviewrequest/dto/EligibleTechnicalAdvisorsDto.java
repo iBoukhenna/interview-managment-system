@@ -5,6 +5,6 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class SelectTechnicalAdvisorsDto {
+public class EligibleTechnicalAdvisorsDto {
     private List<String> TechnicalAdvisors;
 }

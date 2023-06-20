@@ -1,4 +1,4 @@
-package ca.levio.queuemessagebean.dto;
+package ca.levio.commonbean.messageevent;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
-public class GenerateInterviewRequestDto{
+public class InterviewRequestMessageEvent{
     private String interview;
     private Integer x;
     private String jobPosition;

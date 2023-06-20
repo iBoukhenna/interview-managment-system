@@ -12,7 +12,7 @@
     <modules>
         <module>interview</module>
         <module>interview-request</module>
-        <module>queue-message-bean</module>
+        <module>common-bean</module>
         <module>technical-advisor</module>
         <module>openfeign-clients</module>
     </modules>

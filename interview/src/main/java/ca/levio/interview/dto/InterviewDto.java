@@ -1,9 +1,13 @@
 package ca.levio.interview.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class CreateInterviewDto {
+@AllArgsConstructor
+@NoArgsConstructor
+public class InterviewDto {
     private String applicant;
     private String recruiter;
     private String jobPosition;

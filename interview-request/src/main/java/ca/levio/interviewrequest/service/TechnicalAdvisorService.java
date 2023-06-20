@@ -16,8 +16,8 @@ public class TechnicalAdvisorService {
 
     private TechnicalAdvisorClient technicalAdvisorClient;
 
-    public List<String> getTechnicalAdvisors(String jobPosition, String levelOfExpertise, Integer x) {
-        String[] technicalAdvisors = technicalAdvisorClient.selectTechnicalAdvisors(jobPosition, levelOfExpertise, x);
+    public List<String> selectEligibleTechnicalAdvisors(String jobPosition, String levelOfExpertise, Integer x) {
+        String[] technicalAdvisors = technicalAdvisorClient.selectEligibleTechnicalAdvisors(jobPosition, levelOfExpertise, x);
         
         if (technicalAdvisors != null) {
             return Arrays.asList(technicalAdvisors);

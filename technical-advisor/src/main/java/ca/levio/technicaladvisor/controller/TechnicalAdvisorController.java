@@ -30,8 +30,8 @@ public class TechnicalAdvisorController {
         return ResponseEntity.ok().body(technicalAdvisorService.getTechnicalAdvisors());
     }
 
-    @GetMapping("/select")
-    public ResponseEntity<?> selectTechnicalAdvisors(
+    @GetMapping("/select-eligible")
+    public ResponseEntity<?> selectEligibleTechnicalAdvisors(
         @RequestParam("jobPosition") String jobPosition,
         @RequestParam("expertiseLevel") LevelOfExpertise expertiseLevel,
         @RequestParam("x") int x) {

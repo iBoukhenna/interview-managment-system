@@ -20,7 +20,7 @@ public class InterviewRequestService {
     public void createInterviewRequest(InterviewRequest interviewRequest, Integer x, String jobPosition, String levelOfExpertise) {
         log.info("create interview request service");
 
-        List<String> technicalAdvisors = technicalAdvisorService.getTechnicalAdvisors(jobPosition, levelOfExpertise, x);
+        List<String> technicalAdvisors = technicalAdvisorService.selectEligibleTechnicalAdvisors(jobPosition, levelOfExpertise, x);
 
         if (technicalAdvisors != null) {
             technicalAdvisors.forEach(technicalAdvisor -> {

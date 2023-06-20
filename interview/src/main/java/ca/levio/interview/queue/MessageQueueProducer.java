@@ -1,6 +1,6 @@
 package ca.levio.interview.queue;
 
-public interface MessageQueueProducer {
+public interface MessageQueueProducer<T> {
 
-    abstract void send(Object data);
+    abstract void send(T data);
 }

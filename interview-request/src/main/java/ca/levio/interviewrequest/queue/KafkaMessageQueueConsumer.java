@@ -3,8 +3,8 @@ package ca.levio.interviewrequest.queue;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import ca.levio.queuemessagebean.dto.GenerateInterviewRequestDto;
-import ca.levio.interviewrequest.mapper.CreateInterviewRequestMapper;
+import ca.levio.commonbean.messageevent.InterviewRequestMessageEvent;
+import ca.levio.interviewrequest.mapper.InterviewRequestMessageEventMapper;
 import ca.levio.interviewrequest.model.InterviewRequest;
 import ca.levio.interviewrequest.service.InterviewRequestService;
 import lombok.AllArgsConstructor;
@@ -16,10 +16,10 @@ import lombok.extern.slf4j.Slf4j;
 public class KafkaMessageQueueConsumer {
 
     private InterviewRequestService interviewRequestService;
-    private CreateInterviewRequestMapper interviewRequestMapper;
+    private InterviewRequestMessageEventMapper interviewRequestMapper;
 
     @KafkaListener(topics = "interviewRequest.topic", groupId = "interviewRequestId")
-    public void receive(GenerateInterviewRequestDto interviewRequestDto) {
+    public void receive(InterviewRequestMessageEvent interviewRequestDto) {
         log.info("receive interivew data from interview {}", interviewRequestDto);
         InterviewRequest interviewRequest = interviewRequestMapper.interviewRequestDtoToInterviewRequest(interviewRequestDto);
         interviewRequestService.createInterviewRequest(interviewRequest, interviewRequestDto.getX(), interviewRequestDto.getJobPosition(), interviewRequestDto.getLevelOfExpertise());

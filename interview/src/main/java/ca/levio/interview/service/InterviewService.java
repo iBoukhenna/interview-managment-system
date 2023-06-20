@@ -1,7 +1,9 @@
 package ca.levio.interview.service;
 
-import ca.levio.interview.dto.CreateInterviewDto;
-import ca.levio.interview.mapper.CreateInterviewDtoMapper;
+import ca.levio.commonbean.messageevent.InterviewRequestMessageEvent;
+import ca.levio.interview.dto.InterviewDto;
+import ca.levio.interview.mapper.InterviewDtoMapper;
+import ca.levio.interview.mapper.InterviewToInterviewRequestMessageEventMapper;
 import ca.levio.interview.model.Interview;
 import ca.levio.interview.queue.MessageQueueProducer;
 import ca.levio.interview.repository.InterviewRepository;
@@ -18,20 +20,27 @@ import org.springframework.stereotype.Service;
 public class InterviewService {
 
     private InterviewRepository interviewRepository;
-    private final MessageQueueProducer messageQueueProducer;
-    private final CreateInterviewDtoMapper createInterviewDtoMapper;
+    private final MessageQueueProducer<InterviewRequestMessageEvent> messageQueueProducer;
+    private final InterviewDtoMapper interviewDtoMapper;
+    private InterviewToInterviewRequestMessageEventMapper interviewToInterviewRequestMessageEventMapper;
 
-    public Interview createInterview(CreateInterviewDto createInterviewDto) {
-        log.info("interivew creation service {}", createInterviewDto);
-        Interview interview = createInterviewDtoMapper.interviewDtoToInterview(createInterviewDto);
-        interview = interviewRepository.saveAndFlush(interview);
-        log.info("send data of interview created {}", interview);
-        messageQueueProducer.send(interview);
+    public Interview createInterview(InterviewDto interviewDto) {
+        log.info("creation interivew service {}", interviewDto);
+        Interview interview = interviewDtoMapper.interviewDtoToInterview(interviewDto);
+        interview = saveInterview(interview);
+
+        InterviewRequestMessageEvent interviewRequestMessageEvent = interviewToInterviewRequestMessageEventMapper.interviewToInterviewRequestDto(interview);
+        messageQueueProducer.send(interviewRequestMessageEvent);
         return interview;
     }
 
+    public Interview saveInterview(Interview interview) {
+        log.info("save interivew service {}", interview);
+        return interviewRepository.saveAndFlush(interview);
+    }
+
     public List<Interview> getInterviews() {
-        log.info("get all interivews service");
+        log.info("get interivews service {}");
         return interviewRepository.findAll();
     }
 }
