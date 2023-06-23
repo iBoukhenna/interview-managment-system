@@ -6,7 +6,13 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@SpringBootApplication
+@SpringBootApplication(
+	scanBasePackages = {
+		"ca.levio.interviewrequest",
+		"ca.levio.messagequeue",
+		"ca.levio.mailmaker"
+	}
+)
 @EnableFeignClients(
 	basePackages = "ca.levio.openfeignclients"
 )

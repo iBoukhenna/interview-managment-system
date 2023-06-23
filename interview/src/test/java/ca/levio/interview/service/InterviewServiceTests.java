@@ -24,7 +24,7 @@ import ca.levio.interview.enums.TypeOfInterview;
 import ca.levio.interview.mapper.InterviewDtoMapper;
 import ca.levio.interview.mapper.InterviewToInterviewRequestMessageEventMapper;
 import ca.levio.interview.model.Interview;
-import ca.levio.interview.queue.MessageQueueProducer;
+import ca.levio.messagequeue.producer.MessageQueueProducer;
 import ca.levio.interview.repository.InterviewRepository;
 
 import java.util.UUID;
@@ -64,7 +64,7 @@ public class InterviewServiceTests {
 
         Interview interviewExpected = interviewDtoMapper.interviewDtoToInterview(interviewDto);
 
-        Mockito.doNothing().when(messageQueueProducer).send(any(InterviewRequestMessageEvent.class));
+        Mockito.doNothing().when(messageQueueProducer).send(any(InterviewRequestMessageEvent.class), InterviewRequestMessageEvent.TOPIC);
         when(interviewRepository.saveAndFlush(any(Interview.class))).thenReturn(interviewExpected);
 
         Interview interviewActual = interviewService.createInterview(interviewDto);

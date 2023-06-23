@@ -59,7 +59,19 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <artifactId>message-queue</artifactId>
+            <groupId>ca.levio</groupId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <artifactId>openfeign-clients</artifactId>
+            <groupId>ca.levio</groupId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <artifactId>mail-maker</artifactId>
             <groupId>ca.levio</groupId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>

@@ -1,16 +1,18 @@
 package ca.levio.commonbean.messageevent;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
-public class InterviewRequestMessageEvent{
+public class InterviewRequestMessageEvent extends MessageEvent {
+    public static final String TOPIC = "InterviewRequest";
     private String interview;
     private Integer x;
     private String jobPosition;
     private String levelOfExpertise;
-    
 }

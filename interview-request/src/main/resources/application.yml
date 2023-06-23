@@ -4,9 +4,9 @@ spring:
   application:
     name: interview-request
   datasource:
-    username: test
+    username: postgres
     url: jdbc:postgresql://localhost:5432/interview_request
-    password: password
+    password: spintechs
   jpa:
     properties:
       hibernate:
@@ -17,7 +17,9 @@ spring:
     show-sql: true
   kafka:
     bootstrap-servers: localhost:9092
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
       group-id: interviewRequestId
-      value-deserializer: ca.levio.interviewrequest.queue.InterviewRequestMessageEventDeserializer
+      value-deserializer: ca.levio.interviewrequest.consumer.InterviewRequestMessageEventDeserializer
       properties.spring.json.trusted.packages: "*"

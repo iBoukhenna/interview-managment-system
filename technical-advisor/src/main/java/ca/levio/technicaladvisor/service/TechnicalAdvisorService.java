@@ -28,8 +28,8 @@ public class TechnicalAdvisorService {
         log.info("select technical advisorss by criteria service");
         return new ArrayList<EligibleTechnicalAdvisorDto>() {
             {
-                add(new EligibleTechnicalAdvisorDto("1", "a", "a@gmail.com"));
-                add(new EligibleTechnicalAdvisorDto("2", "b", "b@gmail.com"));
+                add(new EligibleTechnicalAdvisorDto("1", "a", "ibrahim.9007@gmail.com"));
+                add(new EligibleTechnicalAdvisorDto("2", "b", "boukhenna.ibrahim@outlook.com"));
             }
         };
     }

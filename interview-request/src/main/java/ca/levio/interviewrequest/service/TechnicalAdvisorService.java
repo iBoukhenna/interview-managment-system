@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class TechnicalAdvisorService {
 
-    private TechnicalAdvisorClient technicalAdvisorClient;
+    private final TechnicalAdvisorClient technicalAdvisorClient;
 
     public List<EligibleTechnicalAdvisorDto> selectEligibleTechnicalAdvisors(String jobPosition, String levelOfExpertise, Integer x) {
         return technicalAdvisorClient.selectEligibleTechnicalAdvisors(jobPosition, levelOfExpertise, x);

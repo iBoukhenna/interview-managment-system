@@ -17,7 +17,7 @@ import lombok.AllArgsConstructor;
 @RequestMapping("api/v1/interviewrequests")
 public class InterviewRequestController {
 
-    private InterviewRequestService interviewRequestService;
+    private final InterviewRequestService interviewRequestService;
 
     @GetMapping
     public ResponseEntity<?> getAllInterviewRequests() {

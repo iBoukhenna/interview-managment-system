@@ -1,4 +1,4 @@
-package ca.levio.interviewrequest.queue;
+package ca.levio.interviewrequest.consumer;
 
 
 import org.springframework.kafka.support.serializer.JsonDeserializer;

@@ -1,4 +1,4 @@
-package ca.levio.interviewrequest.queue;
+package ca.levio.interviewrequest.consumer;
 
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -13,12 +13,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Component
 @AllArgsConstructor
-public class KafkaMessageQueueConsumer {
+public class InterviewRequestKafkaMessageQueueConsumer {
 
-    private InterviewRequestService interviewRequestService;
-    private InterviewRequestMessageEventMapper interviewRequestMapper;
+    private final InterviewRequestService interviewRequestService;
+    private final InterviewRequestMessageEventMapper interviewRequestMapper;
 
-    @KafkaListener(topics = "interviewRequest", groupId = "interviewRequestId")
+    @KafkaListener(topics = InterviewRequestMessageEvent.TOPIC)
     public void receive(InterviewRequestMessageEvent interviewRequestDto) {
         log.info("receive interivew data from interview {}", interviewRequestDto);
         InterviewRequest interviewRequest = interviewRequestMapper.interviewRequestDtoToInterviewRequest(interviewRequestDto);
