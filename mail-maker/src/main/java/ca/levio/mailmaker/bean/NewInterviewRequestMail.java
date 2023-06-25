@@ -1,5 +1,5 @@
 package ca.levio.mailmaker.bean;
-
+//Todo : pourquoi nommer ton package bean ?
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

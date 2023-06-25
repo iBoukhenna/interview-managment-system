@@ -30,6 +30,9 @@ public class InterviewService {
         interview = saveInterview(interview);
 
         InterviewRequestMessageEvent interviewRequestMessageEvent = interviewToInterviewRequestMessageEventMapper.interviewToInterviewRequestDto(interview);
+        //Todo : ton service a trop de responsabilités, tu lui demandes de savoir que le message doit être envoyé sur un topic.
+        //Lui il veut juste envoyer un message, là tu lui donnes la possibilités de mettre ce qu'il veut
+        //Il y a plusieurs moyens de faire autrement, je te laisse chercher et on en parlera
         messageQueueProducer.send(interviewRequestMessageEvent, InterviewRequestMessageEvent.TOPIC);
         return interview;
     }

@@ -38,6 +38,11 @@ public class InterviewRequestService {
                         .build();
                 interviewRequestRepository.saveAndFlush(interviewRequestTemp);
                 NewInterviewRequestMail newInterviewRequestMail = new NewInterviewRequestMail(eligibleTechnicalAdvisorDto.getEmail(), eligibleTechnicalAdvisorDto.getName(), "detail", "reject", "accept");
+                //Pourquoi générer un mail et passer par Kafka pour l'envoyer ?
+                //On en revient toujours à la responsabilité :
+                //Ici le role de ta méthode est de créer l'interviewRequest
+                //Une fois qu'elle l'a créé, elle va envoyer un event pour dire : Coucou j'ai créé une InterviewRequest
+                //Ensuite ceux que ca interesse vont écouter ces events et dire par exemple : Ah oui super, moi ca m'interesse, j'envoie une notification
                 NotificationMessageEvent notificationMessageEvent = mailMakerService.getNotificationContent(newInterviewRequestMail);
                 messageQueueProducer.send(notificationMessageEvent, NotificationMessageEvent.TOPIC);
             });

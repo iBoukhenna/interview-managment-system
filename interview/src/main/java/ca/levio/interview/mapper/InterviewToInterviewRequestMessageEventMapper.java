@@ -9,6 +9,7 @@ import ca.levio.interview.model.Interview;
 @Mapper(componentModel = "spring")
 public abstract class InterviewToInterviewRequestMessageEventMapper {
 
+    //Todo : pourquoi des expressions pas juste source/target
     @Mapping(target = "interview", expression = "java(interview.getId())")
     @Mapping(target = "x", expression = "java(interview.getTypeOfInterview().getX())")
     public abstract InterviewRequestMessageEvent interviewToInterviewRequestDto(Interview interview);

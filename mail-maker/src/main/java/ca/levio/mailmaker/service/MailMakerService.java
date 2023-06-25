@@ -16,9 +16,13 @@ import ca.levio.commonbean.messageevent.NotificationMessageEvent;
 
 @AllArgsConstructor
 @Service
+//Todo : nommage ! je ne comprends pas ce que fait ce service en lisant son nom
+//En tous cas c'est spécifique aux interviews
+//Et ca parle de NotificationMEssageEvent, pas de Mail
 public class MailMakerService {
     
     private final Configuration configuration;
+
 
     public NotificationMessageEvent getNotificationContent(NewInterviewRequestMail newInterviewRequestMail) {
         NotificationMessageEvent notificationMessageEvent = null;
