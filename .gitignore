@@ -36,8 +36,8 @@ interview/mvnw
 interview/.mvn/
 interview-request/mvnw
 interview-request/.mvn/
-message-queue/mvnw
-message-queue/.mvn/
+common-bean/mvnw
+common-bean/.mvn/
 notification/mvnw
 notification/.mvn/
 openfeign-service/mvnw

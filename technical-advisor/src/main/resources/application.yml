@@ -5,9 +5,9 @@ spring:
   application:
     name: technical-advisor
   datasource:
-    username: test
+    username: postgres
     url: jdbc:postgresql://localhost:5432/technical_advisor
-    password: password
+    password: spintechs
   jpa:
     properties:
       hibernate:

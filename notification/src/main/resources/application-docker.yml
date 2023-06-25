@@ -1,0 +1,19 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: notification
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: notificationId
+      value-deserializer: ca.levio.notification.consumer.NotificationMessageEventDeserializer
+      properties.spring.json.trusted.packages: "*"
+  mail:
+    username: boukhenna.ibrahim@gmail.com
+    password: **********
+    host: smtp.gmail.com
+    port: 587
+    protocol: smtp
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.starttls.enable: true

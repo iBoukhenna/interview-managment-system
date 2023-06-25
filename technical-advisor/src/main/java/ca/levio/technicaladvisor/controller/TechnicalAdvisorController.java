@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
 import ca.levio.technicaladvisor.enums.LevelOfExpertise;
 import ca.levio.technicaladvisor.service.TechnicalAdvisorService;
 
@@ -30,15 +31,15 @@ public class TechnicalAdvisorController {
         return ResponseEntity.ok().body(technicalAdvisorService.getTechnicalAdvisors());
     }
 
-    @GetMapping("/select")
-    public ResponseEntity<?> selectTechnicalAdvisors(
+    @GetMapping("/select-eligible")
+    public ResponseEntity<?> selectEligibleTechnicalAdvisors(
         @RequestParam("jobPosition") String jobPosition,
         @RequestParam("expertiseLevel") LevelOfExpertise expertiseLevel,
         @RequestParam("x") int x) {
 
         log.info("select technical advisors");
         try {
-            List<String> technicalAdvisors = technicalAdvisorService.selectTechnicalAdvisorsByCriteria(jobPosition, expertiseLevel, x);
+            List<EligibleTechnicalAdvisorDto> technicalAdvisors = technicalAdvisorService.selectTechnicalAdvisorsByCriteria(jobPosition, expertiseLevel, x);
             if (technicalAdvisors.isEmpty()) {
                 return ResponseEntity.noContent().build();
             } else {
