@@ -9,8 +9,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication(
 	scanBasePackages = {
 		"ca.levio.interviewrequest",
-		"ca.levio.messagequeue",
-		"ca.levio.mailmaker"
+		"ca.levio.messagequeue"
 	}
 )
 @EnableFeignClients(

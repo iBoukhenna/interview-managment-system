@@ -1,16 +1,15 @@
-package ca.levio.commonbean.messageevent;
+package ca.levio.mailmaker.maildtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @Getter
 @Setter
 @NoArgsConstructor
-public class NotificationMessageEvent extends MessageEvent {
-    public static final String TOPIC = "Notification";
+public class MailGeneratorResponseDto {
     private String subject;
     private String content;
     private String to;

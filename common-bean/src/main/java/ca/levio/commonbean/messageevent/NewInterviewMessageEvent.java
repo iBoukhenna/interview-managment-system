@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Getter
 @Setter
 @NoArgsConstructor
-public class InterviewRequestMessageEvent extends MessageEvent {
-    public static final String TOPIC = "InterviewRequest";
+public class NewInterviewMessageEvent extends MessageEvent {
+    public static final String TOPIC = "NewInterview";
     private String interview;
     private Integer x;
     private String jobPosition;

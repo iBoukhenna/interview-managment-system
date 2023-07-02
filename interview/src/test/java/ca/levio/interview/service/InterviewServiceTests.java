@@ -16,13 +16,12 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import ca.levio.commonbean.messageevent.InterviewRequestMessageEvent;
+import ca.levio.commonbean.messageevent.NewInterviewMessageEvent;
 import ca.levio.interview.dto.InterviewDto;
 import ca.levio.interview.enums.LevelOfExpertise;
 import ca.levio.interview.enums.StateOfInterview;
 import ca.levio.interview.enums.TypeOfInterview;
 import ca.levio.interview.mapper.InterviewDtoMapper;
-import ca.levio.interview.mapper.InterviewToInterviewRequestMessageEventMapper;
 import ca.levio.interview.model.Interview;
 import ca.levio.messagequeue.producer.MessageQueueProducer;
 import ca.levio.interview.repository.InterviewRepository;
@@ -40,9 +39,6 @@ public class InterviewServiceTests {
 
     @Mock
     private InterviewDtoMapper interviewDtoMapper;
-
-    @Mock
-    private InterviewToInterviewRequestMessageEventMapper interviewRequestMessageEventMapper;
 
     @InjectMocks
     private InterviewService interviewService;
@@ -64,7 +60,7 @@ public class InterviewServiceTests {
 
         Interview interviewExpected = interviewDtoMapper.interviewDtoToInterview(interviewDto);
 
-        Mockito.doNothing().when(messageQueueProducer).send(any(InterviewRequestMessageEvent.class), InterviewRequestMessageEvent.TOPIC);
+        Mockito.doNothing().when(messageQueueProducer).send(any(NewInterviewMessageEvent.class));
         when(interviewRepository.saveAndFlush(any(Interview.class))).thenReturn(interviewExpected);
 
         Interview interviewActual = interviewService.createInterview(interviewDto);
