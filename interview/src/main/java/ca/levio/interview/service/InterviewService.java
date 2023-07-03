@@ -1,9 +1,9 @@
 package ca.levio.interview.service;
 
-import ca.levio.commonbean.messageevent.InterviewRequestMessageEvent;
+import ca.levio.commonbean.messageevent.NewInterviewMessageEvent;
 import ca.levio.interview.dto.InterviewDto;
 import ca.levio.interview.mapper.InterviewDtoMapper;
-import ca.levio.interview.mapper.InterviewToInterviewRequestMessageEventMapper;
+import ca.levio.interview.mapper.InterviewNewInterviewMessageEventMapper;
 import ca.levio.interview.model.Interview;
 import ca.levio.messagequeue.producer.MessageQueueProducer;
 import ca.levio.interview.repository.InterviewRepository;
@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -22,16 +23,19 @@ public class InterviewService {
     private final InterviewRepository interviewRepository;
     private final MessageQueueProducer messageQueueProducer;
     private final InterviewDtoMapper interviewDtoMapper;
-    private final InterviewToInterviewRequestMessageEventMapper interviewToInterviewRequestMessageEventMapper;
+    private final InterviewNewInterviewMessageEventMapper interviewNewInterviewMessageEventMapper;
 
     public Interview createInterview(InterviewDto interviewDto) {
         log.info("creation interivew service {}", interviewDto);
         Interview interview = interviewDtoMapper.interviewDtoToInterview(interviewDto);
         interview = saveInterview(interview);
-
-        InterviewRequestMessageEvent interviewRequestMessageEvent = interviewToInterviewRequestMessageEventMapper.interviewToInterviewRequestDto(interview);
-        messageQueueProducer.send(interviewRequestMessageEvent, InterviewRequestMessageEvent.TOPIC);
+        sendMessageEventToInterviewRequest(interview);
         return interview;
+    }
+
+    public void sendMessageEventToInterviewRequest(Interview interview) {
+        NewInterviewMessageEvent newInterviewMessageEvent = interviewNewInterviewMessageEventMapper.interviewToNewInterviewMessageEvent(interview);
+        messageQueueProducer.send(newInterviewMessageEvent);
     }
 
     public Interview saveInterview(Interview interview) {
@@ -40,7 +44,13 @@ public class InterviewService {
     }
 
     public List<Interview> getInterviews() {
-        log.info("get interivews service {}");
+        log.info("get interivews service");
         return interviewRepository.findAll();
+    }
+
+    public Interview getInterview(String id) {
+        log.info("get interivew service {}", id);
+        Optional<Interview> optionalInterview = interviewRepository.findById(id);
+        return optionalInterview.isPresent() ? optionalInterview.get() : null;
     }
 }

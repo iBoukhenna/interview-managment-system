@@ -1,14 +1,15 @@
-package ca.levio.mailmaker.bean;
+package ca.levio.mailmaker.maildtos;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
-public class NewInterviewRequestMail {
-    private String to;
+public class NewInterviewRequestMailDataRequestDto extends MailDataRequestDto {
     private String technicalAdvisorName;
     private String linkInterviewDetail;
     private String linkRejectInterview;

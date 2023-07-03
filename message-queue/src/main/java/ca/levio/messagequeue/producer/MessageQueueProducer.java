@@ -4,5 +4,5 @@ import ca.levio.commonbean.messageevent.MessageEvent;
 
 public interface MessageQueueProducer {
 
-    abstract void send(MessageEvent data, String topic);
+    abstract void send(MessageEvent data);
 }

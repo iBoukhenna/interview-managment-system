@@ -7,13 +7,18 @@ spring:
     bootstrap-servers: localhost:9092
     consumer:
       group-id: notificationId
-      value-deserializer: ca.levio.notification.consumer.NotificationMessageEventDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties.spring.json.trusted.packages: "*"
   mail:
     username: boukhenna.ibrahim@gmail.com
-    password: **********
+    password: pnrmlbrndduliigb
     host: smtp.gmail.com
     port: 587
     protocol: smtp
     properties.mail.smtp.auth: true
     properties.mail.smtp.starttls.enable: true
+interview-detail-link: http://localhost:8081/api/v1/interviews/%s
+accept-interview-request-link: http://localhost:8082/api/v1/interviewrequests/%s/accept
+reject-interview-request-link: http://localhost:8082/api/v1/interviewrequests/%s/reject
+recruiter-detail-link: http://localhost:8085/api/v1/recruiters/%s
+technical-advisor-detail-link: http://localhost:8083/api/v1/technicaladvisors/%s

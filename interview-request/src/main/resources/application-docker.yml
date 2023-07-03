@@ -21,5 +21,5 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
       group-id: interviewRequestId
-      value-deserializer: ca.levio.interviewrequest.consumer.InterviewRequestMessageEventDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties.spring.json.trusted.packages: "*"
