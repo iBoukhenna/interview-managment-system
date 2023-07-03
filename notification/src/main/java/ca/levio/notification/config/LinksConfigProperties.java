@@ -15,4 +15,8 @@ public class LinksConfigProperties {
     private String acceptInterviewRequestLink;
     @Value("${reject-interview-request-link}")
     private String rejectInterviewRequestLink;
+    @Value("${recruiter-detail-link}")
+    private String recruiterDetailLink;
+    @Value("${technical-advisor-detail-link}")
+    private String technicalAdvisorDetailLink;
 }

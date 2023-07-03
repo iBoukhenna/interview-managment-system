@@ -7,11 +7,14 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
+import ca.levio.technicaladvisor.dto.TechnicalAdvisorDto;
 import ca.levio.technicaladvisor.enums.LevelOfExpertise;
 import ca.levio.technicaladvisor.service.TechnicalAdvisorService;
 
@@ -24,6 +27,12 @@ import lombok.AllArgsConstructor;
 public class TechnicalAdvisorController {
 
     private TechnicalAdvisorService technicalAdvisorService;
+
+    @PostMapping
+    public ResponseEntity<?> createTechnicalAdvisor(@RequestBody TechnicalAdvisorDto technicalAdvisorDto) {
+        log.info("new technical advisor creation {}", technicalAdvisorDto);
+        return new ResponseEntity<>(technicalAdvisorService.createTechnicalAdvisor(technicalAdvisorDto), HttpStatus.CREATED);
+    }
 
     @GetMapping
     public ResponseEntity<?> getAllTechnicalAdvisors() {

@@ -17,8 +17,9 @@ public class Skill {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private JobPosition jobPosition;
+    private String jobPosition;
+
+    private String lineOfBusiness;
 
     private LevelOfExpertise levelOfExpertise;
     

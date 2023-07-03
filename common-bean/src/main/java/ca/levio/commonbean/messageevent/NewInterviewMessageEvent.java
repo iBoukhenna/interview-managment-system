@@ -12,6 +12,9 @@ import lombok.NoArgsConstructor;
 public class NewInterviewMessageEvent extends MessageEvent {
     public static final String TOPIC = "NewInterview";
     private String interview;
+    private String recruiter;
+    private String recruiterName;
+    private String recruiterEmail;
     private Integer x;
     private String jobPosition;
     private String levelOfExpertise;

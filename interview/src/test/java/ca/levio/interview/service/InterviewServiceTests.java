@@ -55,7 +55,7 @@ public class InterviewServiceTests {
     @Test
     void createInterviewTest() {
         InterviewDto interviewDto = new InterviewDto("Ahmed@gmail.com"
-            , "Amine@levio.ca", "Java Developer"
+            , "A01", "Amine@levio.ca", "Amine", "Java Developer"
             , LevelOfExpertise.INTERMEDIATE.getCode(), TypeOfInterview.NOT_URGENT.getCode());
 
         Interview interviewExpected = interviewDtoMapper.interviewDtoToInterview(interviewDto);
@@ -69,7 +69,7 @@ public class InterviewServiceTests {
 
     @Test
     void saveInterviewTest() {
-        Interview interviewExpected = new Interview(UUID.randomUUID().toString(), "aa@gmail.com", "ra@levio.ca", "Java Developer", StateOfInterview.OPEN, LevelOfExpertise.SENIOR, TypeOfInterview.NOT_URGENT);
+        Interview interviewExpected = new Interview(UUID.randomUUID().toString(), "aa@gmail.com", "RA01", "ra@levio.ca", "RA", "Java Developer", StateOfInterview.OPEN, LevelOfExpertise.SENIOR, TypeOfInterview.NOT_URGENT);
         when(interviewRepository.saveAndFlush(any(Interview.class))).thenReturn(interviewExpected);
         Interview interviewActual = interviewService.saveInterview(interviewExpected);
         assertEquals(interviewExpected, interviewActual);
@@ -78,10 +78,10 @@ public class InterviewServiceTests {
     @Test
     public void getInterviewsTest() {
         List<Interview> interviewsExpected = new ArrayList();
-        interviewsExpected.add(new Interview(UUID.randomUUID().toString(), "aa@gmail.com", "ra@levio.ca", "Java Developer", StateOfInterview.OPEN, LevelOfExpertise.SENIOR, TypeOfInterview.NOT_URGENT));
-        interviewsExpected.add(new Interview(UUID.randomUUID().toString(), "ab@gmail.com", "rb@levio.ca", ".NET Developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.URGENT));
-        interviewsExpected.add(new Interview(UUID.randomUUID().toString(), "ac@gmail.com", "rc@levio.ca", "Java Developer", StateOfInterview.OPEN, LevelOfExpertise.JUNIOR, TypeOfInterview.NOT_URGENT));
-        interviewsExpected.add(new Interview(UUID.randomUUID().toString(), "ad@gmail.com", "rd@levio.ca", ".NET Developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.URGENT));
+        interviewsExpected.add(new Interview(UUID.randomUUID().toString(), "aa@gmail.com", "RA01", "ra@levio.ca", "RA", "Java Developer", StateOfInterview.OPEN, LevelOfExpertise.SENIOR, TypeOfInterview.NOT_URGENT));
+        interviewsExpected.add(new Interview(UUID.randomUUID().toString(), "ab@gmail.com", "RB01", "rb@levio.ca", "RB", ".NET Developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.URGENT));
+        interviewsExpected.add(new Interview(UUID.randomUUID().toString(), "ac@gmail.com", "RC01", "rc@levio.ca", "RC", "Java Developer", StateOfInterview.OPEN, LevelOfExpertise.JUNIOR, TypeOfInterview.NOT_URGENT));
+        interviewsExpected.add(new Interview(UUID.randomUUID().toString(), "ad@gmail.com", "RD01", "rd@levio.ca", "RD", ".NET Developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.URGENT));
         when(interviewRepository.findAll()).thenReturn(interviewsExpected);
         List<Interview> interviewsActual = interviewService.getInterviews();
         assertEquals(interviewsExpected, interviewsActual);

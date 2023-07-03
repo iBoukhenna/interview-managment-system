@@ -7,9 +7,9 @@
     <title>${mailDataDto.subject}</title>
 </head>
 <body>
-<div style="margin-top: 10px">Cher(e), ${mailDataDto.technicalAdvisor}</div>
-<div>Nous tennons à vous informer que nous avons reçu une réponse positive de la part d'un référent technique concernant l'entrevue. Pour obtenir de plus amples détails, veuillez cliquer sur le lien suivant : <b>${mailDataDto.detail}</b></div>
-<div>Pour obtenir de plus amples informations sur le référent technique qui mènera l'entrevue, veuillez consulter le profil de : <b>${mailDataDto.technicalAdvisor}</b></div>
+<div style="margin-top: 10px">Cher(e), ${mailDataDto.recruiterName}</div>
+<div>Nous tennons à vous informer que nous avons reçu une réponse positive de la part d'un référent technique concernant l'entrevue. Pour obtenir de plus amples détails, veuillez cliquer sur le lien suivant : <b>${mailDataDto.linkInterviewDetail}</b></div>
+<div>Pour obtenir de plus amples informations sur le référent technique qui mènera l'entrevue, veuillez consulter le profil de : <b>${mailDataDto.linkTechnicalAdvisorDetail}</b></div>
 <br/>
 <div>Cordialement.</div>
 </body>

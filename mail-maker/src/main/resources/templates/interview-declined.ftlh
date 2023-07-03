@@ -8,8 +8,7 @@
 </head>
 <body>
 <div style="margin-top: 10px">Cher(e), ${mailDataDto.technicalAdvisorName}</div>
-<div>Nous sommes ravis de vous informer que vous avez été attribué(e) à l'entrevue que vous avez accepté. Pour obtenir de plus amples détails, veuillez cliquer sur le lien suivant : <b>${mailDataDto.linkInterviewDetail}</b></div>
-<div>Pour obtenir de plus amples informations sur le recruteur, veuillez consulter le profil de : <b>${mailDataDto.linkRecruiterDetail}</b></div>
+<div>Nous tennons à vous informer que la demande de l'entrevue que vous avez accepté est annulé. Pour obtenir de plus amples détails, veuillez cliquer sur le lien suivant : <b>${mailDataDto.linkInterviewDetail}</b></div>
 <br/>
 <div>Cordialement.</div>
 </body>

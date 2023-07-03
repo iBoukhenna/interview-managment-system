@@ -30,6 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 public class InterviewControllerTests {
 
@@ -61,7 +62,7 @@ public class InterviewControllerTests {
     @Test
     void shouldCreateInterview() throws Exception {
         InterviewDto interviewDto = new InterviewDto("Ahmed@gmail.com"
-            , "Amine@levio.ca", "Java Developer"
+            , UUID.randomUUID().toString(), "Amine@levio.ca", "Amine", "Java Developer"
             , LevelOfExpertise.INTERMEDIATE.getCode(), TypeOfInterview.NOT_URGENT.getCode());
 
         Interview interivew = interviewDtoMapper.interviewDtoToInterview(interviewDto);
@@ -79,9 +80,9 @@ public class InterviewControllerTests {
     @Test
     void shouldReturnListOfTutorials() throws Exception {
         List<Interview> interviews = new ArrayList<>(
-        Arrays.asList(new Interview(null, "a@gmail.com", "a@levio.ca", "Java developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.NOT_URGENT),
-            new Interview(null, "b@gmail.com", "b@levio.ca", "Java developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.URGENT),
-            new Interview(null, "c@gmail.com", "c@levio.ca", "Java developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.NOT_URGENT)));
+        Arrays.asList(new Interview(UUID.randomUUID().toString(), "a@gmail.com", "a01", "a@levio.ca", "ra", "Java developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.NOT_URGENT),
+            new Interview(UUID.randomUUID().toString(), "b@gmail.com", "b01", "b@levio.ca", "rb", "Java developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.URGENT),
+            new Interview(UUID.randomUUID().toString(), "c@gmail.com", "c01", "c@levio.ca", "rc", "Java developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.NOT_URGENT)));
 
         when(interviewService.getInterviews()).thenReturn(interviews);
         mockMvc.perform(get("/api/v1/interviews"))
