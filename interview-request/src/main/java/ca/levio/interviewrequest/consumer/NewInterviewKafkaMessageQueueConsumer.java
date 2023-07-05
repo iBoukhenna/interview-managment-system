@@ -22,6 +22,6 @@ public class NewInterviewKafkaMessageQueueConsumer {
     public void receive(NewInterviewMessageEvent newInterviewMessageEvent) {
         log.info("receive interivew data from interview {}", newInterviewMessageEvent);
         InterviewRequest interviewRequest = interviewRequestNewInterviewMessageEventMapper.NewInterviewMessageEventToInterviewRequest(newInterviewMessageEvent);
-        interviewRequestService.createInterviewRequest(interviewRequest, newInterviewMessageEvent.getX(), newInterviewMessageEvent.getJobPosition(), newInterviewMessageEvent.getLevelOfExpertise());
+        interviewRequestService.createInterviewRequest(interviewRequest, newInterviewMessageEvent.getNumberOfTechnicalAdvisorByBatch(), newInterviewMessageEvent.getJobPosition(), newInterviewMessageEvent.getLevelOfExpertise());
     }
 }

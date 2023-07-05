@@ -29,10 +29,9 @@ public class InterviewRequestService {
     private final TechnicalAdvisorService technicalAdvisorService;
     private final MessageQueueProducer messageQueueProducer;
 
-    public void createInterviewRequest(InterviewRequest interviewRequest, Integer x, String jobPosition, String levelOfExpertise) {
+    public void createInterviewRequest(InterviewRequest interviewRequest, Integer numberOfTechnicalAdvisorByBatch, String jobPosition, String levelOfExpertise) {
         log.info("create interview request service");
-
-        List<EligibleTechnicalAdvisorDto> eligibleTechnicalAdvisorDtos = technicalAdvisorService.selectEligibleTechnicalAdvisors(jobPosition, levelOfExpertise, x);
+        List<EligibleTechnicalAdvisorDto> eligibleTechnicalAdvisorDtos = technicalAdvisorService.selectEligibleTechnicalAdvisors(jobPosition, levelOfExpertise, interviewRequest.getInterview(), numberOfTechnicalAdvisorByBatch);
 
         if (eligibleTechnicalAdvisorDtos != null) {
             eligibleTechnicalAdvisorDtos.forEach(eligibleTechnicalAdvisorDto -> {
@@ -44,12 +43,16 @@ public class InterviewRequestService {
                         .technicalAdvisorEmail(eligibleTechnicalAdvisorDto.getEmail())
                         .technicalAdvisorName(eligibleTechnicalAdvisorDto.getName())
                         .build();
-                interviewRequestTemp = interviewRequestRepository.saveAndFlush(interviewRequestTemp);
-                sendNewInterviewRequestMessageEvent(interviewRequestTemp);
+                createInterviewRequest(interviewRequestTemp);
             });
         } else {
             log.info("Aucun Technical Advisor trouvé.");
         }
+    }
+
+    protected void createInterviewRequest(InterviewRequest interviewRequest) {
+        interviewRequest = interviewRequestRepository.saveAndFlush(interviewRequest);
+        sendNewInterviewRequestMessageEvent(interviewRequest);
     }
 
     public void sendNewInterviewRequestMessageEvent(InterviewRequest interviewRequest) {
@@ -100,7 +103,8 @@ public class InterviewRequestService {
     }
 
     public boolean interviewAlreadyAccepted(String interview) {
-        return interviewRequestRepository.existsByInterviewAndStatusOfRequest(interview, StatusOfRequest.ACCEPTED);
+        // TODO : use UUID
+        return interviewRequestRepository.existsByInterviewAndStatusOfRequestAndStatusOfRequestOrStatusOfRequest(interview, StatusOfRequest.ACCEPTED, StatusOfRequest.ASSIGNED);
     }
 
     public void rejectInterviewRequest(String id) {

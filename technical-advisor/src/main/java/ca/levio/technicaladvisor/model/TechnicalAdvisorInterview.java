@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ca.levio.technicaladvisor.enums.LevelOfExpertise;
 import jakarta.persistence.*;
 
 @Data
@@ -12,13 +11,13 @@ import jakarta.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Skill {
+public class TechnicalAdvisorInterview {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private JobPosition jobPosition;
+    private String interview;
 
-    private LevelOfExpertise levelOfExpertise;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private TechnicalAdvisor technicalAdvisor;
 }

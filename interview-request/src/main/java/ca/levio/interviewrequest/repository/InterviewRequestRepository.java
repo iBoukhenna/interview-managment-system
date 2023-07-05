@@ -9,7 +9,7 @@ import ca.levio.interviewrequest.model.InterviewRequest;
 
 public interface InterviewRequestRepository extends JpaRepository<InterviewRequest, String> {
 
-    boolean existsByInterviewAndStatusOfRequest(String interview, StatusOfRequest statusOfRequest);
+    boolean existsByInterviewAndStatusOfRequestAndStatusOfRequestOrStatusOfRequest(String interview, StatusOfRequest statusOfRequest1, StatusOfRequest statusOfRequest2);
 
     Optional<InterviewRequest> findFirstByInterviewAndStatusOfRequestOrderByAcceptedAtAsc(String interivew, StatusOfRequest statusOfRequest);
 }

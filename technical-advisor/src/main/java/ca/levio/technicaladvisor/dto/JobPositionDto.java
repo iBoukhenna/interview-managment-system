@@ -1,9 +1,10 @@
 package ca.levio.technicaladvisor.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-public class SkillDto {
+@AllArgsConstructor
+public class JobPositionDto {
     private String jobPositionLabel;
-    private String levelOfExpertise;
 }

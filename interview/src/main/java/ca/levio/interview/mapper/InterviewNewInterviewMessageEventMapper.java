@@ -10,10 +10,10 @@ import ca.levio.interview.model.Interview;
 public abstract class InterviewNewInterviewMessageEventMapper {
 
     @Mapping(target = "interview", source = "interview.id")
-    @Mapping(target = "x", source = "interview.typeOfInterview.x")
+    @Mapping(target = "numberOfTechnicalAdvisorByBatch", source = "interview.typeOfInterview.numberOfTechnicalAdvisorByBatch")
     public abstract NewInterviewMessageEvent interviewToNewInterviewMessageEvent(Interview interview);
 
     @Mapping(target = "id", source = "newInterviewMessageEvent.interview")
-    @Mapping(target = "typeOfInterview", expression = "java(ca.levio.interview.enums.TypeOfInterview.getTypeOfInterviewFromX(newInterviewMessageEvent.getX()))")
+    @Mapping(target = "typeOfInterview", expression = "java(ca.levio.interview.enums.TypeOfInterview.getTypeOfInterviewFromNumberOfTechnicalAdvisorByBatch(newInterviewMessageEvent.getNumberOfTechnicalAdvisorByBatch()))")
     public abstract Interview NewInterviewMessageEventToInterview(NewInterviewMessageEvent newInterviewMessageEvent);
 }

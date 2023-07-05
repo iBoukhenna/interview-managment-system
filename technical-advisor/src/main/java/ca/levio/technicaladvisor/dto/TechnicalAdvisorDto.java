@@ -9,5 +9,5 @@ public class TechnicalAdvisorDto {
 
     private String name;
     private String email;
-    private List<SkillDto> skills;
+    private List<SkillDto> skillDtos;
 }

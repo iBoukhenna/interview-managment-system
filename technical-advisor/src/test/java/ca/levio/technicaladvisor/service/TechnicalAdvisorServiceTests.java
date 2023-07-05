@@ -1,46 +1,56 @@
-package ca.levio.technicaladvisor;
+package ca.levio.technicaladvisor.service;
 
-import java.util.ArrayList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
 import ca.levio.technicaladvisor.model.JobPosition;
 import ca.levio.technicaladvisor.model.Skill;
 import ca.levio.technicaladvisor.model.TechnicalAdvisor;
-import ca.levio.technicaladvisor.service.JobPositionService;
-import ca.levio.technicaladvisor.service.SkillService;
-import ca.levio.technicaladvisor.service.TechnicalAdvisorService;
+import ca.levio.technicaladvisor.repository.JobPositionRepository;
+import ca.levio.technicaladvisor.repository.SkillRepository;
+import ca.levio.technicaladvisor.repository.TechnicalAdvisorInterviewRepository;
+import ca.levio.technicaladvisor.repository.TechnicalAdvisorRepository;
+
+import java.util.UUID;
 
 import static ca.levio.technicaladvisor.enums.LevelOfExpertise.*;
 
-@SpringBootApplication
-public class TechnicalAdvisorApplication implements CommandLineRunner {
+@SpringBootTest
+public class TechnicalAdvisorServiceTests {
 
-	@Autowired
-	private TechnicalAdvisorService technicalAdvisorService;
-	@Autowired
-	private JobPositionService jobPositionService;
+    @Autowired
+    private TechnicalAdvisorInterviewService technicalAdvisorInterviewService;
 
-	@Autowired
-	private SkillService skillService;
+    @Autowired
+    private TechnicalAdvisorService technicalAdvisorService;
 
-	public static void main(String[] args) {
-		SpringApplication.run(TechnicalAdvisorApplication.class, args);
-	}
+    @Autowired
+    private JobPositionService jobPositionService;
 
-	 @Override
-    public void run(String... args) throws Exception {
+    @Autowired
+    private SkillService skillService;
+
+    @BeforeEach
+    public void setup() {
+        technicalAdvisorInterviewService.deleteAll();
+        technicalAdvisorService.deleteAll();
+        skillService.deleteAll();
+        jobPositionService.deleteAll();
+
+
 		List<JobPosition> jobPositions = Arrays.asList(
          new JobPosition(UUID.randomUUID().toString(),"Scrum Master", "Agile", "Scrum",3),
          new JobPosition(UUID.randomUUID().toString(),"Developeur Java", "IL", "Java",1),
          new JobPosition(UUID.randomUUID().toString(),"Team Lead Java", "IL", "Java",2),
-         new JobPosition(UUID.randomUUID().toString(),"Architecte Java", "IL", "Java",3),
          new JobPosition(UUID.randomUUID().toString(),"Developeur .NET", "IL", ".NET",1)
 		);
 		jobPositionService.saveAllJobPositions(jobPositions);
@@ -71,5 +81,34 @@ public class TechnicalAdvisorApplication implements CommandLineRunner {
 			new TechnicalAdvisor(UUID.randomUUID().toString(), "ibrahim boukhenna", "ibrahim.boukhenna@levio.ca",  Arrays.asList(skillTeamLeadJavaSkilled))
 		);
         technicalAdvisorService.saveAllTechnicalAdvisors(technicalAdvisors);
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
+
+    @Test
+    void selectTechnicalAdvisorsByCriteriaAllTest() {
+        List<EligibleTechnicalAdvisorDto> eligibleTechnicalAdvisorDtos = technicalAdvisorService.selectEligibleTechnicalAdvisors("Developeur Java", JUNIOR, "1", 5);
+        int interviewActual = eligibleTechnicalAdvisorDtos.size();
+        int interviewExpected = 5;
+        assertEquals(interviewExpected, interviewActual);
+    }
+
+    @Test
+    void selectTechnicalAdvisorsByCriteriaLevelTest() {
+        List<EligibleTechnicalAdvisorDto> eligibleTechnicalAdvisorDtos = technicalAdvisorService.selectEligibleTechnicalAdvisors("Developeur Java", INTERMEDIATE, "1", 5);
+        int interviewActual = eligibleTechnicalAdvisorDtos.size();
+        int interviewExpected = 2;
+        assertEquals(interviewExpected, interviewActual);
+    }
+
+    @Test
+    void selectTechnicalAdvisorsByCriteriaLimitTest() {
+        List<EligibleTechnicalAdvisorDto> eligibleTechnicalAdvisorDtos = technicalAdvisorService.selectEligibleTechnicalAdvisors("Developeur Java", JUNIOR, "1", 3);
+        eligibleTechnicalAdvisorDtos = technicalAdvisorService.selectEligibleTechnicalAdvisors("Developeur Java", JUNIOR, "1", 3);
+        int interviewActual = eligibleTechnicalAdvisorDtos.size();
+        int interviewExpected = 2;
+        assertEquals(interviewExpected, interviewActual);
     }
 }

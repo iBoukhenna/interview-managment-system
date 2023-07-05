@@ -44,11 +44,12 @@ public class TechnicalAdvisorController {
     public ResponseEntity<?> selectEligibleTechnicalAdvisors(
         @RequestParam("jobPosition") String jobPosition,
         @RequestParam("expertiseLevel") LevelOfExpertise expertiseLevel,
-        @RequestParam("x") int x) {
+        @RequestParam("interview") String interview,
+        @RequestParam("numberOfTechnicalAdvisorByBatch") int numberOfTechnicalAdvisorByBatch) {
 
         log.info("select technical advisors");
         try {
-            List<EligibleTechnicalAdvisorDto> technicalAdvisors = technicalAdvisorService.selectTechnicalAdvisorsByCriteria(jobPosition, expertiseLevel, x);
+            List<EligibleTechnicalAdvisorDto> technicalAdvisors = technicalAdvisorService.selectEligibleTechnicalAdvisors(jobPosition, expertiseLevel, interview, numberOfTechnicalAdvisorByBatch);
             if (technicalAdvisors.isEmpty()) {
                 return ResponseEntity.noContent().build();
             } else {

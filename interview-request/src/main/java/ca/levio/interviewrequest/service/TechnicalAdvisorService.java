@@ -15,7 +15,7 @@ public class TechnicalAdvisorService {
 
     private final TechnicalAdvisorClient technicalAdvisorClient;
 
-    public List<EligibleTechnicalAdvisorDto> selectEligibleTechnicalAdvisors(String jobPosition, String levelOfExpertise, Integer x) {
-        return technicalAdvisorClient.selectEligibleTechnicalAdvisors(jobPosition, levelOfExpertise, x);
+    public List<EligibleTechnicalAdvisorDto> selectEligibleTechnicalAdvisors(String jobPosition, String levelOfExpertise, String interview, Integer numberOfTechnicalAdvisorByBatch) {
+        return technicalAdvisorClient.selectEligibleTechnicalAdvisors(jobPosition, levelOfExpertise, interview, numberOfTechnicalAdvisorByBatch);
     }
 }

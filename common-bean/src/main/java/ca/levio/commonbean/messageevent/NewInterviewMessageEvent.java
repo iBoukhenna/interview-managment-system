@@ -15,7 +15,7 @@ public class NewInterviewMessageEvent extends MessageEvent {
     private String recruiter;
     private String recruiterName;
     private String recruiterEmail;
-    private Integer x;
+    private Integer numberOfTechnicalAdvisorByBatch;
     private String jobPosition;
     private String levelOfExpertise;
 }

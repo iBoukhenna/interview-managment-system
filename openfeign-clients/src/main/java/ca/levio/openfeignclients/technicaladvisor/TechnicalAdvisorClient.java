@@ -15,6 +15,7 @@ public interface TechnicalAdvisorClient {
     List<EligibleTechnicalAdvisorDto> selectEligibleTechnicalAdvisors(
         @RequestParam("jobPosition") String jobPosition,
         @RequestParam("expertiseLevel") String expertiseLevel,
-        @RequestParam("x") int x);
+        @RequestParam("interview") String interview,
+        @RequestParam("numberOfTechnicalAdvisorByBatch") int numberOfTechnicalAdvisorByBatch);
 
 }

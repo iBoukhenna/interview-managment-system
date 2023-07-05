@@ -5,19 +5,19 @@ public enum TypeOfInterview {
     NOT_URGENT("NOT_URGENT", 2, 5);
     
     private final String code;
-    private final int x;
-    private final int y;
+    private final int numberOfTechnicalAdvisorByBatch;
+    private final int delayBeforeRetrying;
     
-    TypeOfInterview(String code, int x, int y) {
+    TypeOfInterview(String code, int numberOfTechnicalAdvisorByBatch, int delayBeforeRetrying) {
         this.code = code;
-        this.x = x;
-        this.y = y;
+        this.numberOfTechnicalAdvisorByBatch = numberOfTechnicalAdvisorByBatch;
+        this.delayBeforeRetrying = delayBeforeRetrying;
     }
 
-    public static TypeOfInterview getTypeOfInterviewFromX(int x) {
+    public static TypeOfInterview getTypeOfInterviewFromNumberOfTechnicalAdvisorByBatch(int numberOfTechnicalAdvisorByBatch) {
         TypeOfInterview typeOfInterview = null;
         for (TypeOfInterview type : TypeOfInterview.values()) {
-            if (type.getX() == x) {
+            if (type.getNumberOfTechnicalAdvisorByBatch() == numberOfTechnicalAdvisorByBatch) {
                 typeOfInterview = type;
                 break;
             }
@@ -29,12 +29,12 @@ public enum TypeOfInterview {
         return code;
     }
 
-    public int getX() {
-        return x;
+    public int getNumberOfTechnicalAdvisorByBatch() {
+        return numberOfTechnicalAdvisorByBatch;
     }
 
-    public int getY() {
-        return y;
+    public int getDelayBeforeRetrying() {
+        return delayBeforeRetrying;
     }
 
 }
