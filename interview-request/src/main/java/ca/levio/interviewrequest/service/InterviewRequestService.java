@@ -13,6 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -104,7 +105,7 @@ public class InterviewRequestService {
 
     public boolean interviewAlreadyAccepted(String interview) {
         // TODO : use UUID
-        return interviewRequestRepository.existsByInterviewAndStatusOfRequestAndStatusOfRequestOrStatusOfRequest(interview, StatusOfRequest.ACCEPTED, StatusOfRequest.ASSIGNED);
+        return interviewRequestRepository.existsByInterviewAndStatusOfRequestIn(interview, Arrays.asList(StatusOfRequest.ACCEPTED, StatusOfRequest.ASSIGNED));
     }
 
     public void rejectInterviewRequest(String id) {

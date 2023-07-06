@@ -64,11 +64,11 @@ public class TechnicalAdvisorApplication implements CommandLineRunner {
 		skillService.saveAllSkills(skills);
 
 		List<TechnicalAdvisor> technicalAdvisors = Arrays.asList(
-			new TechnicalAdvisor(UUID.randomUUID().toString(), "rachad bensalem", "rachad.bensalem@levio.ca",  Arrays.asList(skillDevNetSkilled, skillDevJavaIntermediate)),
-			new TechnicalAdvisor(UUID.randomUUID().toString(), "billel belhadj", "billel.belhadj@levio.ca",  Arrays.asList(skillScrumMasterSkilled, skillDevJavaIntermediate)),
-			new TechnicalAdvisor(UUID.randomUUID().toString(), "ahmed hamada", "ahmed.hamada@levio.ca",  Arrays.asList(skillDevJavaSenior)),
-			new TechnicalAdvisor(UUID.randomUUID().toString(), "amine kabouche", "amine.kabouche@levio.ca",  Arrays.asList(skillDevJavaIntermediate)),
-			new TechnicalAdvisor(UUID.randomUUID().toString(), "ibrahim boukhenna", "ibrahim.boukhenna@levio.ca",  Arrays.asList(skillTeamLeadJavaSkilled))
+			new TechnicalAdvisor(UUID.randomUUID().toString(), "rachad bensalem", "ibrahim.9007@gmail.com",  Arrays.asList(skillDevNetSkilled, skillDevJavaIntermediate)),
+			new TechnicalAdvisor(UUID.randomUUID().toString(), "billel belhadj", "ibrahim.boukhenna@gmail.com",  Arrays.asList(skillScrumMasterSkilled, skillDevJavaIntermediate)),
+			new TechnicalAdvisor(UUID.randomUUID().toString(), "ahmed hamada", "boukhenna.ibrahim@gmail.com",  Arrays.asList(skillDevJavaSenior)),
+			new TechnicalAdvisor(UUID.randomUUID().toString(), "amine kabouche", "boukhenna.ibrahim@outlook.com",  Arrays.asList(skillDevJavaIntermediate)),
+			new TechnicalAdvisor(UUID.randomUUID().toString(), "ibrahim boukhenna", "ibrahim.boukhenna@outlook.com",  Arrays.asList(skillTeamLeadJavaSkilled))
 		);
         technicalAdvisorService.saveAllTechnicalAdvisors(technicalAdvisors);
     }
