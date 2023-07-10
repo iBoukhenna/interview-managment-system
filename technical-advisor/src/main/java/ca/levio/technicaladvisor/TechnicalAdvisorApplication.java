@@ -34,7 +34,7 @@ public class TechnicalAdvisorApplication implements CommandLineRunner {
 		SpringApplication.run(TechnicalAdvisorApplication.class, args);
 	}
 
-	 @Override
+	@Override
     public void run(String... args) throws Exception {
 		List<JobPosition> jobPositions = Arrays.asList(
          new JobPosition(UUID.randomUUID().toString(),"Scrum Master", "Agile", "Scrum",3),

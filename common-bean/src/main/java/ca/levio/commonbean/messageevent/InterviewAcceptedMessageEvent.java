@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class InterviewAcceptedMessageEvent extends MessageEvent {
-    public static final String TOPIC = "InterviewAccepted";
+    public static final String TOPIC = "InterviewAcceptedMessageEvent";
     private String technicalAdvisorEmail;
     private String technicalAdvisorName;
     private String interview;

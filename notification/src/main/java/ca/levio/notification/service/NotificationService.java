@@ -7,16 +7,19 @@ import ca.levio.commonbean.messageevent.InterviewAlreadyAcceptedMessageEvent;
 import ca.levio.commonbean.messageevent.InterviewAssignedMessageEvent;
 import ca.levio.commonbean.messageevent.InterviewDeclinedMessageEvent;
 import ca.levio.commonbean.messageevent.NewInterviewRequestMessageEvent;
+import ca.levio.commonbean.messageevent.NoAvailibleTechnicalAdvisorMessageEvent;
 import ca.levio.mailmaker.maildtos.InterviewAcceptedMailDataRequestDto;
 import ca.levio.mailmaker.maildtos.InterviewAlreadyAcceptedMailDataRequestDto;
 import ca.levio.mailmaker.maildtos.InterviewAssignedMailDataRequestDto;
 import ca.levio.mailmaker.maildtos.InterviewDeclinedMailDataRequestDto;
 import ca.levio.mailmaker.maildtos.MailGeneratorResponseDto;
 import ca.levio.mailmaker.maildtos.NewInterviewRequestMailDataRequestDto;
+import ca.levio.mailmaker.maildtos.NoAvailibleTechnicalAdvisorMailDataRequestDto;
 import ca.levio.mailmaker.service.MailGeneratorService;
 import ca.levio.notification.config.LinksConfigProperties;
 import ca.levio.notification.dto.NotificationDto;
 import ca.levio.notification.mapper.NewInterviewRequestMessageEventMailDataDtoMapper;
+import ca.levio.notification.mapper.NoAvailibleTechnicalAdvisorMessageEventMailDataDtoMapper;
 import ca.levio.notification.mapper.InterviewAcceptedMessageEventMailDataDtoMapper;
 import ca.levio.notification.mapper.InterviewAlreadyAcceptedMessageEventMailDataDtoMapper;
 import ca.levio.notification.mapper.InterviewAssignedMessageEventMailDataDtoMapper;
@@ -37,6 +40,7 @@ public class NotificationService {
     private final InterviewAlreadyAcceptedMessageEventMailDataDtoMapper interviewAlreadyAcceptedMessageEventMailDataDtoMapper;
     private final InterviewAssignedMessageEventMailDataDtoMapper interviewAssignedMessageEventMailDataDtoMapper;
     private final InterviewDeclinedMessageEventMailDataDtoMapper interviewDeclinedMessageEventMailDataDtoMapper;
+    private final NoAvailibleTechnicalAdvisorMessageEventMailDataDtoMapper noAvailibleTechnicalAdvisorMessageEventMailDataDtoMapper;
     private final LinksConfigProperties linksConfigProperties;
 
     public void sendNewInterviewRequestNotification(NewInterviewRequestMessageEvent newInterviewRequestMessageEvent) {
@@ -74,5 +78,10 @@ public class NotificationService {
         notificationSender.send(notificationDto);
     }
 
-
+    public void sendNoAvailibleTechnicalAdvisorNotification(NoAvailibleTechnicalAdvisorMessageEvent noAvailibleTechnicalAdvisorMessageEvent) {
+        NoAvailibleTechnicalAdvisorMailDataRequestDto noAvailibleTechnicalAdvisorMailDataRequestDto =  noAvailibleTechnicalAdvisorMessageEventMailDataDtoMapper.noAvailibleTechnicalAdvisorMessageEventToNoAvailibleTechnicalAdvisorMailDataRequestDto(noAvailibleTechnicalAdvisorMessageEvent, linksConfigProperties);
+        MailGeneratorResponseDto mailGeneratorResponseDto = mailGeneratorService.generateNoAvailibleTechnicalAdvisorMailResponseDto(noAvailibleTechnicalAdvisorMailDataRequestDto);
+        NotificationDto notificationDto = notificationDtoMailGeneratorResponseDtoMapper.mailGeneratorResponseDtoToNotificationDto(mailGeneratorResponseDto);
+        notificationSender.send(notificationDto);
+    }
 }

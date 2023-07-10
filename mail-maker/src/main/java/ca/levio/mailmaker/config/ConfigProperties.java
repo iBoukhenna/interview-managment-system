@@ -39,4 +39,10 @@ public class ConfigProperties {
     @Value("${interview-declined.subject}")
     private String interviewDeclinedSubject;
 
+    @Value("${no-availible-technical-advisor.template}")
+    private String noAvailibleTechnicalAdvisorTemplate;
+
+    @Value("${no-availible-technical-advisor.subject}")
+    private String noAvailibleTechnicalAdvisorSubject;
+
 }

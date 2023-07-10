@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import ca.levio.interview.dto.InterviewDto;
+import ca.levio.commonbean.dto.InterviewDto;
 import ca.levio.interview.enums.LevelOfExpertise;
 import ca.levio.interview.enums.StateOfInterview;
 import ca.levio.interview.enums.TypeOfInterview;
@@ -61,9 +61,9 @@ public class InterviewControllerTests {
 
     @Test
     void shouldCreateInterview() throws Exception {
-        InterviewDto interviewDto = new InterviewDto("Ahmed@gmail.com"
-            , UUID.randomUUID().toString(), "Amine@levio.ca", "Amine", "Java Developer"
-            , LevelOfExpertise.INTERMEDIATE.getCode(), TypeOfInterview.NOT_URGENT.getCode());
+        InterviewDto interviewDto = new InterviewDto("1", "ibrahim.9007@gmail.com"
+            , UUID.randomUUID().toString(), "ibrahim.9007@gmail.com", "Amine", "Java Developer"
+            , LevelOfExpertise.INTERMEDIATE.getCode(), TypeOfInterview.NOT_URGENT.getCode(), StateOfInterview.OPEN.toString(), 2, 5);
 
         Interview interivew = interviewDtoMapper.interviewDtoToInterview(interviewDto);
 
@@ -79,10 +79,10 @@ public class InterviewControllerTests {
 
     @Test
     void shouldReturnListOfTutorials() throws Exception {
-        List<Interview> interviews = new ArrayList<>(
-        Arrays.asList(new Interview(UUID.randomUUID().toString(), "a@gmail.com", "a01", "a@levio.ca", "ra", "Java developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.NOT_URGENT),
-            new Interview(UUID.randomUUID().toString(), "b@gmail.com", "b01", "b@levio.ca", "rb", "Java developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.URGENT),
-            new Interview(UUID.randomUUID().toString(), "c@gmail.com", "c01", "c@levio.ca", "rc", "Java developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.NOT_URGENT)));
+        List<InterviewDto> interviews = new ArrayList<>(
+        Arrays.asList(new InterviewDto(UUID.randomUUID().toString(), "a@gmail.com", "a01", "a@levio.ca", "ra", "Java developer", LevelOfExpertise.INTERMEDIATE.toString(), TypeOfInterview.NOT_URGENT.toString(), StateOfInterview.OPEN.toString(), 2, 5),
+            new InterviewDto(UUID.randomUUID().toString(), "b@gmail.com", "b01", "b@levio.ca", "rb", "Java developer", LevelOfExpertise.INTERMEDIATE.toString(), TypeOfInterview.URGENT.toString(), StateOfInterview.OPEN.toString(), 2, 5),
+            new InterviewDto(UUID.randomUUID().toString(), "c@gmail.com", "c01", "c@levio.ca", "rc", "Java developer", LevelOfExpertise.INTERMEDIATE.toString(), TypeOfInterview.NOT_URGENT.toString(), StateOfInterview.OPEN.toString(), 2, 5)));
 
         when(interviewService.getInterviews()).thenReturn(interviews);
         mockMvc.perform(get("/api/v1/interviews"))

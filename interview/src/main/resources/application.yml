@@ -15,8 +15,12 @@ spring:
         format_sql: true
     hibernate:
       ddl-auto: create-drop
-    show-sql: true
+    show-sql: false
   kafka:
     bootstrap-servers: localhost:9092
     producer:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: interviewId
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties.spring.json.trusted.packages: "*"

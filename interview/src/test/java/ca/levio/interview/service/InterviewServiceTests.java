@@ -16,8 +16,8 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import ca.levio.commonbean.dto.InterviewDto;
 import ca.levio.commonbean.messageevent.NewInterviewMessageEvent;
-import ca.levio.interview.dto.InterviewDto;
 import ca.levio.interview.enums.LevelOfExpertise;
 import ca.levio.interview.enums.StateOfInterview;
 import ca.levio.interview.enums.TypeOfInterview;
@@ -54,9 +54,9 @@ public class InterviewServiceTests {
 
     @Test
     void createInterviewTest() {
-        InterviewDto interviewDto = new InterviewDto("Ahmed@gmail.com"
+        InterviewDto interviewDto = new InterviewDto("1", "Ahmed@gmail.com"
             , "A01", "Amine@levio.ca", "Amine", "Java Developer"
-            , LevelOfExpertise.INTERMEDIATE.getCode(), TypeOfInterview.NOT_URGENT.getCode());
+            , LevelOfExpertise.INTERMEDIATE.getCode(), TypeOfInterview.NOT_URGENT.getCode(), StateOfInterview.OPEN.toString(), 2, 5);
 
         Interview interviewExpected = interviewDtoMapper.interviewDtoToInterview(interviewDto);
 
@@ -83,7 +83,7 @@ public class InterviewServiceTests {
         interviewsExpected.add(new Interview(UUID.randomUUID().toString(), "ac@gmail.com", "RC01", "rc@levio.ca", "RC", "Java Developer", StateOfInterview.OPEN, LevelOfExpertise.JUNIOR, TypeOfInterview.NOT_URGENT));
         interviewsExpected.add(new Interview(UUID.randomUUID().toString(), "ad@gmail.com", "RD01", "rd@levio.ca", "RD", ".NET Developer", StateOfInterview.OPEN, LevelOfExpertise.INTERMEDIATE, TypeOfInterview.URGENT));
         when(interviewRepository.findAll()).thenReturn(interviewsExpected);
-        List<Interview> interviewsActual = interviewService.getInterviews();
-        assertEquals(interviewsExpected, interviewsActual);
+        List<InterviewDto> interviewsActual = interviewService.getInterviews();
+        assertEquals(interviewsExpected.size(), interviewsActual.size());
     }
 }

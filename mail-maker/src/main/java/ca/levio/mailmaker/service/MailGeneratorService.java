@@ -15,6 +15,7 @@ import ca.levio.mailmaker.maildtos.InterviewDeclinedMailDataRequestDto;
 import ca.levio.mailmaker.maildtos.MailDataRequestDto;
 import ca.levio.mailmaker.maildtos.MailGeneratorResponseDto;
 import ca.levio.mailmaker.maildtos.NewInterviewRequestMailDataRequestDto;
+import ca.levio.mailmaker.maildtos.NoAvailibleTechnicalAdvisorMailDataRequestDto;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
 import lombok.AllArgsConstructor;
@@ -54,6 +55,12 @@ public class MailGeneratorService {
         String template = configProperties.getInterviewDeclinedTemplate();
         interviewDeclinedMailDataRequestDto.setSubject(configProperties.getInterviewDeclinedSubject());
         return generateMailResponseDto(interviewDeclinedMailDataRequestDto, template);
+    }
+
+    public MailGeneratorResponseDto generateNoAvailibleTechnicalAdvisorMailResponseDto(NoAvailibleTechnicalAdvisorMailDataRequestDto noAvailibleTechnicalAdvisorMailDataRequestDto) {
+        String template = configProperties.getNoAvailibleTechnicalAdvisorTemplate();
+        noAvailibleTechnicalAdvisorMailDataRequestDto.setSubject(configProperties.getNoAvailibleTechnicalAdvisorSubject());
+        return generateMailResponseDto(noAvailibleTechnicalAdvisorMailDataRequestDto, template);
     }
 
     private MailGeneratorResponseDto generateMailResponseDto(MailDataRequestDto mailDataDto, String template) {

@@ -1,11 +1,13 @@
 package ca.levio.interviewrequest.service;
 
 import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
+import ca.levio.commonbean.messageevent.AllInterviewRequestRejectedMessageEvent;
 import ca.levio.commonbean.messageevent.InterviewAcceptedMessageEvent;
 import ca.levio.commonbean.messageevent.InterviewAlreadyAcceptedMessageEvent;
 import ca.levio.commonbean.messageevent.InterviewAssignedMessageEvent;
 import ca.levio.commonbean.messageevent.InterviewDeclinedMessageEvent;
 import ca.levio.commonbean.messageevent.NewInterviewRequestMessageEvent;
+import ca.levio.commonbean.messageevent.NoAvailibleTechnicalAdvisorMessageEvent;
 import ca.levio.interviewrequest.enums.StatusOfRequest;
 import ca.levio.interviewrequest.model.InterviewRequest;
 import ca.levio.interviewrequest.repository.InterviewRequestRepository;
@@ -36,6 +38,7 @@ public class InterviewRequestService {
 
         if (eligibleTechnicalAdvisorDtos != null) {
             eligibleTechnicalAdvisorDtos.forEach(eligibleTechnicalAdvisorDto -> {
+                System.out.println(eligibleTechnicalAdvisorDto.getEmail());
                 InterviewRequest interviewRequestTemp = InterviewRequest.builder()
                         .interview(interviewRequest.getInterview())
                         .recruiterEmail(interviewRequest.getRecruiterEmail())
@@ -47,7 +50,7 @@ public class InterviewRequestService {
                 createInterviewRequest(interviewRequestTemp);
             });
         } else {
-            log.info("Aucun Technical Advisor trouvé.");
+            sendNoAvailibleTechnicalAdvisorMessageEvent(interviewRequest);
         }
     }
 
@@ -76,9 +79,19 @@ public class InterviewRequestService {
         messageQueueProducer.send(interviewAssignedMessageEvent);
     }
 
+    public void sendNoAvailibleTechnicalAdvisorMessageEvent(InterviewRequest interviewRequest) {
+        NoAvailibleTechnicalAdvisorMessageEvent noAvailibleTechnicalAdvisorMessageEvent = new NoAvailibleTechnicalAdvisorMessageEvent(interviewRequest.getRecruiterEmail(), interviewRequest.getRecruiterName(), interviewRequest.getInterview());
+        messageQueueProducer.send(noAvailibleTechnicalAdvisorMessageEvent);
+    }
+
     public void sendInterviewDeclinedMessageEvent(InterviewRequest interviewRequest) {
         InterviewDeclinedMessageEvent interviewDeclinedMessageEvent = new InterviewDeclinedMessageEvent(interviewRequest.getTechnicalAdvisorEmail(), interviewRequest.getTechnicalAdvisorName(), interviewRequest.getInterview());
         messageQueueProducer.send(interviewDeclinedMessageEvent);
+    }
+
+    public void sendAllInterviewRequestRejectedMessageEvent(InterviewRequest interviewRequest) {
+        AllInterviewRequestRejectedMessageEvent allInterviewRequestRejectedMessageEvent = new AllInterviewRequestRejectedMessageEvent(interviewRequest.getInterview());
+        messageQueueProducer.send(allInterviewRequestRejectedMessageEvent);
     }
 
     public List<InterviewRequest> getInterviewRequests() {
@@ -117,6 +130,14 @@ public class InterviewRequestService {
             if (oldStatusOfRequest.equals(StatusOfRequest.ASSIGNED)) {
                 sendNotificationToNextTechnicalAdvisor(interviewRequest.getInterview());
             }
+            checkRejectedInterviewRequest(interviewRequest);
+        }
+    }
+
+    public void checkRejectedInterviewRequest(InterviewRequest interviewRequest) {
+        boolean allInterviewRequestRejected = interviewRequestRepository.areAllInterviewRequestsRejected(interviewRequest.getInterview());
+        if (allInterviewRequestRejected) {
+            sendAllInterviewRequestRejectedMessageEvent(interviewRequest);
         }
     }
 

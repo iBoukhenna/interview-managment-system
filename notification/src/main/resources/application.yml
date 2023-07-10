@@ -10,8 +10,8 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties.spring.json.trusted.packages: "*"
   mail:
-    username: boukhenna.ibrahim@gmail.com
-    password: pnrmlbrndduliigb
+    username: ibrahim.boukhenna@gmail.com
+    password: *****************
     host: smtp.gmail.com
     port: 587
     protocol: smtp
