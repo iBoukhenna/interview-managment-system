@@ -22,9 +22,7 @@ public class Interview {
     private String applicant;
 
     private String recruiter;
-    private String recruiterEmail;
-    private String recruiterName;
-
+ 
     private String jobPosition;
 
     @Builder.Default

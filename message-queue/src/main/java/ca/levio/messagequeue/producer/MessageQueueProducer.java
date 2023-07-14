@@ -1,6 +1,6 @@
 package ca.levio.messagequeue.producer;
 
-import ca.levio.commonbean.messageevent.MessageEvent;
+import ca.levio.messagequeue.messageevent.MessageEvent;
 
 public interface MessageQueueProducer {
 

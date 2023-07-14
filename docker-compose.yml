@@ -114,20 +114,6 @@ services:
       - postgres
       - kafka
 
-  task-scheduler:
-    image: iboukhenna/task-scheduler:latest
-    container_name: task-scheduler
-    ports:
-      - "8085:8085"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-      - postgres
-    depends_on:
-      - postgres
-      - kafka
-
 networks:
   postgres:
     driver: bridge

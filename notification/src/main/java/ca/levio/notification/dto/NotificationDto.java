@@ -1,13 +1,11 @@
 package ca.levio.notification.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @AllArgsConstructor
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 public class NotificationDto {
     private String subject;

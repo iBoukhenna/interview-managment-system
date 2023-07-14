@@ -1,6 +1,5 @@
 package ca.levio.technicaladvisor;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -24,6 +23,7 @@ public class TechnicalAdvisorApplication implements CommandLineRunner {
 
 	@Autowired
 	private TechnicalAdvisorService technicalAdvisorService;
+
 	@Autowired
 	private JobPositionService jobPositionService;
 

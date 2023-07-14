@@ -53,19 +53,11 @@
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
         <dependency>
-            <artifactId>common-bean</artifactId>
-            <groupId>ca.levio</groupId>
-            <version>${project.version}</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
         <dependency>
             <artifactId>message-queue</artifactId>
-            <groupId>ca.levio</groupId>
-            <version>${project.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <artifactId>openfeign-clients</artifactId>
             <groupId>ca.levio</groupId>
             <version>${project.version}</version>
             <scope>compile</scope>

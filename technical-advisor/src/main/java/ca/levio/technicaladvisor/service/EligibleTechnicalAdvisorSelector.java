@@ -2,7 +2,7 @@ package ca.levio.technicaladvisor.service;
 
 import java.util.List;
 
-import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
+import ca.levio.technicaladvisor.dto.EligibleTechnicalAdvisorDto;
 import ca.levio.technicaladvisor.enums.LevelOfExpertise;
 import ca.levio.technicaladvisor.model.JobPosition;
 

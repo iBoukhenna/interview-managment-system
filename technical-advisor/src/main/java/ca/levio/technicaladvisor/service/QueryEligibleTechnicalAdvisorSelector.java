@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
+import ca.levio.technicaladvisor.dto.EligibleTechnicalAdvisorDto;
 import ca.levio.technicaladvisor.enums.LevelOfExpertise;
 import ca.levio.technicaladvisor.model.JobPosition;
 import ca.levio.technicaladvisor.model.TechnicalAdvisor;
@@ -23,7 +23,7 @@ public class QueryEligibleTechnicalAdvisorSelector implements EligibleTechnicalA
         List<TechnicalAdvisor> technicalAdvisors = technicalAdvisorRepository.findEligibleTechnicalAdvisors(jobPosition.getId(), levelOfExpertise.ordinal(), interview, numberOfTechnicalAdvisorByBatch);
         List<EligibleTechnicalAdvisorDto> eligibleTechnicalAdvisors = technicalAdvisors.stream().map(technicalAdvisor -> {
             technicalAdvisorInterviewService.saveTechnicalAdvisorInterview(technicalAdvisor, interview);
-            return new EligibleTechnicalAdvisorDto(technicalAdvisor.getId(), technicalAdvisor.getName(), technicalAdvisor.getEmail());
+            return new EligibleTechnicalAdvisorDto(technicalAdvisor.getId());
         }).collect(Collectors.toList());
         return eligibleTechnicalAdvisors;
     }

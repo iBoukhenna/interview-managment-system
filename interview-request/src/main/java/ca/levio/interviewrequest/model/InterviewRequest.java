@@ -24,17 +24,9 @@ public class InterviewRequest {
 
     private String technicalAdvisor;
 
-    private String technicalAdvisorEmail;
-
-    private String technicalAdvisorName;
-
     private LocalDateTime acceptedAt;
 
     private String recruiter;
-
-    private String recruiterName;
-
-    private String recruiterEmail;
 
     @Builder.Default
     private StatusOfRequest statusOfRequest = StatusOfRequest.OPENED;

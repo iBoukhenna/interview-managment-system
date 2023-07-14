@@ -5,7 +5,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import ca.levio.notification.dto.NotificationDto;
-import ca.levio.notification.service.NotificationService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.AllArgsConstructor;
@@ -17,7 +16,8 @@ public class MailNotificationSender implements NotificationSender {
     private final JavaMailSender javaMailSender;
 
     public void send(NotificationDto notificationDto) {
-        try {
+        System.out.println(notificationDto.getSubject() + " toooooooooo " + notificationDto.getTo() + " this contenttttttttttt " + notificationDto.getContent());
+        /*try {
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
             helper.setSubject(notificationDto.getSubject());
@@ -26,6 +26,6 @@ public class MailNotificationSender implements NotificationSender {
             javaMailSender.send(mimeMessage);
         } catch (MessagingException e) {
             System.out.println("mail non envoyé");
-        }
+        }*/
     }
 }

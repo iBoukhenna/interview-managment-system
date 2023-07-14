@@ -2,13 +2,10 @@ package ca.levio.notification;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@SpringBootApplication(
-	scanBasePackages = {
-		"ca.levio.notification",
-		"ca.levio.mailmaker"
-	}
-)
+@SpringBootApplication
+@EnableFeignClients
 public class NotificationApplication {
 
 	public static void main(String[] args) {

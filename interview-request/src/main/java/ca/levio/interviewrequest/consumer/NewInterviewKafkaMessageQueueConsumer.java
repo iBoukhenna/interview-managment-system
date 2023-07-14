@@ -3,10 +3,11 @@ package ca.levio.interviewrequest.consumer;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import ca.levio.commonbean.messageevent.NewInterviewMessageEvent;
-import ca.levio.interviewrequest.mapper.InterviewRequestNewInterviewMessageEventMapper;
-import ca.levio.interviewrequest.model.InterviewRequest;
+import ca.levio.interviewrequest.dto.InterviewDto;
+import ca.levio.interviewrequest.mapper.InterviewDtoNewInterviewMessageEventMapper;
+import ca.levio.interviewrequest.service.InterviewRequestProcessService;
 import ca.levio.interviewrequest.service.InterviewRequestService;
+import ca.levio.messagequeue.messageevent.NewInterviewMessageEvent;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -15,13 +16,13 @@ import lombok.extern.slf4j.Slf4j;
 @AllArgsConstructor
 public class NewInterviewKafkaMessageQueueConsumer {
 
-    private final InterviewRequestService interviewRequestService;
-    private final InterviewRequestNewInterviewMessageEventMapper interviewRequestNewInterviewMessageEventMapper;
+    private final InterviewRequestProcessService interviewRequestProcessService;
+    private final InterviewDtoNewInterviewMessageEventMapper interviewDtoNewInterviewMessageEventMapper;
 
     @KafkaListener(topics = NewInterviewMessageEvent.TOPIC)
     public void receive(NewInterviewMessageEvent newInterviewMessageEvent) {
-        log.info("receive interivew data from interview {}", newInterviewMessageEvent);
-        InterviewRequest interviewRequest = interviewRequestNewInterviewMessageEventMapper.NewInterviewMessageEventToInterviewRequest(newInterviewMessageEvent);
-        interviewRequestService.createInterviewRequest(interviewRequest, newInterviewMessageEvent.getNumberOfTechnicalAdvisorByBatch(), newInterviewMessageEvent.getJobPosition(), newInterviewMessageEvent.getLevelOfExpertise());
+        log.info("NewInterviewMessageEvent data {}", newInterviewMessageEvent);
+        InterviewDto interviewDto = interviewDtoNewInterviewMessageEventMapper.newInterviewMessageEventToInterviewDto(newInterviewMessageEvent);
+        interviewRequestProcessService.createInterviewRequestsProcess(interviewDto);
     }
 }

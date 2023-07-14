@@ -1,6 +1,6 @@
 package ca.levio.technicaladvisor.service;
 
-import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
+import ca.levio.technicaladvisor.dto.EligibleTechnicalAdvisorDto;
 import ca.levio.technicaladvisor.dto.TechnicalAdvisorDto;
 import ca.levio.technicaladvisor.enums.LevelOfExpertise;
 import ca.levio.technicaladvisor.mapper.TechnicalAdvisorDtoMapper;
@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
@@ -27,9 +28,16 @@ public class TechnicalAdvisorService {
     private TechnicalAdvisorDtoMapper technicalAdvisorDtoMapper;
     private JobPositionService jobPositionService;
 
-    public List<TechnicalAdvisor> getTechnicalAdvisors() {
+    public List<TechnicalAdvisorDto> getTechnicalAdvisors() {
         log.info("get all technical advisors service");
-        return technicalAdvisorRepository.findAll();
+        List<TechnicalAdvisor> technicalAdvisors = technicalAdvisorRepository.findAll();
+        return technicalAdvisors.stream().map(technicalAdvisorDtoMapper::technicalAdvisorToTechnicalAdvisorDto).collect(Collectors.toList());
+    }
+
+    public TechnicalAdvisorDto getTechnicalAdvisorById(String id) {
+        log.info("get technical advisor service");
+        Optional<TechnicalAdvisor> optionalTechnicalAdvisor = technicalAdvisorRepository.findById(id);
+        return optionalTechnicalAdvisor.isPresent() ? technicalAdvisorDtoMapper.technicalAdvisorToTechnicalAdvisorDto(optionalTechnicalAdvisor.get()) : null;
     }
 
     public void saveAllTechnicalAdvisors(List<TechnicalAdvisor> technicalAdvisors) {
@@ -45,10 +53,11 @@ public class TechnicalAdvisorService {
         return new ArrayList<>();
     }
 
-    public TechnicalAdvisor createTechnicalAdvisor(TechnicalAdvisorDto technicalAdvisorDto) {
+    public TechnicalAdvisorDto createTechnicalAdvisor(TechnicalAdvisorDto technicalAdvisorDto) {
         log.info("creation technical advisor service {}", technicalAdvisorDto);
         TechnicalAdvisor technicalAdvisor = technicalAdvisorDtoMapper.technicalAdvisorDtoToTechnicalAdvisor(technicalAdvisorDto);
-        return technicalAdvisorRepository.saveAndFlush(technicalAdvisor);
+        technicalAdvisor = technicalAdvisorRepository.saveAndFlush(technicalAdvisor);
+        return technicalAdvisorDtoMapper.technicalAdvisorToTechnicalAdvisorDto(technicalAdvisor);
     }
 
     public void deleteAll() {

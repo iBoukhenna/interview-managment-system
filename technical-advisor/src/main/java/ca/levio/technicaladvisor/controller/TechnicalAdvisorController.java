@@ -7,13 +7,14 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
+import ca.levio.technicaladvisor.dto.EligibleTechnicalAdvisorDto;
 import ca.levio.technicaladvisor.dto.TechnicalAdvisorDto;
 import ca.levio.technicaladvisor.enums.LevelOfExpertise;
 import ca.levio.technicaladvisor.service.TechnicalAdvisorService;
@@ -29,19 +30,25 @@ public class TechnicalAdvisorController {
     private TechnicalAdvisorService technicalAdvisorService;
 
     @PostMapping
-    public ResponseEntity<?> createTechnicalAdvisor(@RequestBody TechnicalAdvisorDto technicalAdvisorDto) {
+    public ResponseEntity<TechnicalAdvisorDto> createTechnicalAdvisor(@RequestBody TechnicalAdvisorDto technicalAdvisorDto) {
         log.info("new technical advisor creation {}", technicalAdvisorDto);
-        return new ResponseEntity<>(technicalAdvisorService.createTechnicalAdvisor(technicalAdvisorDto), HttpStatus.CREATED);
+        return new ResponseEntity<TechnicalAdvisorDto>(technicalAdvisorService.createTechnicalAdvisor(technicalAdvisorDto), HttpStatus.CREATED);
     }
 
     @GetMapping
-    public ResponseEntity<?> getAllTechnicalAdvisors() {
+    public ResponseEntity<List<TechnicalAdvisorDto>> getAllTechnicalAdvisors() {
         log.info("get all technical advisors");
         return ResponseEntity.ok().body(technicalAdvisorService.getTechnicalAdvisors());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<TechnicalAdvisorDto> getInterview(@PathVariable("id") String id) {
+        log.info("get interview by id " + id);
+        return ResponseEntity.ok().body(technicalAdvisorService.getTechnicalAdvisorById(id));
+    }
+
     @GetMapping("/select-eligible")
-    public ResponseEntity<?> selectEligibleTechnicalAdvisors(
+    public ResponseEntity<List<EligibleTechnicalAdvisorDto>> selectEligibleTechnicalAdvisors(
         @RequestParam("jobPosition") String jobPosition,
         @RequestParam("expertiseLevel") LevelOfExpertise expertiseLevel,
         @RequestParam("interview") String interview,
@@ -56,7 +63,7 @@ public class TechnicalAdvisorController {
                 return ResponseEntity.ok(technicalAdvisors);
             }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Une erreur est survenue lors de la récupération des Technical Advisors.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 }

@@ -27,10 +27,6 @@
                     
     
     
-    <module>common-bean</module>
-                    
-    
-    
     <module>interview</module>
                     
     
@@ -47,20 +43,9 @@
                     
     
     
-    <module>openfeign-clients</module>
-                    
-    
-    
     <module>technical-advisor</module>
-                  
-    
-    
-    <module>mail-maker</module>
               
     
-    
-    <module>task-scheduler</module>
-          
     
     <module>recruiter</module>
       

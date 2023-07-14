@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 
 import org.springframework.stereotype.Service;
 
-import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
-import ca.levio.openfeignclients.technicaladvisor.TechnicalAdvisorClient;
+import ca.levio.interviewrequest.dto.EligibleTechnicalAdvisorDto;
+import ca.levio.interviewrequest.openfeign.TechnicalAdvisorClient;
 
 import java.util.List;
 

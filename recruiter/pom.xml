@@ -48,11 +48,5 @@
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <artifactId>common-bean</artifactId>
-            <groupId>ca.levio</groupId>
-            <version>${project.version}</version>
-            <scope>compile</scope>
-        </dependency>
 	</dependencies>
 </project>

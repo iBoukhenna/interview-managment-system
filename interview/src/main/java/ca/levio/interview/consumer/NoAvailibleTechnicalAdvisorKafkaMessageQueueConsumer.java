@@ -3,8 +3,8 @@ package ca.levio.interview.consumer;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import ca.levio.commonbean.messageevent.NoAvailibleTechnicalAdvisorMessageEvent;
 import ca.levio.interview.service.InterviewService;
+import ca.levio.messagequeue.messageevent.NoAvailibleTechnicalAdvisorMessageEvent;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

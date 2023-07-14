@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import ca.levio.commonbean.dto.EligibleTechnicalAdvisorDto;
+import ca.levio.technicaladvisor.dto.EligibleTechnicalAdvisorDto;
 import ca.levio.technicaladvisor.model.JobPosition;
 import ca.levio.technicaladvisor.model.Skill;
 import ca.levio.technicaladvisor.model.TechnicalAdvisor;
