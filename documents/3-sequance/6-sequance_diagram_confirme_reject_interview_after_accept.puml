@@ -1,25 +1,34 @@
 @startuml
-actor Recruiter
-actor TechnicalAdvisor
-participant System
+actor RecruiterActor
+actor TechnicalAdvisorActor1
+actor TechnicalAdvisorActor2
+participant InterviewRequest
+participant MessageQueue
+participant Notification
+participant TechnicalAdvisor
+participant Recruiter
 
-TechnicalAdvisor -> System: Click on the link confirme reject Interview
-System --> TechnicalAdvisor: Response of the request
-alt#Grey #LightGray If this TechnicalAdvisor confirme that he rejecte the request
-    alt#Yellow #LightGoldenRodYellow If this TechnicalAdvisor is the first one accept the request
-        alt#Orange #LightSalmon If there is another TechnicalAdvisor accept this request
-            System ->> TechnicalAdvisor: Send an email to the next TechnicalAdvisor \n the interview request is assigned \n send the recruiter's informations
-            System ->> Recruiter: Send an email to the Recruiter
-        else #LightSalmon
-            ref over System
-                Check Rejected Request
-            end ref
-        end
-    else #LightGoldenRodYellow
-        ref over System
+TechnicalAdvisorActor1 -> InterviewRequest: Click on the link confirme reject Interview
+InterviewRequest --> TechnicalAdvisorActor1: Response of the request
+alt If this TechnicalAdvisor1 is the first one accept the request (Old StatusOfRequest Assigned)
+    alt If there is another TechnicalAdvisor2 accept this request
+        InterviewRequest ->> MessageQueue: Produce Message Accepted Interview Request
+        Notification <<- MessageQueue: Consume Message Accepted Interview Request
+        Notification ->> Recruiter: Get Recruiter Detail
+        Recruiter --> Notification: Return Recruiter Detail
+        Notification ->> RecruiterActor: Send an email containing a link to details of the TechnicalAdvisor who accept
+        Notification ->> TechnicalAdvisor: Get TechnicalAdvisor Detail
+        TechnicalAdvisor --> Notification: Return TechnicalAdvisor Detail
+        Notification ->> TechnicalAdvisorActor2: Send an email to the next TechnicalAdvisor \n the interview request is assigned \n send the recruiter's informations
+    else
+        ref over InterviewRequest
             Check Rejected Request
         end ref
     end
+else (Old StatusOfRequest Accepted)
+    ref over InterviewRequest
+        Check Rejected Request
+    end ref
 end
 
 @enduml

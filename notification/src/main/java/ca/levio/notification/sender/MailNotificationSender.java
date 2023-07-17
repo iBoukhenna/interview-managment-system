@@ -16,8 +16,8 @@ public class MailNotificationSender implements NotificationSender {
     private final JavaMailSender javaMailSender;
 
     public void send(NotificationDto notificationDto) {
-        System.out.println(notificationDto.getSubject() + " toooooooooo " + notificationDto.getTo() + " this contenttttttttttt " + notificationDto.getContent());
-        /*try {
+        //System.out.println(notificationDto.getSubject() + " toooooooooo " + notificationDto.getTo() + " this contenttttttttttt " + notificationDto.getContent());
+        try {
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
             helper.setSubject(notificationDto.getSubject());
@@ -26,6 +26,6 @@ public class MailNotificationSender implements NotificationSender {
             javaMailSender.send(mimeMessage);
         } catch (MessagingException e) {
             System.out.println("mail non envoyé");
-        }*/
+        }
     }
 }

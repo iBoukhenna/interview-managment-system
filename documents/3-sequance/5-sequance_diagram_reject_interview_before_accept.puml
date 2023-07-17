@@ -1,14 +1,21 @@
 @startuml
-actor Recruiter
-actor TechnicalAdvisor
-participant System
+actor RecruiterActor
+actor TechnicalAdvisorActor
+participant InterviewRequest
+participant TechnicalAdvisor
+participant Notification
+participant MessageQueue
 
-TechnicalAdvisor -> System: Click on the link reject Interview
-System --> TechnicalAdvisor: Response of the request
-alt#Green #LightGreen If this TechnicalAdvisor has accepted this request before
-    System ->> TechnicalAdvisor: Send message to confirme the reject action
-else #LightGreen
-    ref over System
+TechnicalAdvisorActor -> InterviewRequest: Click on the link reject Interview
+InterviewRequest --> TechnicalAdvisorActor: Response of the request
+alt If this TechnicalAdvisor has accepted this request before
+    InterviewRequest ->> MessageQueue: Produce Message Reject before Accept
+    Notification <<- MessageQueue: Consume Message Reject before Accept
+    Notification ->> TechnicalAdvisor: Get TechnicalAdvisor Detail
+    TechnicalAdvisor --> Notification: Return TechnicalAdvisor Detail
+    Notification ->> TechnicalAdvisorActor: Send email to the TechnicalAdvisor to confirme the reject action
+else
+    ref over InterviewRequest
         Check Rejected Request
     end ref
 end

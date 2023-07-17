@@ -1,11 +1,10 @@
 @startuml
-actor Recruiter
-actor TechnicalAdvisor
-participant System
+actor RecruiterActor
+participant InterviewRequest
 
-Recruiter -> System: Decline the acceptance of Interview Request
-System --> Recruiter: Response of the request
-ref over Recruiter
+RecruiterActor -> InterviewRequest: Decline the acceptance of Interview Request
+System --> RecruiterActor: Response of the request
+ref over InterviewRequest
     Choise the Request
 end ref
 

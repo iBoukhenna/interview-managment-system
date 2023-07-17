@@ -1,0 +1,29 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Component diagram for Interview Management System - Recruiter Microservice
+
+Container(spa, "Single Page Application", "JavaScript, Angular", "Provides all the interview system functionality to recruiter and recruiter via their web browser.")
+Container(mobile_app, "Mobile App", "C#, Xamarin", "Provides a limited subset of interview system functionality to recruiter and recruiter via their mobile device.")
+ContainerDb(database_recruiter, "Database Recruiter", "Relational Database Schema", "Stores Information regarding the interviews, the recruiters, the recruiters ...")
+
+Container_Boundary(backend_api_recruiter, "Recruiter Microservice") {
+
+    Component(recruiter_controller, "Recruiter Controller", "Spring Rest Controller", "Get Recruiter APIs")
+    Rel(spa, recruiter_controller, "Uses", "JSON/HTTPS")
+    Rel(mobile_app, recruiter_controller, "Uses", "JSON/HTTPS")
+
+    Component(recruiter_service, "Recruiter Service", "Spring Service", "Provides functionality business related to recruiter")
+    Rel(recruiter_controller, recruiter_service, "Uses")
+
+    Component(recruiter_repository, "Recruiter Repository", "Spring Repository", "Provides functionality repository related to recruiter")
+    Rel(recruiter_service, recruiter_repository, "Uses")
+
+    Rel(recruiter_repository, database_recruiter, "CRUD Recruiter", "JDBC")
+}
+
+@enduml

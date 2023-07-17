@@ -1,15 +1,29 @@
 @startuml
-actor Recruiter
-actor TechnicalAdvisor
-participant System
+actor RecruiterActor
+actor TechnicalAdvisorActor
+participant InterviewRequest
+participant Notification
+participant Recruiter
+participant TechnicalAdvisor
 
-TechnicalAdvisor -> System: Click on the link accept Interview
-System --> TechnicalAdvisor: Response of the request
+
+TechnicalAdvisorActor -> InterviewRequest: Click on the link accept Interview
+InterviewRequest --> TechnicalAdvisorActor: Response of the request
 alt If no one else has accepted before
-    System ->> TechnicalAdvisor: Send an email the interview request is assigned \n and the recruiter's informations
-    System ->> Recruiter: Send an email containing a link to details of the TechnicalAdvisor who accept
+    InterviewRequest ->> MessageQueue: Produce Message Accepted Interview Request
+    Notification <<- MessageQueue: Consume Message Accepted Interview Request
+    Notification ->> Recruiter: Get Recruiter Detail
+    Recruiter --> Notification: Return Recruiter Detail
+    Notification ->> RecruiterActor: Send an email containing a link to details of the TechnicalAdvisor who accept
+    Notification ->> TechnicalAdvisor: Get TechnicalAdvisor Detail
+    TechnicalAdvisor --> Notification: Return TechnicalAdvisor Detail
+    Notification ->> TechnicalAdvisorActor: Send an email the interview request is assigned \n and the recruiter's informations
 else If someone has already accepted
-    System ->> TechnicalAdvisor: Send email to informe that the interview has already been assigned \n that he will be contacted if this ultimately proves necessary
+    InterviewRequest ->> MessageQueue: Produce Message Already Accepted Interview Request
+    Notification <<- MessageQueue: Consume Message Already Accepted Interview Request
+    Notification ->> TechnicalAdvisor: Get TechnicalAdvisor Detail
+    TechnicalAdvisor --> Notification: Return TechnicalAdvisor Detail
+    Notification ->> TechnicalAdvisorActor: Send email to informe that the interview has already been assigned \n that he will be contacted if this ultimately proves necessary
 end
 
 @enduml

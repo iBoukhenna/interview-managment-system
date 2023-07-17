@@ -1,0 +1,37 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Component diagram for Interview Management System - Notification Microservice
+
+System_Ext(email_system, "E-mail System")
+ContainerDb(message_queue, "Message Queue", "Kafka", "Provides functionality related to Publish and Consume Messages ...")
+Container(backend_api_recruiter, "Recruiter Microservice", "Java and Spring boot", "Provides fonctionality via JSON/HTTPS API.")
+Container(backend_api_technical_advisor, "Technical Advisor Microservice", "Java and Spring boot", "Provides fonctionality via JSON/HTTPS API.")
+
+Container_Boundary(backend_api_notification, "Notification Microservice") {
+
+
+    Component(notification_consumer, "Notification Consumer", "Kafka Listener", "InterviewRequest (Accepted, Already Accepted, Declined, Assigned), NoAvailibleTechnicalAdvisor, NewInterviewRequest")
+
+    Component(notification_openfeign, "Notification Openfeign", "Feign Client", "Recruiter, TechnicalAdvisor")
+
+    Component(notification_sender, "Sender", "Java Mail Sender", "Send Email")
+
+    Component(notification_service, "Notification Service", "Spring Service", "Provides functionality business related to notification")
+    Rel(notification_consumer, notification_service, "Uses")
+    Rel(notification_service, notification_openfeign, "Uses")
+    Rel(notification_service, notification_sender, "Uses")
+
+    Rel(notification_consumer, message_queue, "Consume")
+
+    Rel(notification_openfeign, backend_api_recruiter, "Get Recruiter", "JSON/HTTPS")
+    Rel(notification_openfeign, backend_api_technical_advisor, "Select Eligible Technical Advisor", "JSON/HTTPS")
+
+    Rel(notification_sender, email_system, "Uses", "SMTP")
+}
+
+@enduml

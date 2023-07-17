@@ -20,9 +20,21 @@ System_Boundary(c1, "Interview Management System") {
 
     Container(mobile_app, "Mobile App", "C#, Xamarin", "Provides a limited subset of interview system functionality to recruiter and technical advisor via their mobile device.")
 
-    Container(backend_api, "API Application", "Java and Spring boot", "Provides fonctionality via JSON/HTTPS API.")
+    Container(backend_api_interview, "Microservice Interview", "Java and Spring boot", "Provides fonctionality via JSON/HTTPS API.")
+    ContainerDb(database_interview, "Database Interview", "Relational Database Schema", "Stores All Data.")
 
-    ContainerDb(database, "Database", "Relational Database Schema", "Stores All Data.")
+    Container(backend_api_interview_request, "Microservice Interview Request", "Java and Spring boot", "Provides fonctionality via JSON/HTTPS API.")
+    ContainerDb(database_interview_request, "Database Interview Request", "Relational Database Schema", "Stores All Data.")
+
+    Container(backend_api_recruiter, "Microservice Recruiter", "Java and Spring boot", "Provides fonctionality via JSON/HTTPS API.")
+    ContainerDb(database_recruiter, "Database Recruiter", "Relational Database Schema", "Stores All Data.")
+
+    Container(backend_api_technical_advisor, "Microservice Technical Advisor", "Java and Spring boot", "Provides fonctionality via JSON/HTTPS API.")
+    ContainerDb(database_technical_advisor, "Database Technical Advisor", "Relational Database Schema", "Stores All Data.")
+
+    Container(backend_api_notification, "Microservice Notification", "Java and Spring boot", "Provides fonctionality via JSON/HTTPS API.")
+
+    Container(message_queue, "Messaging Service", "Kafka", "Publication of message event.")
 }
 
 System_Ext(email_system, "E-Mail System")
@@ -36,16 +48,38 @@ Rel(technical_advisor, mobile_app, "Uses")
 
 Rel(reverse_proxy, spa, "Delivers")
 
-Rel(spa, backend_api, "Uses", "JSON/HTTPS")
-Rel(mobile_app, backend_api, "Uses", "JSON/HTTPS")
+Rel(spa, backend_api_interview, "Uses", "JSON/HTTPS")
+Rel(mobile_app, backend_api_interview, "Uses", "JSON/HTTPS")
 
-Rel_Back_Neighbor(database, backend_api, "Read and Write", "JDBC")
+Rel(spa, backend_api_interview_request, "Uses", "JSON/HTTPS")
+Rel(mobile_app, backend_api_interview_request, "Uses", "JSON/HTTPS")
+
+Rel(spa, backend_api_recruiter, "Uses", "JSON/HTTPS")
+Rel(mobile_app, backend_api_recruiter, "Uses", "JSON/HTTPS")
+
+Rel(spa, backend_api_technical_advisor, "Uses", "JSON/HTTPS")
+Rel(mobile_app, backend_api_technical_advisor, "Uses", "JSON/HTTPS")
+
+Rel_Neighbor(backend_api_interview_request, backend_api_interview, "Uses", "JSON/HTTPS")
+Rel_Neighbor(backend_api_interview_request, backend_api_technical_advisor, "Uses", "JSON/HTTPS")
+Rel_Neighbor(backend_api_notification, backend_api_recruiter, "Uses", "JSON/HTTPS")
+Rel_Neighbor(backend_api_notification, backend_api_technical_advisor, "Uses", "JSON/HTTPS")
+
+Rel(backend_api_interview, database_interview, "Read and Write", "JDBC")
+Rel(backend_api_interview_request, database_interview_request, "Read and Write", "JDBC")
+Rel(backend_api_technical_advisor, database_technical_advisor, "Read and Write", "JDBC")
+Rel(backend_api_recruiter, database_recruiter, "Read and Write", "JDBC")
+
+Rel(backend_api_interview, message_queue, "Publish and Consume Message")
+Rel(backend_api_interview_request, message_queue, "Publish and Consume Message")
+Rel(backend_api_notification, message_queue, "Consume Message")
+
 
 Rel_Back(recruiter, email_system, "Uses", "Send Email")
 Rel_Back(technical_advisor, email_system, "Uses", "Send Email")
 
-Rel_Back(email_system, backend_api, "Uses", "Send Email")
-Rel_Neighbor(backend_api, unit4_system, "Uses")
+Rel_Back(email_system, backend_api_notification, "Uses", "Send Email")
+Rel_Neighbor(backend_api_interview, unit4_system, "Uses")
 
 
 @enduml

@@ -1,15 +1,26 @@
 @startuml
-actor Recruiter
-actor TechnicalAdvisor
-participant System
+actor RecruiterActor
+actor TechnicalAdvisorActor
+participant Interview
+participant InterviewRquest
+participant Notification
+participant MessageQueue
+participant TechnicalAdvisor
 
-Recruiter -> System: Create new interview request
-System --> Recruiter: Response of the request
-System ->> System: Determination of eligible TechnicalAdvisor / X / Y
-
-group Random selection of X TechnicalAdvisor
-    System ->> TechnicalAdvisor: Send an email containing \n the "Accept" and "Reject" links
-    ref over System
+RecruiterActor -> Interview: Create new interview
+Interview --> RecruiterActor: Response of the request
+Interview ->> MessageQueue: Produce Message New Interview
+InterviewRquest <<- MessageQueue: Consume Message New Interview
+group Run Iteration Of Process
+    InterviewRquest -> TechnicalAdvisor: Select X of Eligible TechnicalAdvisor
+    TechnicalAdvisor --> InterviewRquest: List X of Eligible TechnicalAdvisor
+    InterviewRquest --> InterviewRquest: Create Interview Request and TechnicalAdvisorSelectionProcess
+    InterviewRquest ->> MessageQueue: Produce Message New Interview Request
+    MessageQueue ->> Notification: Consume Message New Interview Request
+    Notification ->> TechnicalAdvisor: Get TechnicalAdvisor Detail
+    TechnicalAdvisor --> Notification: Return TechnicalAdvisor Detail
+    Notification ->> TechnicalAdvisorActor: Send an email containing \n the "Accept" and "Reject" links
+    ref over InterviewRquest
         Asynchrone Job
     end ref
 end

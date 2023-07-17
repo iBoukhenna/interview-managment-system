@@ -2,7 +2,6 @@ package ca.levio.interviewrequest.service;
 
 import ca.levio.interviewrequest.dto.InterviewDto;
 import ca.levio.interviewrequest.mapper.InterviewDtoNoAvailibleTechnicalAdvisorMessageEventMapper;
-import ca.levio.interviewrequest.mapper.InterviewRequestAllInterviewRequestRejectedMessageEventMapper;
 import ca.levio.interviewrequest.mapper.InterviewRequestInterviewAcceptedMessageEventMapper;
 import ca.levio.interviewrequest.mapper.InterviewRequestInterviewAlreadyAcceptedMessageEventMapper;
 import ca.levio.interviewrequest.mapper.InterviewRequestInterviewAssignedMessageEventMapper;
@@ -11,7 +10,6 @@ import ca.levio.interviewrequest.mapper.InterviewRequestNewInterviewRequestMessa
 import ca.levio.interviewrequest.model.InterviewRequest;
 import lombok.AllArgsConstructor;
 
-import ca.levio.interviewrequest.messageevent.AllInterviewRequestRejectedMessageEvent;
 import ca.levio.interviewrequest.messageevent.InterviewAcceptedMessageEvent;
 import ca.levio.interviewrequest.messageevent.InterviewAlreadyAcceptedMessageEvent;
 import ca.levio.interviewrequest.messageevent.InterviewAssignedMessageEvent;
@@ -26,7 +24,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageQueueProducerService {
 
-    private final InterviewRequestAllInterviewRequestRejectedMessageEventMapper interviewRequestAllInterviewRequestRejectedMessageEventMapper;
     private final InterviewRequestInterviewAcceptedMessageEventMapper interviewRequestInterviewAcceptedMessageEventMapper;
     private final InterviewRequestInterviewAlreadyAcceptedMessageEventMapper interviewRequestInterviewAlreadyAcceptedMessageEventMapper;
     private final InterviewRequestInterviewAssignedMessageEventMapper interviewRequestInterviewAssignedMessageEventMapper;
@@ -65,10 +62,4 @@ public class MessageQueueProducerService {
         InterviewDeclinedMessageEvent interviewDeclinedMessageEvent = interviewRequestInterviewDeclinedMessageEventMapper.interviewRequestToInterviewDeclinedMessageEvent(interviewRequest);
         messageQueueProducer.send(interviewDeclinedMessageEvent);
     }
-
-    public void sendAllInterviewRequestRejectedMessageEvent(InterviewRequest interviewRequest) {
-        AllInterviewRequestRejectedMessageEvent allInterviewRequestRejectedMessageEvent = interviewRequestAllInterviewRequestRejectedMessageEventMapper.interviewRequestToAllInterviewRequestRejectedMessageEvent(interviewRequest);
-        messageQueueProducer.send(allInterviewRequestRejectedMessageEvent);
-    }
-
 }

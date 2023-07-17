@@ -1,11 +1,10 @@
 @startuml
-actor Recruiter
-actor TechnicalAdvisor
-participant System
+actor RecruiterActor
+participant InterviewRequest
 
 group Choise the Request
-    Recruiter -> System: Choise the accepted Request
-    System -> Recruiter: Response of the Request
+    RecruiterActor -> InterviewRequest: Choise the accepted Request
+    InterviewRequest -> RecruiterActor: Response of the Request
 end ref
 
 @enduml

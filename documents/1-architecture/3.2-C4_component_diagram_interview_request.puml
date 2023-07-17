@@ -1,0 +1,46 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Component diagram for Interview Management System - Interview Request Microservice
+
+Container(spa, "Single Page Application", "JavaScript, Angular", "Provides all the interview system functionality to recruiter and technical advisor via their web browser.")
+Container(mobile_app, "Mobile App", "C#, Xamarin", "Provides a limited subset of interview system functionality to recruiter and technical advisor via their mobile device.")
+ContainerDb(database_interview_request, "Database Interview Request", "Relational Database Schema", "Stores Information regarding the interviews, the recruiters, the technical advisors ...")
+ContainerDb(message_queue, "Message Queue", "Kafka", "Provides functionality related to Publish and Consume Messages ...")
+Container(backend_api_interview, "Interview Microservice", "Java and Spring boot", "Provides fonctionality via JSON/HTTPS API.")
+Container(backend_api_technical_advisor, "Technical Advisor Microservice", "Java and Spring boot", "Provides fonctionality via JSON/HTTPS API.")
+
+Container_Boundary(backend_api_interview_request, "Interview Request Microservice") {
+
+    Component(interview_request_controller, "Interview Request Controller", "Spring Rest Controller", "GetAll, Accept, Reject, Decline Interview Request APIs")
+    Rel(spa, interview_request_controller, "Uses", "JSON/HTTPS")
+    Rel(mobile_app, interview_request_controller, "Uses", "JSON/HTTPS")
+
+    Component(interview_request_consumer, "Interview Request Consumer", "Kafka Listener", "NewInterview")
+
+    Component(interview_request_openfeign, "Interview Request Openfeign", "Feign Client", "Interview, TechnicalAdvisor")
+
+    Component(interview_request_producer, "Interview Request Producer", "Kafka Producer", "InterviewRequest (Accepted, Already Accepted, Declined, Assigned), NoAvailibleTechnicalAdvisor, NewInterviewRequest")
+
+    Component(interview_request_service, "Interview Request Service", "Spring Service", "Provides functionality business related to interview request")
+    Rel(interview_request_controller, interview_request_service, "Uses")
+    Rel(interview_request_consumer, interview_request_service, "Uses")
+    Rel(interview_request_service, interview_request_openfeign, "Uses")
+    Rel(interview_request_service, interview_request_producer, "Uses")
+
+    Component(interview_request_repository, "Interview Request Repository", "Spring Repository", "Provides functionality repository related to interview request")
+    Rel(interview_request_service, interview_request_repository, "Uses")
+
+    Rel(interview_request_producer, message_queue, "Produce")
+    Rel(interview_request_consumer, message_queue, "Consume")
+    Rel(interview_request_repository, database_interview_request, "CRUD Interview Request", "JDBC")
+
+    Rel(interview_request_openfeign, backend_api_interview, "Get Interview", "JSON/HTTPS")
+    Rel(interview_request_openfeign, backend_api_technical_advisor, "Select Eligible Technical Advisor", "JSON/HTTPS")
+}
+
+@enduml

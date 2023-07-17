@@ -25,6 +25,7 @@ Applicant "1" -- "1" Interview : have <
 enum StateOfInterview {
  OPEN
  IN_PROGRESS
+ INTERRUPTED
  CLOSED
 }
 
@@ -43,6 +44,8 @@ class LineOfBusiness {
 class JobPosition {
  - String label
  - LineOfBusiness lineOfBusiness
+ - String hierarchicalLine
+ - Integer hierarchicalLevel
 }
 
 LineOfBusiness "1" -- "*" JobPosition
@@ -77,11 +80,22 @@ class InterviewRequest {
     - Interview Interview
     - TechnicalAdvisor technicalAdvisor
     - StatusOfRequest statusOfRequest
+    - Recruiter recruiter
+    - LocalDateTime acceptedAt
     - String motif
 }
 
+InterviewRequest "*" -- "1" Recruiter
 InterviewRequest "*" -- "1" Interview
 InterviewRequest "*" -- "1" TechnicalAdvisor
+
+class TechnicalAdvisorSelectionProcess {
+    - LocalDateTime lastDateProcess
+    - Interview interview
+    - Integer delayBeforeRetrying
+}
+
+TechnicalAdvisorSelectionProcess "1" -- "1" Interview
 
 enum StatusOfRequest {
  OPENED
@@ -91,6 +105,6 @@ enum StatusOfRequest {
  DECLINED_BY_RECRUITER
 }
 
-InterviewRequest -- statusOfRequest : have >
+InterviewRequest -- StatusOfRequest : have >
 
 @enduml

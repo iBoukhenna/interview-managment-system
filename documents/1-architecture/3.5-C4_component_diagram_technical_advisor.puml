@@ -1,0 +1,29 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Component diagram for Interview Management System - Technical Advisor Microservice
+
+Container(spa, "Single Page Application", "JavaScript, Angular", "Provides all the interview system functionality to recruiter and technical advisor via their web browser.")
+Container(mobile_app, "Mobile App", "C#, Xamarin", "Provides a limited subset of interview system functionality to recruiter and technical advisor via their mobile device.")
+ContainerDb(database_technical_advisor, "Database Technical Advisor", "Relational Database Schema", "Stores Information regarding the interviews, the recruiters, the technical advisors ...")
+
+Container_Boundary(backend_api_technical_advisor, "Technical Advisor Microservice") {
+
+    Component(technical_advisor_controller, "Technical Advisor Controller", "Spring Rest Controller", "GetAll, Get, Create, SelectEligible Technical Advisor APIs")
+    Rel(spa, technical_advisor_controller, "Uses", "JSON/HTTPS")
+    Rel(mobile_app, technical_advisor_controller, "Uses", "JSON/HTTPS")
+
+    Component(technical_advisor_service, "Technical Advisor Service", "Spring Service", "Provides functionality business related to technical advisor")
+    Rel(technical_advisor_controller, technical_advisor_service, "Uses")
+
+    Component(technical_advisor_repository, "Technical Advisor Repository", "Spring Repository", "Provides functionality repository related to technical advisor")
+    Rel(technical_advisor_service, technical_advisor_repository, "Uses")
+
+    Rel(technical_advisor_repository, database_technical_advisor, "CRUD Technical Advisor", "JDBC")
+}
+
+@enduml

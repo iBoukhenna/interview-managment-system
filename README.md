@@ -7,6 +7,11 @@ Functional need for a tool related to the management of interviews requested by 
     - [System Context Diagram](#system-context-diagram)
     - [Container Diagram](#container-diagram)
     - [Component Diagram](#component-diagram)
+      - [Component Diagram Interview](#component-diagram-interview)
+      - [Component Diagram Interview Request](#component-diagram-interview-request)
+      - [Component Diagram Notification](#component-diagram-notification)
+      - [Component Diagram Recruiter](#component-diagram-recruiter)
+      - [Component Diagram Technical Advisor](#component-diagram-technical-advisor)
     - [Deployment Diagram](#deployment-diagram)
   - [Supplementary Diagrams](#supplementary-diagrams)
     - [Class Diagram](#class-diagram)
@@ -15,7 +20,7 @@ Functional need for a tool related to the management of interviews requested by 
       - [Sequance Diagram notification technical advisor](#sequance-diagram-notification-technical-advisor)
       - [Sequance Diagram accept interview](#sequance-diagram-accept-interview)
       - [Sequance Diagram reject interview](#sequance-diagram-reject-interview)
-      - [Sequance Diagram reject interview after accept](#sequance-diagram-reject-interview-after-accept)
+      - [Sequance Diagram reject interview before accept](#sequance-diagram-reject-interview-before-accept)
       - [Sequance Diagram confirme reject interview after accept](#sequance-diagram-confirme-reject-interview-after-accept)
       - [Sequance Diagram decline acceptance](#sequance-diagram-decline-acceptance)
       - [Sequance Diagram choise accepted request](#sequance-diagram-choise-accepted-request)
@@ -36,9 +41,30 @@ Source: [2-C4_container_diagram.puml](documents/1-architecture/2-C4_container_di
 
 
 ### Component Diagram
-Source: [3-C4_component_diagram.puml](documents/1-architecture/3-C4_component_diagram.puml)
+#### Component Diagram Interview
+Source: [3.1-C4_component_diagram_interview.puml](documents/1-architecture/3.1-C4_component_diagram_interview.puml)
 
-![System Component diagram for Interview Management System](out/../documents/out/1-architecture/3-C4_component_diagram/3-C4_component_diagram.svg "System Component diagram for Interview Management System")
+![System Component diagram for Interview Management System - Interview Microservice](out/../documents/out/1-architecture/3-C4_component_diagram/3.1-C4_component_diagram_interview.svg "System Component diagram for Interview Management System - Interview Microservice")
+
+#### Component Diagram Interview Request
+Source: [3.1-C4_component_diagram_interview_request.puml](documents/1-architecture/3.2-C4_component_diagram_interview_request.puml)
+
+![System Component diagram for Interview Management System - Interview Request Microservice](out/../documents/out/1-architecture/3-C4_component_diagram/3.2-C4_component_diagram_interview_request.svg "System Component diagram for Interview Management System - Interview Request Microservice")
+
+#### Component Diagram Notification
+Source: [3.1-C4_component_diagram_notification.puml](documents/1-architecture/3.3-C4_component_diagram_notification.puml)
+
+![System Component diagram for Interview Management System - Notification Microservice](out/../documents/out/1-architecture/3-C4_component_diagram/3.3-C4_component_diagram_notification.svg "System Component diagram for Interview Management System - Notification Microservice")
+
+#### Component Diagram Recruiter
+Source: [3.1-C4_component_diagram_recruiter.puml](documents/1-architecture/3.4-C4_component_diagram_recruiter.puml)
+
+![System Component diagram for Interview Management System - Recruiter Microservice](out/../documents/out/1-architecture/3-C4_component_diagram/3.4-C4_component_diagram_recruiter.svg "System Component diagram for Interview Management System - Recruiter Microservice")
+
+#### Component Diagram Technical Advisor
+Source: [3.1-C4_component_diagram_technical_advisor.puml](documents/1-architecture/3.5-C4_component_diagram_technical_advisor.puml)
+
+![System Component diagram for Interview Management System - Technical Advisor Microservice](out/../documents/out/1-architecture/3-C4_component_diagram/3.5-C4_component_diagram_technical_advisor.svg "System Component diagram for Interview Management System - Technical Advisor Microservice")
 
 
 ### Deployment Diagram
@@ -78,10 +104,10 @@ Source: [4-sequance_diagram_reject_interview.puml](documents/3-sequance/4-sequan
 ![Sequance diagram reject interview for Interview Management System](out/../documents/out/3-sequance/4-sequance_diagram_reject_interview/4-sequance_diagram_reject_interview.svg "Sequance diagram reject interview for Interview Management System")
 
 
-#### Sequance Diagram reject interview after accept
-Source: [5-sequance_diagram_reject_interview_after_accept.puml](documents/3-sequance/5-sequance_diagram_reject_interview_after_accept.puml)
+#### Sequance Diagram reject interview before accept
+Source: [5-sequance_diagram_reject_interview_before_accept.puml](documents/3-sequance/5-sequance_diagram_reject_interview_before_accept.puml)
 
-![Sequance diagram reject interview after accept for Interview Management System](out/../documents/out/3-sequance/5-sequance_diagram_reject_interview_after_accept/5-sequance_diagram_reject_interview_after_accept.svg "Sequance diagram reject interview after accept for Interview Management System")
+![Sequance diagram reject interview before accept for Interview Management System](out/../documents/out/3-sequance/5-sequance_diagram_reject_interview_before_accept/5-sequance_diagram_reject_interview_before_accept.svg "Sequance diagram reject interview before accept for Interview Management System")
 
 
 #### Sequance Diagram confirme reject interview after accept

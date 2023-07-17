@@ -1,0 +1,38 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Component diagram for Interview Management System - Interview Microservice
+
+Container(spa, "Single Page Application", "JavaScript, Angular", "Provides all the interview system functionality to recruiter and technical advisor via their web browser.")
+Container(mobile_app, "Mobile App", "C#, Xamarin", "Provides a limited subset of interview system functionality to recruiter and technical advisor via their mobile device.")
+ContainerDb(database_interview, "Database Interview", "Relational Database Schema", "Stores Information regarding the interviews, the recruiters, the technical advisors ...")
+ContainerDb(message_queue, "Message Queue", "Kafka", "Provides functionality related to Publish and Consume Messages ...")
+
+Container_Boundary(backend_api_interview, "Interview Microservice") {
+
+    Component(interview_controller, "Interview Controller", "Spring Rest Controller", "GetAll, Accept, Reject, Decline Interview APIs")
+    Rel(spa, interview_controller, "Uses", "JSON/HTTPS")
+    Rel(mobile_app, interview_controller, "Uses", "JSON/HTTPS")
+
+    Component(interview_consumer, "Interview Consumer", "Kafka Listener", "NoAvailibleTechnicalAdvisor")
+
+    Component(interview_producer, "Interview Producer", "Kafka Producer", "NewInterview")
+
+    Component(interview_service, "Interview Service", "Spring Service", "Provides functionality business related to interview")
+    Rel(interview_controller, interview_service, "Uses")
+    Rel(interview_consumer, interview_service, "Uses")
+    Rel(interview_service, interview_producer, "Uses")
+
+    Component(interview_repository, "Interview Repository", "Spring Repository", "Provides functionality repository related to interview")
+    Rel(interview_service, interview_repository, "Uses")
+
+    Rel(interview_producer, message_queue, "Produce")
+    Rel(interview_consumer, message_queue, "Consume")
+    Rel(interview_repository, database_interview, "CRUD Interview", "JDBC")
+}
+
+@enduml

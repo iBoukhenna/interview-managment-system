@@ -12,24 +12,55 @@ AddRelTag("fallback", $textColor="#c0c0c0", $lineColor="#438DD5")
 title Deployment diagram for Interview Management System - API Application
 
 Deployment_Node(plc, "Big Bank plc", "Big Bank plc data center"){
-    Deployment_Node(dn, "bigbank-api***\tx8"){
+    Deployment_Node(dn, "bigbank***\tx8"){
         Deployment_Node(nginx, "NGINX", "NGINX"){
-            Container(spa, "API Application", "Java and Spring MVC", "Provides Interview Management functionality via a JSON/HTTPS API.")
+            Container(spa, "Web Application", "Angular / JavaScript", "Provides Interview Management functionality via a JSON/HTTPS API.")
         }
     }
-    Deployment_Node(dn, "bigbank-api***\tx8"){
-        Deployment_Node(apache, "Apache Tomcat", "Apache Tomcat 8.x"){
-            Container(api, "API Application", "Java and Spring MVC", "Provides Interview Management functionality via a JSON/HTTPS API.")
+    Deployment_Node(dn_message_queue, "bigbank-message-queue***\tx8"){
+        Deployment_Node(kafka_message_queue, "Kafka", "kafka"){
+            Container(message_queue, "Message Queue", "Kafka", "Provides Message Service functionality via a Kafka Queue.")
+        }
+    }
+    Deployment_Node(dn_interview, "bigbank-api-interview***\tx8"){
+        Deployment_Node(apache_interview, "Apache Tomcat", "Apache Tomcat 8.x"){
+            Container(api_interview, "Microservice Interview", "Java and Spring MVC", "Provides Interview functionality via a JSON/HTTPS API.")
+        }
+    }
+    Deployment_Node(dn_interview_request, "bigbank-api-interview-request***\tx8"){
+        Deployment_Node(apache_interview_request, "Apache Tomcat", "Apache Tomcat 8.x"){
+            Container(api_interview_request, "Microservice Interview Request", "Java and Spring MVC", "Provides Interview Request functionality via a JSON/HTTPS API.")
+        }
+    }
+    Deployment_Node(dn_notification, "bigbank-api-notification***\tx8"){
+        Deployment_Node(apache_notification, "Apache Tomcat", "Apache Tomcat 8.x"){
+            Container(api_notification, "Microservice Notification", "Java and Spring MVC", "Provides Notification functionality via a JSON/HTTPS API.")
+        }
+    }
+    Deployment_Node(dn_recruiter, "bigbank-api-recruiter***\tx8"){
+        Deployment_Node(apache_recruiter, "Apache Tomcat", "Apache Tomcat 8.x"){
+            Container(api_recruiter, "Microservice Recruiter", "Java and Spring MVC", "Provides Recruiter functionality via a JSON/HTTPS API.")
+        }
+    }
+    Deployment_Node(dn_technical_advisor, "bigbank-api-technical-advisor***\tx8"){
+        Deployment_Node(apache_technical_advisor, "Apache Tomcat", "Apache Tomcat 8.x"){
+            Container(api_technical_advisor, "Microservice Technical Advisor", "Java and Spring MVC", "Provides Technical Advisor functionality via a JSON/HTTPS API.")
         }
     }
     Deployment_Node(bigbankdb01, "bigbank-db01"){
         Deployment_Node(postgres, "Postgres - Primary", "Postgres"){
-            ContainerDb(db1, "Database", "Relational Database Schema", "Stores All Data.")
+            ContainerDb(db1_interview, "Database Interview", "Relational Database Schema", "Stores All Data.")
+            ContainerDb(db1_interview_request, "Database Interview Request", "Relational Database Schema", "Stores All Data.")
+            ContainerDb(db1_recruiter, "Database Recruiter", "Relational Database Schema", "Stores All Data.")
+            ContainerDb(db1_technical_advisor, "Database Technical Advisor", "Relational Database Schema", "Stores All Data.")
         }
     }
     Deployment_Node(bigbankdb02, "bigbank-db02", "Ubuntu 16.04 LTS", $tags="fallback") {
         Deployment_Node(postgres, "Postgres - Secondary", "Postgres", $tags="fallback") {
-            ContainerDb(db2, "Database", "Relational Database Schema", "Stores All Data.", $tags="fallback")
+            ContainerDb(db2_interview, "Database Interview", "Relational Database Schema", "Stores All Data.", $tags="fallback")
+            ContainerDb(db2_interview_request, "Database Interview Request", "Relational Database Schema", "Stores All Data.", $tags="fallback")
+            ContainerDb(db2_recruiter, "Database Recruiter", "Relational Database Schema", "Stores All Data.", $tags="fallback")
+            ContainerDb(db2_technical_advisor, "Database Technical Advisor", "Relational Database Schema", "Stores All Data.", $tags="fallback")
         }
     }
 }
@@ -44,11 +75,45 @@ Deployment_Node(computer, "Computer", "Microsoft Windows or Apple macOS"){
     }
 }
 
-Rel(mobile, api, "Makes API calls to", "json/HTTPS")
-Rel(spa, api, "Makes API calls to", "json/HTTPS")
-Rel_U(web, spa, "Delivers to the web browser")
-Rel(api, db1, "Reads from and writes to", "JDBC")
-Rel(api, db2, "Reads from and writes to", "JDBC", $tags="fallback")
-Rel_R(db1, db2, "Replicates data to")
+Rel(message_queue, api_notification, "Consume", "Consume")
+Rel(message_queue, api_interview_request, "Produce / Consume", "Produce / Consume")
+Rel(message_queue, api_interview, "Produce / Consume", "Produce / Consume")
+
+Rel_Neighbor(api_interview_request, api_technical_advisor, "Makes API calls to", "json/HTTPS")
+Rel_Neighbor(api_interview_request, api_interview, "Makes API calls to", "json/HTTPS")
+
+Rel_Neighbor(api_notification, api_technical_advisor, "Makes API calls to", "json/HTTPS")
+Rel_Neighbor(api_notification, api_recruiter, "Makes API calls to", "json/HTTPS")
+
+Rel(mobile, api_technical_advisor, "Makes API calls to", "json/HTTPS")
+Rel(spa, api_technical_advisor, "Makes API calls to", "json/HTTPS")
+
+Rel(mobile, api_recruiter, "Makes API calls to", "json/HTTPS")
+Rel(spa, api_recruiter, "Makes API calls to", "json/HTTPS")
+
+Rel(mobile, api_interview_request, "Makes API calls to", "json/HTTPS")
+Rel(spa, api_interview_request, "Makes API calls to", "json/HTTPS")
+
+Rel(mobile, api_interview, "Makes API calls to", "json/HTTPS")
+Rel(spa, api_interview, "Makes API calls to", "json/HTTPS")
+
+Rel(web, spa, "Delivers to the web browser")
+
+Rel(api_technical_advisor, db1_technical_advisor, "Reads from and writes to", "JDBC")
+Rel(api_technical_advisor, db2_technical_advisor, "Reads from and writes to", "JDBC", $tags="fallback")
+
+Rel(api_recruiter, db1_recruiter, "Reads from and writes to", "JDBC")
+Rel(api_recruiter, db2_recruiter, "Reads from and writes to", "JDBC", $tags="fallback")
+
+Rel(api_interview_request, db1_interview_request, "Reads from and writes to", "JDBC")
+Rel(api_interview_request, db2_interview_request, "Reads from and writes to", "JDBC", $tags="fallback")
+
+Rel(api_interview, db1_interview, "Reads from and writes to", "JDBC")
+Rel(api_interview, db2_interview, "Reads from and writes to", "JDBC", $tags="fallback")
+
+Rel_R(db1_interview, db2_interview, "Replicates data to")
+Rel_R(db1_interview_request, db2_interview_request, "Replicates data to")
+Rel_R(db1_recruiter, db2_recruiter, "Replicates data to")
+Rel_R(db1_technical_advisor, db2_technical_advisor, "Replicates data to")
 
 @enduml

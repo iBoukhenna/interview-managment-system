@@ -1,17 +1,27 @@
 @startuml
-actor Recruiter
+actor RecruiterActor
 actor TechnicalAdvisor
-participant System
+participant Interview
+participant InterviewRequest
+participant Notification
+participant MessageQueue
+participant Recruiter
 
 group Asynchrone Job
-    System ->> System: Wait for Y heures
+    InterviewRequest ->> InterviewRequest: Wait for Y heures
     alt If no TechnicalAdvisor has accepted the request
         alt If there are more of TechnicalAdvisor eligible for the request
-            ref over System
-                Random selection of X TechnicalAdvisor
+            ref over InterviewRequest
+                Run Iteration Of Process
             end ref
         else
-            System ->> Recruiter: Send email all the TechnicalAdvisor eligible refused the request
+            InterviewRequest ->> MessageQueue: Produce Message No Availible TechnicalAdvisor
+            Interview <<- MessageQueue: Consume Message No Availible TechnicalAdvisor
+            Interview ->> Interview: Set Status Of The Interview
+            Notification <<- MessageQueue: Consume Message No Availible TechnicalAdvisor
+            Notification ->> Recruiter: Get Recruiter Detail
+            Recruiter --> Notification: Return Recruiter Detail
+            Notification ->> RecruiterActor: Send email all the TechnicalAdvisor eligible refused the request
         end
     end
 end

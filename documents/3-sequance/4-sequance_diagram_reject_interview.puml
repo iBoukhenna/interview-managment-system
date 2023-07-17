@@ -1,19 +1,30 @@
 @startuml
 
-actor Recruiter
-actor TechnicalAdvisor
-participant System
+actor RecruiterActor
+actor TechnicalAdvisorActor
+participant InterviewRequest
+participant TechnicalAdvisor
+participant MessageQueue
+participant Notification
+participant Recruiter
+participant Interview
 
-TechnicalAdvisor -> System: Click on the link reject Interview
-System --> TechnicalAdvisor: Response of the request
+TechnicalAdvisorActor -> InterviewRequest: Click on the link reject Interview
+InterviewRequest --> TechnicalAdvisorActor: Response of the request
 group Check Rejected Request
-    alt#SkyBlue #LightBlue If X TechnicalAdvisor has rejected the request
-        alt#LightCyan #LightSkyBlue If there are more of TechnicalAdvisor eligible for the request
-            ref over System
-                Random selection of X TechnicalAdvisor
+    alt If X TechnicalAdvisor has rejected the request
+        alt If there are more of TechnicalAdvisor eligible for the request
+            ref over InterviewRequest
+                Run Iteration Of Process
             end ref
-        else #LightCyan
-            System ->> Recruiter: Send email all the TechnicalAdvisor eligible refused the request
+        else
+            InterviewRequest ->> MessageQueue: Produce Message No Availible TechnicalAdvisor
+            Interview <<- MessageQueue: Consume Message No Availible TechnicalAdvisor
+            Interview ->> Interview: Set Status Of The Interview
+            Notification <<- MessageQueue: Consume Message No Availible TechnicalAdvisor
+            Notification ->> Recruiter: Get Recruiter Detail
+            Recruiter --> Notification: Return Recruiter Detail
+            Notification ->> RecruiterActor: Send email all the TechnicalAdvisor eligible refused the request
         end
     end
 end
