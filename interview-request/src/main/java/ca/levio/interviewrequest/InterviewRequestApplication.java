@@ -11,12 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import ca.levio.interviewrequest.service.InterviewRequestProcessService;
 
-@SpringBootApplication(
-	scanBasePackages = {
-		"ca.levio.interviewrequest",
-		"ca.levio.messagequeue"
-	}
-)
+@SpringBootApplication
 @EnableScheduling
 @EnableFeignClients
 public class InterviewRequestApplication implements CommandLineRunner {

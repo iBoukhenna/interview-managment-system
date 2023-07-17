@@ -2,12 +2,12 @@ package ca.levio.notification.service;
 
 import org.springframework.stereotype.Service;
 
-import ca.levio.messagequeue.messageevent.InterviewAcceptedMessageEvent;
-import ca.levio.messagequeue.messageevent.InterviewAlreadyAcceptedMessageEvent;
-import ca.levio.messagequeue.messageevent.InterviewAssignedMessageEvent;
-import ca.levio.messagequeue.messageevent.InterviewDeclinedMessageEvent;
-import ca.levio.messagequeue.messageevent.NewInterviewRequestMessageEvent;
-import ca.levio.messagequeue.messageevent.NoAvailibleTechnicalAdvisorMessageEvent;
+import ca.levio.notification.messageevent.InterviewAcceptedMessageEvent;
+import ca.levio.notification.messageevent.InterviewAlreadyAcceptedMessageEvent;
+import ca.levio.notification.messageevent.InterviewAssignedMessageEvent;
+import ca.levio.notification.messageevent.InterviewDeclinedMessageEvent;
+import ca.levio.notification.messageevent.NewInterviewRequestMessageEvent;
+import ca.levio.notification.messageevent.NoAvailibleTechnicalAdvisorMessageEvent;
 import ca.levio.notification.config.LinksConfigProperties;
 import ca.levio.notification.dto.NotificationDto;
 import ca.levio.notification.maildtos.InterviewAcceptedMailDataRequestDto;

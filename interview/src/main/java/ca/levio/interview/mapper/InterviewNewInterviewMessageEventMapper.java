@@ -4,7 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import ca.levio.interview.model.Interview;
-import ca.levio.messagequeue.messageevent.NewInterviewMessageEvent;
+import ca.levio.interview.messageevent.NewInterviewMessageEvent;
 
 @Mapper(componentModel = "spring")
 public abstract class InterviewNewInterviewMessageEventMapper {

@@ -11,14 +11,14 @@ import ca.levio.interviewrequest.mapper.InterviewRequestNewInterviewRequestMessa
 import ca.levio.interviewrequest.model.InterviewRequest;
 import lombok.AllArgsConstructor;
 
-import ca.levio.messagequeue.messageevent.AllInterviewRequestRejectedMessageEvent;
-import ca.levio.messagequeue.messageevent.InterviewAcceptedMessageEvent;
-import ca.levio.messagequeue.messageevent.InterviewAlreadyAcceptedMessageEvent;
-import ca.levio.messagequeue.messageevent.InterviewAssignedMessageEvent;
-import ca.levio.messagequeue.messageevent.InterviewDeclinedMessageEvent;
-import ca.levio.messagequeue.messageevent.NewInterviewRequestMessageEvent;
-import ca.levio.messagequeue.messageevent.NoAvailibleTechnicalAdvisorMessageEvent;
-import ca.levio.messagequeue.producer.MessageQueueProducer;
+import ca.levio.interviewrequest.messageevent.AllInterviewRequestRejectedMessageEvent;
+import ca.levio.interviewrequest.messageevent.InterviewAcceptedMessageEvent;
+import ca.levio.interviewrequest.messageevent.InterviewAlreadyAcceptedMessageEvent;
+import ca.levio.interviewrequest.messageevent.InterviewAssignedMessageEvent;
+import ca.levio.interviewrequest.messageevent.InterviewDeclinedMessageEvent;
+import ca.levio.interviewrequest.messageevent.NewInterviewRequestMessageEvent;
+import ca.levio.interviewrequest.messageevent.NoAvailibleTechnicalAdvisorMessageEvent;
+import ca.levio.interviewrequest.producer.MessageQueueProducer;
 
 import org.springframework.stereotype.Service;
 

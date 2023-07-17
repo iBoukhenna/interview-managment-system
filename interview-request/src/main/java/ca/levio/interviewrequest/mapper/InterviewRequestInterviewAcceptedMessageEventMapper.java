@@ -3,7 +3,7 @@ package ca.levio.interviewrequest.mapper;
 import org.mapstruct.Mapper;
 
 import ca.levio.interviewrequest.model.InterviewRequest;
-import ca.levio.messagequeue.messageevent.InterviewAcceptedMessageEvent;
+import ca.levio.interviewrequest.messageevent.InterviewAcceptedMessageEvent;
 
 @Mapper(componentModel = "spring")
 public abstract class InterviewRequestInterviewAcceptedMessageEventMapper {

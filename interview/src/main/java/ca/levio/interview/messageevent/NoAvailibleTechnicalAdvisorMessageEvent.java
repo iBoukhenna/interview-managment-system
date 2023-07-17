@@ -1,4 +1,4 @@
-package ca.levio.messagequeue.messageevent;
+package ca.levio.interview.messageevent;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

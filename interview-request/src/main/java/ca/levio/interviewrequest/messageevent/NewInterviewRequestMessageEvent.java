@@ -1,4 +1,4 @@
-package ca.levio.messagequeue.messageevent;
+package ca.levio.interviewrequest.messageevent;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +9,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class InterviewDeclinedMessageEvent extends MessageEvent {
-    public static final String TOPIC = "InterviewDeclinedMessageEvent";
+public class NewInterviewRequestMessageEvent extends MessageEvent {
+    public static final String TOPIC = "NewInterviewRequestMessageEvent";
     private String technicalAdvisor;
     private String interview;
+    private String interviewRequest;
 }

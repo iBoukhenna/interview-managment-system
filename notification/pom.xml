@@ -56,10 +56,8 @@
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
         <dependency>
-            <artifactId>message-queue</artifactId>
-            <groupId>ca.levio</groupId>
-            <version>${project.version}</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
   	</dependencies>
 </project>

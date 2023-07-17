@@ -3,7 +3,7 @@ package ca.levio.interviewrequest.mapper;
 import org.mapstruct.Mapper;
 
 import ca.levio.interviewrequest.dto.InterviewDto;
-import ca.levio.messagequeue.messageevent.NoAvailibleTechnicalAdvisorMessageEvent;
+import ca.levio.interviewrequest.messageevent.NoAvailibleTechnicalAdvisorMessageEvent;
 
 @Mapper(componentModel = "spring")
 public abstract class InterviewDtoNoAvailibleTechnicalAdvisorMessageEventMapper {

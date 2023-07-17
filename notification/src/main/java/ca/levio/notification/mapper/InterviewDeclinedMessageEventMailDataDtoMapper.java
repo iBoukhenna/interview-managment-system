@@ -3,7 +3,7 @@ package ca.levio.notification.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import ca.levio.messagequeue.messageevent.InterviewDeclinedMessageEvent;
+import ca.levio.notification.messageevent.InterviewDeclinedMessageEvent;
 import ca.levio.notification.config.LinksConfigProperties;
 import ca.levio.notification.dto.TechnicalAdvisorDto;
 import ca.levio.notification.maildtos.InterviewDeclinedMailDataRequestDto;

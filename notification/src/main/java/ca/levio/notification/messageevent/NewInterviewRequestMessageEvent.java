@@ -1,4 +1,4 @@
-package ca.levio.messagequeue.messageevent;
+package ca.levio.notification.messageevent;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

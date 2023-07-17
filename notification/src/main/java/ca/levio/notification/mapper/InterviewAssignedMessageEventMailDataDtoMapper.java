@@ -3,7 +3,7 @@ package ca.levio.notification.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import ca.levio.messagequeue.messageevent.InterviewAssignedMessageEvent;
+import ca.levio.notification.messageevent.InterviewAssignedMessageEvent;
 import ca.levio.notification.config.LinksConfigProperties;
 import ca.levio.notification.dto.RecruiterDto;
 import ca.levio.notification.maildtos.InterviewAssignedMailDataRequestDto;
